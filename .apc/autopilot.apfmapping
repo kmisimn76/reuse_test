@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
   <source>
-    <originFiles name="main.cpp" path="/home/sumin/workspace/FPGA/test/reuse_test/main.cpp"/>
+    <originFiles name="after.cpp" path="/home/sumin/workspace/FPGA/test/reuse_test/after.cpp"/>
+    <originFiles name="before.cpp" path="/home/sumin/workspace/FPGA/test/reuse_test/before.cpp"/>
   </source>
   <testbench>
     <originFiles name="test.cpp" path="/home/sumin/workspace/FPGA/test/reuse_test/test.cpp"/>

@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1658371191000">
+  <ports id="1" name="numc_iter" type="PortType" bitwidth="32">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="2" name="A" type="PortType" bitwidth="32">
+    <dataOutputObjs>call</dataOutputObjs>
+  </ports>
+  <ports id="3" name="B" type="PortType" bitwidth="32">
+    <dataOutputObjs>call</dataOutputObjs>
+  </ports>
+  <ports id="4" name="C" type="PortType" bitwidth="32" direction="DirInOut">
+    <dataInputObjs>call</dataInputObjs>
+    <dataOutputObjs>call</dataOutputObjs>
+  </ports>
+  <ports id="5" name="tilenuma" type="PortType" bitwidth="32">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="6" name="tilen" type="PortType" bitwidth="32">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="7" name="tilenumc" type="PortType" bitwidth="32">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <edges id="32" source_obj="//@ports.6" sink_obj="//@blocks.0/@node_objs.0"/>
+  <edges id="34" source_obj="//@ports.5" sink_obj="//@blocks.0/@node_objs.1"/>
+  <edges id="36" source_obj="//@ports.4" sink_obj="//@blocks.0/@node_objs.2"/>
+  <edges id="38" source_obj="//@ports.0" sink_obj="//@blocks.0/@node_objs.3"/>
+  <edges id="39" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@blocks.0/@node_objs.4"/>
+  <edges id="42" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="43" source_obj="//@regions.0/@basic_blocks.0/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0" is_back_edge="1"/>
+  <edges id="44" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0" is_back_edge="1"/>
+  <edges id="45" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.1"/>
+  <edges id="46" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.2"/>
+  <edges id="47" source_obj="//@blocks.0/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.2"/>
+  <edges id="48" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="51" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="52" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="53" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="56" source_obj="//@ports.1" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="57" source_obj="//@blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="58" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="59" source_obj="//@ports.2" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="60" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="61" source_obj="//@ports.3" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="62" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.1"/>
+  <edges id="90" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@regions.0/@basic_blocks.0"/>
+  <edges id="91" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@regions.0/@basic_blocks.1"/>
+  <edges id="92" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@blocks.1"/>
+  <edges id="93" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.0" is_back_edge="1"/>
+  <edges id="-61" source_obj="//@regions.0/@basic_blocks.1/@node_objs.0" sink_obj="//@ports.3"/>
+  <blocks id="13" name="newFuncRoot" type="BlockType">
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>block_20</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="8" name="tilenumc_read" bitwidth="32" opcode="read" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
+      <dataInputObjs>tilenumc</dataInputObjs>
+      <dataOutputObjs>call</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="9" name="tilen_read" bitwidth="32" opcode="read" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
+      <dataInputObjs>tilen</dataInputObjs>
+      <dataOutputObjs>call</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="10" name="tilenuma_read" bitwidth="32" opcode="read" m_display="0" m_topoIndex="3" m_clusterGroupNumber="-1">
+      <dataInputObjs>tilenuma</dataInputObjs>
+      <dataOutputObjs>call</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="11" name="numc_iter_read" bitwidth="32" opcode="read" m_display="0" m_topoIndex="4" m_clusterGroupNumber="-1">
+      <dataInputObjs>numc_iter</dataInputObjs>
+      <dataOutputObjs>icmp</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="12" name="br_ln0" opcode="br" m_display="0" m_delay="0.6" m_topoIndex="5" m_clusterGroupNumber="-1">
+      <controlInputObjs>block_20</controlInputObjs>
+    </node_objs>
+  </blocks>
+  <blocks id="29" name=".exitStub" type="BlockType">
+    <controlInputObjs>block_20</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="28" name="_ln0" opcode="ret" nodeLabel="1.0" m_display="0" m_topoIndex="12" m_clusterGroupNumber="-1"/>
+  </blocks>
+  <regions anchor_node="-1" region_type="16" typeName="Dataflow" id="103" RegionName="VITIS_LOOP_65_3">
+    <basic_blocks id="20" name="block_20" type="BlockType">
+      <controlInputObjs>newFuncRoot</controlInputObjs>
+      <controlInputObjs>.split</controlInputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>.split</controlOutputObjs>
+      <controlOutputObjs>.exitStub</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="14" name="onc" originalName="onc" bitwidth="31" opcode="phi" nodeLabel="1.0" m_display="0" m_topoIndex="6" m_clusterGroupNumber="-1">
+        <dataInputObjs>add</dataInputObjs>
+        <dataOutputObjs>zext</dataOutputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+        <controlInputObjs>newFuncRoot</controlInputObjs>
+        <controlInputObjs>.split</controlInputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="15" name="zext_ln65" lineNumber="65" fileName="reuse_test/before.cpp" fileDirectory=".." contextFuncName="region_before" bitwidth="32" opcode="zext" nodeLabel="1.0" m_display="0" m_topoIndex="7" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="reuse_test/before.cpp" linenumber="65" fileDirectory="/home/sumin/workspace/FPGA/test" functionName="region_before"/>
+        <dataInputObjs>phi</dataInputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="16" name="icmp_ln65" lineNumber="65" fileName="reuse_test/before.cpp" fileDirectory=".." contextFuncName="region_before" bitwidth="1" opcode="icmp" nodeLabel="1.0" m_display="0" m_delay="0.85" m_topoIndex="8" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="reuse_test/before.cpp" linenumber="65" fileDirectory="/home/sumin/workspace/FPGA/test" functionName="region_before"/>
+        <dataInputObjs>zext</dataInputObjs>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>br</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="18" name="onc_1" lineNumber="65" originalName="onc" fileName="reuse_test/before.cpp" fileDirectory=".." contextFuncName="region_before" bitwidth="31" opcode="add" nodeLabel="1.0" m_display="0" m_delay="0.87" m_topoIndex="9" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="reuse_test/before.cpp" linenumber="65" fileDirectory="/home/sumin/workspace/FPGA/test" functionName="region_before"/>
+        <dataInputObjs>phi</dataInputObjs>
+        <dataOutputObjs>phi</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="19" name="br_ln65" lineNumber="65" fileName="reuse_test/before.cpp" fileDirectory=".." contextFuncName="region_before" opcode="br" nodeLabel="1.0" m_display="0" m_topoIndex="10" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="reuse_test/before.cpp" linenumber="65" fileDirectory="/home/sumin/workspace/FPGA/test" functionName="region_before"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <controlInputObjs>.exitStub</controlInputObjs>
+        <controlInputObjs>.split</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="reuse_test/before.cpp">
+        <validLinenumbers>65</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+    <basic_blocks id="27" name=".split" type="BlockType">
+      <controlInputObjs>block_20</controlInputObjs>
+      <controlOutputObjs>phi</controlOutputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>block_20</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="25" name="_ln74" lineNumber="74" fileName="reuse_test/before.cpp" fileDirectory=".." rtlName="dataflow_in_loop_VITIS_LOOP_65_3_U0" contextFuncName="region_before" opcode="call" nodeLabel="1.0" nodeLatency="1" m_display="0" m_topoIndex="11" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="reuse_test/before.cpp" linenumber="74" fileDirectory="/home/sumin/workspace/FPGA/test" functionName="region_before"/>
+        <dataInputObjs>A</dataInputObjs>
+        <dataInputObjs>read</dataInputObjs>
+        <dataInputObjs>read</dataInputObjs>
+        <dataInputObjs>B</dataInputObjs>
+        <dataInputObjs>read</dataInputObjs>
+        <dataInputObjs>C</dataInputObjs>
+        <dataOutputObjs>C</dataOutputObjs>
+        <constName>dataflow_in_loop_VITIS_LOOP_65_3</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="26" name="br_ln65" lineNumber="65" fileName="reuse_test/before.cpp" fileDirectory=".." contextFuncName="region_before" opcode="br" nodeLabel="2.0" m_display="0" m_topoIndex="13" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="reuse_test/before.cpp" linenumber="65" fileDirectory="/home/sumin/workspace/FPGA/test" functionName="region_before"/>
+        <controlInputObjs>block_20</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="reuse_test/before.cpp">
+        <validLinenumbers>74</validLinenumbers>
+        <validLinenumbers>65</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+  </regions>
+  <ScheduleInfo time="0"/>
+  <ScheduleInfo time="1"/>
+  <ScheduleInfo time="2"/>
+  <regnodes realName="numc_iter_read_reg_116">
+    <nodeIds>11</nodeIds>
+  </regnodes>
+  <regnodes realName="icmp_ln65_reg_121">
+    <nodeIds>16</nodeIds>
+  </regnodes>
+  <regnodes realName="tilenumc_read_reg_101">
+    <nodeIds>8</nodeIds>
+  </regnodes>
+  <regnodes realName="onc_1_reg_125">
+    <nodeIds>18</nodeIds>
+  </regnodes>
+  <regnodes realName="tilen_read_reg_106">
+    <nodeIds>9</nodeIds>
+  </regnodes>
+  <regnodes realName="tilenuma_read_reg_111">
+    <nodeIds>10</nodeIds>
+  </regnodes>
+  <regnodes realName="onc_reg_62">
+    <nodeIds>14</nodeIds>
+  </regnodes>
+  <expressionNodes realName="onc_1_fu_95">
+    <nodeIds>18</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="onc_phi_fu_66">
+    <nodeIds>14</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln65_fu_90">
+    <nodeIds>16</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="zext_ln65_fu_86">
+    <nodeIds>15</nodeIds>
+  </expressionNodes>
+  <moduleNodes realName="grp_dataflow_in_loop_VITIS_LOOP_65_3_fu_73">
+    <nodeIds>25</nodeIds>
+  </moduleNodes>
+  <ioNodes realName="numc_iter_read_read_fu_56">
+    <nodeIds>11</nodeIds>
+  </ioNodes>
+  <ioNodes realName="tilen_read_read_fu_44">
+    <nodeIds>9</nodeIds>
+  </ioNodes>
+  <ioNodes realName="tilenuma_read_read_fu_50">
+    <nodeIds>10</nodeIds>
+  </ioNodes>
+  <ioNodes realName="tilenumc_read_read_fu_38">
+    <nodeIds>8</nodeIds>
+  </ioNodes>
+  <ioPorts name="A">
+    <contents name="call">
+      <nodeIds>25</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="B">
+    <contents name="call">
+      <nodeIds>25</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="C">
+    <contents name="call">
+      <nodeIds>25</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="numc_iter">
+    <contents name="read">
+      <nodeIds>11</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="tilen">
+    <contents name="read">
+      <nodeIds>9</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="tilenuma">
+    <contents name="read">
+      <nodeIds>10</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="tilenumc">
+    <contents name="read">
+      <nodeIds>8</nodeIds>
+    </contents>
+  </ioPorts>
+  <fsm>
+    <states id="1">
+      <operations id="8" stage="1" latency="1"/>
+      <operations id="9" stage="1" latency="1"/>
+      <operations id="10" stage="1" latency="1"/>
+      <operations id="11" stage="1" latency="1"/>
+      <operations id="12" stage="1" latency="1"/>
+    </states>
+    <states id="2">
+      <operations id="14" stage="1" latency="1"/>
+      <operations id="15" stage="1" latency="1"/>
+      <operations id="16" stage="1" latency="1"/>
+      <operations id="17" stage="1" latency="1"/>
+      <operations id="18" stage="1" latency="1"/>
+      <operations id="19" stage="1" latency="1"/>
+      <operations id="25" stage="2" latency="2"/>
+      <operations id="28" stage="1" latency="1"/>
+    </states>
+    <states id="3">
+      <operations id="21" stage="1" latency="1"/>
+      <operations id="22" stage="1" latency="1"/>
+      <operations id="23" stage="1" latency="1"/>
+      <operations id="24" stage="1" latency="1"/>
+      <operations id="25" stage="1" latency="2"/>
+      <operations id="26" stage="1" latency="1"/>
+    </states>
+    <transitions inState="1" outState="2">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="2" outState="3">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="3" outState="2">
+      <condition id="-1"/>
+    </transitions>
+  </fsm>
+  <CFGRegionsRoot>
+    <cfgRegions mId="1" mTag="dataflow_parent_loop_proc" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="-1" mMaxLatency="-1">
+      <subRegions>2</subRegions>
+      <subRegions>3</subRegions>
+      <subRegions>4</subRegions>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="2" mTag="Entry" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>13</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="3" mTag="VITIS_LOOP_65_3" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="-1" mMaxLatency="-1" mIsDfPipe="true" mType="1">
+      <basicBlocks>20</basicBlocks>
+      <basicBlocks>27</basicBlocks>
+      <mDfPipe allPipePinInst="//@CFGRegionsRoot/@cfgRegions.2/@mDfPipe/@processe_list.0/@pins.0/@inst">
+        <processe_list name="dataflow_in_loop_VITIS_LOOP_65_3_U0" ssdmobj_id="25">
+          <pins>
+            <port name="A" dir="DirEnd"/>
+            <inst name="dataflow_in_loop_VITIS_LOOP_65_3_U0" ssdmobj_id="25" object_id="_64"/>
+          </pins>
+          <pins>
+            <port name="tilenuma" dir="DirEnd"/>
+            <inst name="dataflow_in_loop_VITIS_LOOP_65_3_U0" ssdmobj_id="25" object_id="_64"/>
+          </pins>
+          <pins>
+            <port name="tilen" dir="DirEnd"/>
+            <inst name="dataflow_in_loop_VITIS_LOOP_65_3_U0" ssdmobj_id="25" object_id="_64"/>
+          </pins>
+          <pins>
+            <port name="B" dir="DirEnd"/>
+            <inst name="dataflow_in_loop_VITIS_LOOP_65_3_U0" ssdmobj_id="25" object_id="_64"/>
+          </pins>
+          <pins>
+            <port name="tilenumc" dir="DirEnd"/>
+            <inst name="dataflow_in_loop_VITIS_LOOP_65_3_U0" ssdmobj_id="25" object_id="_64"/>
+          </pins>
+          <pins>
+            <port name="C" dir="DirEnd" type="MEMType"/>
+            <inst name="dataflow_in_loop_VITIS_LOOP_65_3_U0" ssdmobj_id="25" object_id="_64"/>
+          </pins>
+        </processe_list>
+      </mDfPipe>
+    </cfgRegions>
+    <cfgRegions mId="4" mTag="Return" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>29</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+  </CFGRegionsRoot>
+</cdfg:DBCdfg>

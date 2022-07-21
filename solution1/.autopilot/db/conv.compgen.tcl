@@ -1,7 +1,74 @@
 # This script segment is generated automatically by AutoPilot
 
-set id 53
-set name region_mul_7s_7s_7_1_1
+set id 26
+set name region_before_mul_64ns_32ns_96_1_1
+set corename simcore_mul
+set op mul
+set stage_num 1
+set max_latency -1
+set registered_input 1
+set in0_width 64
+set in0_signed 0
+set in1_width 32
+set in1_signed 0
+set out_width 96
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mul] == "ap_gen_simcore_mul"} {
+eval "ap_gen_simcore_mul { \
+    id ${id} \
+    name ${name} \
+    corename ${corename} \
+    op ${op} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${stage_num} \
+    max_latency ${max_latency} \
+    registered_input ${registered_input} \
+    in0_width ${in0_width} \
+    in0_signed ${in0_signed} \
+    in1_width ${in1_width} \
+    in1_signed ${in1_signed} \
+    out_width ${out_width} \
+}"
+} else {
+puts "@W \[IMPL-100\] Cannot find ap_gen_simcore_mul, check your AutoPilot builtin lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler ${name}
+}
+
+
+set op mul
+set corename Multiplier
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_multicycle_mul] == "::AESL_LIB_VIRTEX::xil_gen_multicycle_mul"} {
+eval "::AESL_LIB_VIRTEX::xil_gen_multicycle_mul { \
+    id ${id} \
+    name ${name} \
+    corename ${corename} \
+    op ${op} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${stage_num} \
+    max_latency ${max_latency} \
+    registered_input ${registered_input} \
+    in0_width ${in0_width} \
+    in0_signed ${in0_signed} \
+    in1_width ${in1_width} \
+    in1_signed ${in1_signed} \
+    out_width ${out_width} \
+}"
+} else {
+puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_multicycle_mul, check your platform lib"
+}
+}
+
+
+set id 27
+set name region_before_mul_7s_7s_7_1_1
 set corename simcore_mul
 set op mul
 set stage_num 1
@@ -67,8 +134,8 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_multicycle_mul, che
 }
 
 
-set id 55
-set name region_mul_32s_32s_32_1_1
+set id 29
+set name region_before_mul_32s_32s_32_1_1
 set corename simcore_mul
 set op mul
 set stage_num 1
@@ -134,8 +201,8 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_multicycle_mul, che
 }
 
 
-set id 58
-set name region_mac_muladd_7s_7s_7s_7_4_1
+set id 32
+set name region_before_mac_muladd_7s_7s_7s_7_4_1
 set corename simcore_mac
 set op mac
 set stage_num 4
@@ -235,95 +302,9 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_dsp48, check your p
 
 
 # Memory (RAM/ROM)  definition:
-set ID 62
+set ID 37
 set hasByteEnable 0
-set MemName region_conv_b_buf_data
-set CoreName ap_simcore_mem
-set PortList { 2 0 }
-set DataWd 32
-set AddrRange 100
-set AddrWd 7
-set impl_style auto
-set TrueReset 0
-set IsROM 0
-set ROMData { }
-set HasInitializer 1
-set Initializer $ROMData
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 1.158
-set ClkPeriod 10
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 2 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    style ${impl_style} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName RAM
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RAM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_RAM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 2 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    style ${impl_style} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_RAM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 63
-set hasByteEnable 0
-set MemName region_conv_local_c
+set MemName region_before_conv_local_c
 set CoreName ap_simcore_mem
 set PortList { 0 1 }
 set DataWd 32
@@ -331,10 +312,9 @@ set AddrRange 100
 set AddrWd 7
 set impl_style auto
 set TrueReset 0
+set HasInitializer 0
 set IsROM 0
-set ROMData { }
-set HasInitializer 1
-set Initializer $ROMData
+set ROMData {}
 set NumOfStage 2
 set MaxLatency -1
 set DelayBudget 1.158
@@ -413,55 +393,67 @@ if {${::AESL::PGuard_autoexp_gen}} {
     AESL_LIB_XILADAPTER::native_axis_begin
 }
 
-# Direct connection:
+# XIL_BRAM:
 if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 64 \
-    name a_buf_s \
-    type fifo \
-    dir I \
+if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
+eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
+    id 38 \
+    name a_buf \
     reset_level 1 \
     sync_rst true \
-    corename dc_a_buf_s \
+    dir I \
+    corename a_buf \
     op interface \
-    ports { a_buf_s_dout { I 3200 vector } a_buf_s_empty_n { I 1 bit } a_buf_s_read { O 1 bit } } \
+    ports { a_buf_address0 { O 7 vector } a_buf_ce0 { O 1 bit } a_buf_q0 { I 32 vector } } \
 } "
+} else {
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'a_buf'"
+}
 }
 
-# Direct connection:
+
+# XIL_BRAM:
 if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 65 \
-    name b_buf_s \
-    type fifo \
-    dir I \
+if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
+eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
+    id 39 \
+    name b_buf \
     reset_level 1 \
     sync_rst true \
-    corename dc_b_buf_s \
+    dir I \
+    corename b_buf \
     op interface \
-    ports { b_buf_s_dout { I 3200 vector } b_buf_s_empty_n { I 1 bit } b_buf_s_read { O 1 bit } } \
+    ports { b_buf_address0 { O 7 vector } b_buf_ce0 { O 1 bit } b_buf_q0 { I 32 vector } } \
 } "
+} else {
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'b_buf'"
+}
 }
 
-# Direct connection:
+
+# XIL_BRAM:
 if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 66 \
-    name c_buf_s \
-    type fifo \
+if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
+eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
+    id 40 \
+    name c_buf \
+    reset_level 1 \
+    sync_rst true \
     dir O \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_c_buf_s \
+    corename c_buf \
     op interface \
-    ports { c_buf_s_din { O 3200 vector } c_buf_s_full_n { I 1 bit } c_buf_s_write { O 1 bit } } \
+    ports { c_buf_address0 { O 7 vector } c_buf_ce0 { O 1 bit } c_buf_we0 { O 1 bit } c_buf_d0 { O 32 vector } } \
 } "
+} else {
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'c_buf'"
 }
+}
+
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 67 \
+    id 41 \
     name tilen \
     type fifo \
     dir I \
@@ -476,7 +468,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 68 \
+    id 42 \
     name tilenuma \
     type fifo \
     dir I \
@@ -491,7 +483,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 69 \
+    id 43 \
     name tilenumc \
     type fifo \
     dir I \
@@ -506,52 +498,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 70 \
-    name numa_iter \
-    type fifo \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_numa_iter \
-    op interface \
-    ports { numa_iter_dout { I 32 vector } numa_iter_empty_n { I 1 bit } numa_iter_read { O 1 bit } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 71 \
-    name n_iter \
-    type fifo \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_n_iter \
-    op interface \
-    ports { n_iter_dout { I 32 vector } n_iter_empty_n { I 1 bit } n_iter_read { O 1 bit } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 72 \
-    name numc_iter \
-    type fifo \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_numc_iter \
-    op interface \
-    ports { numc_iter_dout { I 32 vector } numc_iter_empty_n { I 1 bit } numc_iter_read { O 1 bit } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 73 \
+    id 44 \
     name tilen_out \
     type fifo \
     dir O \
@@ -566,7 +513,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 74 \
+    id 45 \
     name tilenumc_out \
     type fifo \
     dir O \
@@ -581,51 +528,6 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 75 \
-    name numa_iter_out \
-    type fifo \
-    dir O \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_numa_iter_out \
-    op interface \
-    ports { numa_iter_out_din { O 32 vector } numa_iter_out_full_n { I 1 bit } numa_iter_out_write { O 1 bit } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 76 \
-    name n_iter_out \
-    type fifo \
-    dir O \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_n_iter_out \
-    op interface \
-    ports { n_iter_out_din { O 32 vector } n_iter_out_full_n { I 1 bit } n_iter_out_write { O 1 bit } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 77 \
-    name numc_iter_out \
-    type fifo \
-    dir O \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_numc_iter_out \
-    op interface \
-    ports { numc_iter_out_din { O 32 vector } numc_iter_out_full_n { I 1 bit } numc_iter_out_write { O 1 bit } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
     id -1 \
     name ap_ctrl \
     type ap_ctrl \
@@ -633,7 +535,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename ap_ctrl \
     op interface \
-    ports { ap_done { O 1 bit } ap_idle { O 1 bit } ap_continue { I 1 bit } } \
+    ports { ap_start { I 1 bit } ap_ready { O 1 bit } ap_done { O 1 bit } ap_idle { O 1 bit } ap_continue { I 1 bit } } \
 } "
 }
 

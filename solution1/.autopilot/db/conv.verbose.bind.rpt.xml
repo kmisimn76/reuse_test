@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'conv'" level="0">
-<item name = "Date">Thu Jul 21 01:14:07 2022
+<item name = "Date">Thu Jul 21 11:39:45 2022
 </item>
 <item name = "Version">2020.1 (Build 2902540 on Wed May 27 20:16:15 MDT 2020)</item>
 <item name = "Project">reuse_test</item>
@@ -35,8 +35,8 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- VITIS_LOOP_87_1_VITIS_LOOP_88_2_VITIS_LOOP_89_3">?, ?, ?, -, -, ?, no</column>
-<column name=" + VITIS_LOOP_97_4_VITIS_LOOP_99_5_VITIS_LOOP_101_6">?, ?, 437, 1, 1, ?, yes</column>
+<column name="- Loop 1">100, 100, 1, 1, 1, 100, yes</column>
+<column name="- VITIS_LOOP_38_1_VITIS_LOOP_39_2_VITIS_LOOP_40_3">?, ?, 437, 1, 1, ?, yes</column>
 </table>
 </item>
 </section>

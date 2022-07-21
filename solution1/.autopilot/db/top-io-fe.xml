@@ -1,5 +1,5 @@
 <root versionMajor = "1" versionMinor = "5">
-  <kernel src_name="region" language="c" hwCtrl="ap_ctrl_hs" mem_layout="fpga64-xilinx-none">
+  <kernel src_name="region_before" language="c" hwCtrl="ap_ctrl_hs" mem_layout="fpga64-xilinx-none">
     <args>
       <arg id="0" access_type="r" src_name="A" src_type="*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1" hw_interface="Register" hw_name="A" hw_bitwidth="32" hw_size_or_depth="1"/>
       <arg id="1" access_type="r" src_name="B" src_type="*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1" hw_interface="Register" hw_name="B" hw_bitwidth="32" hw_size_or_depth="1"/>

@@ -7,10 +7,29 @@ if {${::AESL::PGuard_autoexp_gen}} {
     AESL_LIB_XILADAPTER::native_axis_begin
 }
 
+# XIL_BRAM:
+if {${::AESL::PGuard_autoexp_gen}} {
+if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
+eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
+    id 22 \
+    name b_buf \
+    reset_level 1 \
+    sync_rst true \
+    dir O \
+    corename b_buf \
+    op interface \
+    ports { b_buf_address0 { O 7 vector } b_buf_ce0 { O 1 bit } b_buf_we0 { O 1 bit } b_buf_d0 { O 32 vector } } \
+} "
+} else {
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'b_buf'"
+}
+}
+
+
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 42 \
+    id 21 \
     name B \
     type other \
     dir I \
@@ -25,22 +44,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 43 \
-    name b_buf \
-    type fifo \
-    dir O \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_b_buf \
-    op interface \
-    ports { b_buf_din { O 3200 vector } b_buf_full_n { I 1 bit } b_buf_write { O 1 bit } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 44 \
+    id 23 \
     name tilenuma \
     type fifo \
     dir I \
@@ -55,7 +59,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 45 \
+    id 24 \
     name tilenumc \
     type fifo \
     dir I \
@@ -64,51 +68,6 @@ eval "cg_default_interface_gen_dc { \
     corename dc_tilenumc \
     op interface \
     ports { tilenumc_dout { I 32 vector } tilenumc_empty_n { I 1 bit } tilenumc_read { O 1 bit } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 46 \
-    name numa_iter \
-    type fifo \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_numa_iter \
-    op interface \
-    ports { numa_iter_dout { I 32 vector } numa_iter_empty_n { I 1 bit } numa_iter_read { O 1 bit } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 47 \
-    name n_iter \
-    type fifo \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_n_iter \
-    op interface \
-    ports { n_iter_dout { I 32 vector } n_iter_empty_n { I 1 bit } n_iter_read { O 1 bit } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 48 \
-    name numc_iter \
-    type fifo \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_numc_iter \
-    op interface \
-    ports { numc_iter_dout { I 32 vector } numc_iter_empty_n { I 1 bit } numc_iter_read { O 1 bit } } \
 } "
 }
 

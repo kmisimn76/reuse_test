@@ -5,6 +5,16 @@
                 <option name="name" value="region"/>
             </pragma>
         </directive>
+        <directive functionName="region_before" label="" functionLabel="">
+            <pragma name="TOP">
+                <option name="name" value="region_before"/>
+            </pragma>
+        </directive>
+        <directive functionName="region_before" label="" functionLabel="">
+            <pragma name="TOP">
+                <option name="name" value="region_before"/>
+            </pragma>
+        </directive>
     </sourceFile>
 </AutoPilot:ProjectResources>
 

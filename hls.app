@@ -1,4 +1,4 @@
-<project xmlns="com.autoesl.autopilot.project" top="region" name="reuse_test">
+<project xmlns="com.autoesl.autopilot.project" name="reuse_test" top="region_before">
     <includePaths/>
     <libraryPaths/>
     <Simulation>
@@ -6,7 +6,8 @@
     </Simulation>
     <files xmlns="">
         <file name="../test.cpp" sc="0" tb="1" cflags=" -Wno-unknown-pragmas" csimflags=" -Wno-unknown-pragmas" blackbox="false"/>
-        <file name="reuse_test/main.cpp" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
+        <file name="reuse_test/before.cpp" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
+        <file name="reuse_test/after.cpp" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
     </files>
     <solutions xmlns="">
         <solution name="solution1" status="active"/>

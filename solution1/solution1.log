@@ -11704,3 +11704,496 @@ INFO: [RTGEN 206-100] Generating core module 'mac_muladd_7s_7s_7ns_7_4_1': 2 ins
 Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.1 (64-bit)
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.1 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.1 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.1 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.1 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xcu200-fsgd2104-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-10] Analyzing design file 'reuse_test/before.cpp' ... 
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: reuse_test/before.cpp:71:12
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: reuse_test/before.cpp:71:19
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: reuse_test/before.cpp:71:24
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: reuse_test/before.cpp:72:15
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: reuse_test/before.cpp:72:22
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: reuse_test/before.cpp:73:10
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: reuse_test/before.cpp:73:17
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: reuse_test/before.cpp:73:24
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: reuse_test/before.cpp:74:16
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: reuse_test/before.cpp:74:28
+WARNING: [HLS 200-471] Dataflow form checks found 10 issue(s) in file reuse_test/before.cpp
+WARNING: [HLS 207-5324] unused parameter 'numa': reuse_test/before.cpp:13:92
+INFO: [HLS 200-10] Analyzing design file 'reuse_test/after.cpp' ... 
+WARNING: [HLS 207-5324] unused parameter 'numa': reuse_test/after.cpp:32:88
+WARNING: [HLS 207-5324] unused parameter 'tilenuma': reuse_test/after.cpp:57:61
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' target.
+INFO: [HLS 214-131] Inlining function 'hls::stream<buf, 0>::write(buf const&)' into 'load_a(int volatile*, hls::stream<buf, 0>&, int, int, int, int, int, int)' (reuse_test/after.cpp:26:9)
+INFO: [HLS 214-131] Inlining function 'hls::stream<buf, 0>::write(buf const&)' into 'load_b(int volatile*, hls::stream<buf, 0>&, int, int, int, int, int, int, int)' (reuse_test/after.cpp:50:10)
+INFO: [HLS 214-131] Inlining function 'hls::stream<buf, 0>::read(buf&)' into 'hls::stream<buf, 0>::read()' (/home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/autopilot/hls_stream_39.h:156:9)
+INFO: [HLS 214-131] Inlining function 'hls::stream<buf, 0>::read()' into 'conv(hls::stream<buf, 0>&, hls::stream<buf, 0>&, hls::stream<buf, 0>&, int, int, int, int, int, int)' (reuse_test/after.cpp:91:17)
+INFO: [HLS 214-131] Inlining function 'hls::stream<buf, 0>::write(buf const&)' into 'conv(hls::stream<buf, 0>&, hls::stream<buf, 0>&, hls::stream<buf, 0>&, int, int, int, int, int, int)' (reuse_test/after.cpp:114:10)
+INFO: [HLS 214-131] Inlining function 'hls::stream<buf, 0>::read()' into 'conv(hls::stream<buf, 0>&, hls::stream<buf, 0>&, hls::stream<buf, 0>&, int, int, int, int, int, int)' (reuse_test/after.cpp:94:17)
+INFO: [HLS 214-131] Inlining function 'hls::stream<buf, 0>::read()' into 'store_c(int volatile*, hls::stream<buf, 0>&, int, int, int, int, int, int, int)' (reuse_test/after.cpp:66:21)
+INFO: [HLS 214-131] Inlining function 'hls::stream<buf, 0>::stream()' into 'region_after(int volatile*, int volatile*, int volatile*, int, int, int, int, int, int, int, int, int)' (reuse_test/after.cpp:127:19)
+INFO: [HLS 214-131] Inlining function 'hls::stream<buf, 0>::stream()' into 'region_after(int volatile*, int volatile*, int volatile*, int, int, int, int, int, int, int, int, int)' (reuse_test/after.cpp:128:19)
+INFO: [HLS 214-131] Inlining function 'hls::stream<buf, 0>::stream()' into 'region_after(int volatile*, int volatile*, int volatile*, int, int, int, int, int, int, int, int, int)' (reuse_test/after.cpp:129:19)
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:37 ; elapsed = 00:00:37 . Memory (MB): peak = 1667.754 ; gain = 1229.770 ; free physical = 224693 ; free virtual = 255086
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:37 ; elapsed = 00:00:37 . Memory (MB): peak = 1667.754 ; gain = 1229.770 ; free physical = 224693 ; free virtual = 255086
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:39 ; elapsed = 00:00:39 . Memory (MB): peak = 1667.754 ; gain = 1229.770 ; free physical = 224686 ; free virtual = 255080
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:44 ; elapsed = 00:00:45 . Memory (MB): peak = 1667.754 ; gain = 1229.770 ; free physical = 224681 ; free virtual = 255075
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_69_5' (reuse_test/after.cpp:69) in function 'store_c' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_101_6' (reuse_test/after.cpp:101) in function 'conv' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_18_5' (reuse_test/after.cpp:18) in function 'load_a' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_42_5' (reuse_test/after.cpp:42) in function 'load_b' automatically.
+WARNING: [HLS 200-786] Detected dataflow-on-top in function  'region_after'  with default interface mode 'ap_ctrl_hs'. Overlapped execution of successive kernel calls will not happen unless interface mode 'ap_ctrl_chain' is used (or 'ap_ctrl_none' for a purely data-driven design).
+INFO: [XFORM 203-712] Applying dataflow to function 'region_after', detected/extracted 5 process function(s): 
+	 'region_after.entry6'
+	 'load_a'
+	 'load_b'
+	 'conv'
+	 'store_c'.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:52 ; elapsed = 00:00:52 . Memory (MB): peak = 1667.754 ; gain = 1229.770 ; free physical = 224649 ; free virtual = 255043
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_67_4' (reuse_test/after.cpp:67:27) in function 'store_c'.
+WARNING: [HLS 200-960] Cannot flatten loop 'VITIS_LOOP_63_3' (reuse_test/after.cpp:63:29) in function 'store_c' the outer loop is not a perfect loop because there is nontrivial logic before entering the inner loop.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_62_2' (reuse_test/after.cpp:62:28) in function 'store_c'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_61_1' (reuse_test/after.cpp:61:27) in function 'store_c'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_40_4' (reuse_test/after.cpp:40:28) in function 'load_b'.
+WARNING: [HLS 200-960] Cannot flatten loop 'VITIS_LOOP_37_3' (reuse_test/after.cpp:37:29) in function 'load_b' the outer loop is not a perfect loop because there is nontrivial logic in the loop latch.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_36_2' (reuse_test/after.cpp:36:28) in function 'load_b'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_35_1' (reuse_test/after.cpp:35:27) in function 'load_b'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_16_4' (reuse_test/after.cpp:16:27) in function 'load_a'.
+WARNING: [HLS 200-960] Cannot flatten loop 'VITIS_LOOP_14_3' (reuse_test/after.cpp:14:29) in function 'load_a' the outer loop is not a perfect loop because there is nontrivial logic in the loop latch.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_13_2' (reuse_test/after.cpp:13:28) in function 'load_a'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_12_1' (reuse_test/after.cpp:12:27) in function 'load_a'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_99_5' (reuse_test/after.cpp:99:27) in function 'conv'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_97_4' (reuse_test/after.cpp:97:27) in function 'conv'.
+WARNING: [HLS 200-960] Cannot flatten loop 'VITIS_LOOP_89_3' (reuse_test/after.cpp:89:29) in function 'conv' the outer loop is not a perfect loop because there is nontrivial logic before entering the inner loop.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_88_2' (reuse_test/after.cpp:88:28) in function 'conv'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_87_1' (reuse_test/after.cpp:87:27) in function 'conv'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'local_c'.
+INFO: [HLS 200-472] Inferring partial write operation for 'tmp.data' (/home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/autopilot/hls_stream_39.h:145:9)
+INFO: [HLS 200-472] Inferring partial write operation for 'b_buf.data.1' (reuse_test/after.cpp:47:27)
+INFO: [HLS 200-472] Inferring partial write operation for 'a_buf.data.1' (reuse_test/after.cpp:23:26)
+INFO: [HLS 200-472] Inferring partial write operation for 'local_c' (reuse_test/after.cpp:108:24)
+INFO: [HLS 200-472] Inferring partial write operation for 'c_buf.data' (reuse_test/after.cpp:109:27)
+INFO: [HLS 200-472] Inferring partial write operation for 'a_buf.data' (reuse_test/after.cpp:91:8)
+INFO: [HLS 200-472] Inferring partial write operation for 'b_buf.data' (reuse_test/after.cpp:94:8)
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:55 ; elapsed = 00:00:55 . Memory (MB): peak = 1667.754 ; gain = 1229.770 ; free physical = 224605 ; free virtual = 254999
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'region_after' ...
+WARNING: [SYN 201-103] Legalizing function name 'region_after.entry64' to 'region_after_entry64'.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'region_after_entry64' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 54.98 seconds; current allocated memory: 264.722 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.02 seconds; current allocated memory: 265.002 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'load_a' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln16) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_16_4_VITIS_LOOP_18_5'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 485.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.39 seconds; current allocated memory: 266.397 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.83 seconds; current allocated memory: 269.493 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'load_b' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln40) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_40_4_VITIS_LOOP_42_5'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 485.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.59 seconds; current allocated memory: 270.833 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.83 seconds; current allocated memory: 273.879 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'conv' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP48 latency (root=empty_51) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln97) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=p_mid15) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_97_4_VITIS_LOOP_99_5_VITIS_LOOP_101_6'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 437.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.88 seconds; current allocated memory: 276.543 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 1.08 seconds; current allocated memory: 281.965 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'store_c' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln67) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_67_4_VITIS_LOOP_69_5'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 985.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 1.07 seconds; current allocated memory: 284.358 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 1.6 seconds; current allocated memory: 291.721 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'region_after' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+WARNING: [HLS 200-1018] Consider increasing the depth of FIFO a_buf (from load_a_U0 to conv_U0) to 2 to improve performance and/or avoid deadlocks.
+WARNING: [HLS 200-1018] Consider increasing the depth of FIFO b_buf (from load_b_U0 to conv_U0) to 2 to improve performance and/or avoid deadlocks.
+WARNING: [HLS 200-1018] Consider increasing the depth of FIFO c_buf (from conv_U0 to store_c_U0) to 2 to improve performance and/or avoid deadlocks.
+INFO: [HLS 200-111]  Elapsed time: 0.33 seconds; current allocated memory: 291.968 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.3 seconds; current allocated memory: 292.609 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'region_after_entry64' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'region_after_entry64'.
+INFO: [HLS 200-111]  Elapsed time: 0.24 seconds; current allocated memory: 292.913 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'load_a' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_7s_7s_7ns_7_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32ns_32ns_64_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_64ns_32ns_96_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'load_a'.
+INFO: [HLS 200-111]  Elapsed time: 0.25 seconds; current allocated memory: 304.767 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'load_b' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_7s_7s_7ns_7_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32ns_32ns_64_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_64ns_32ns_96_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'load_b'.
+INFO: [HLS 200-111]  Elapsed time: 0.66 seconds; current allocated memory: 321.968 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'conv' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-104] Estimated max fanout for 'conv' is 6277 from HDL expression: (~(((1'b0 == a_buf_s_empty_n) & (icmp_ln87_fu_2342_p2 == 1'd0)) | ((icmp_ln87_fu_2342_p2 == 1'd0) & (b_buf_s_empty_n == 1'b0))) & (icmp_ln87_fu_2342_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state3))
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_7s_7s_7ns_7_4_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_7s_7s_7s_7_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32ns_32ns_64_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_64ns_32ns_96_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_7s_7s_7_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'conv'.
+INFO: [HLS 200-111]  Elapsed time: 0.91 seconds; current allocated memory: 341.493 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'store_c' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-104] Estimated max fanout for 'store_c' is 32413 from HDL expression: (1'b0 == ap_block_pp0_stage0_11001)
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_7s_7s_7ns_7_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32ns_32ns_64_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_64ns_32ns_96_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'store_c'.
+INFO: [HLS 200-111]  Elapsed time: 1.79 seconds; current allocated memory: 389.517 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'region_after' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'region_after/A' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'region_after/B' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'region_after/C' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'region_after/numa' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'region_after/numc' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'region_after/n' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'region_after/tilenuma' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'region_after/tilenumc' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'region_after/tilen' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'region_after/numa_iter' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'region_after/numc_iter' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'region_after/n_iter' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'region_after' to 'ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Port 'region_after/numa' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'region_after/numc' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'region_after/n' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'region_after'.
+INFO: [HLS 200-111]  Elapsed time: 0.9 seconds; current allocated memory: 400.757 MB.
+INFO: [RTMG 210-282] Generating pipelined core: 'region_after_mul_32ns_32ns_64_1_1_Multiplier_0'
+INFO: [RTMG 210-282] Generating pipelined core: 'region_after_mul_64ns_32ns_96_1_1_Multiplier_1'
+INFO: [RTMG 210-278] Implementing memory 'region_after_load_a_a_buf_data_1_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-282] Generating pipelined core: 'region_after_mul_7s_7s_7_1_1_Multiplier_2'
+INFO: [RTMG 210-282] Generating pipelined core: 'region_after_mul_32s_32s_32_1_1_Multiplier_3'
+INFO: [RTMG 210-278] Implementing memory 'region_after_conv_b_buf_data_ram (RAM)' using block RAMs with power-on initialization.
+INFO: [RTMG 210-278] Implementing memory 'region_after_conv_local_c_ram (RAM)' using block RAMs with power-on initialization.
+INFO: [RTMG 210-278] Implementing memory 'region_after_store_c_tmp_data_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'tilenuma_c_U(region_after_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'tilenuma_c11_U(region_after_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'tilenumc_c_U(region_after_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'tilenumc_c12_U(region_after_fifo_w32_d3_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'tilen_c_U(region_after_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'numa_iter_c_U(region_after_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'numa_iter_c13_U(region_after_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'numc_iter_c_U(region_after_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'numc_iter_c14_U(region_after_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'n_iter_c_U(region_after_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'n_iter_c15_U(region_after_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'tilenuma_c16_U(region_after_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'tilen_c17_U(region_after_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'numa_iter_c18_U(region_after_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'n_iter_c19_U(region_after_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'numc_iter_c20_U(region_after_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'tilen_c21_U(region_after_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'tilenumc_c22_U(region_after_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'numa_iter_c23_U(region_after_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'n_iter_c24_U(region_after_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285]==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.1 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.1 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xcu200-fsgd2104-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-10] Analyzing design file 'reuse_test/before.cpp' ... 
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: reuse_test/before.cpp:71:12
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: reuse_test/before.cpp:71:19
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: reuse_test/before.cpp:71:24
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: reuse_test/before.cpp:72:15
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: reuse_test/before.cpp:72:22
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: reuse_test/before.cpp:73:10
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: reuse_test/before.cpp:73:17
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: reuse_test/before.cpp:73:24
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: reuse_test/before.cpp:74:16
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: reuse_test/before.cpp:74:28
+WARNING: [HLS 200-471] Dataflow form checks found 10 issue(s) in file reuse_test/before.cpp
+WARNING: [HLS 207-5324] unused parameter 'numa': reuse_test/before.cpp:13:92
+INFO: [HLS 200-10] Analyzing design file 'reuse_test/after.cpp' ... 
+WARNING: [HLS 207-5324] unused parameter 'numa': reuse_test/after.cpp:32:88
+WARNING: [HLS 207-5324] unused parameter 'tilenuma': reuse_test/after.cpp:57:61
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' target.
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1667.754 ; gain = 1229.770 ; free physical = 224533 ; free virtual = 254927
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1667.754 ; gain = 1229.770 ; free physical = 224533 ; free virtual = 254927
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 1667.754 ; gain = 1229.770 ; free physical = 224532 ; free virtual = 254925
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 1667.754 ; gain = 1229.770 ; free physical = 224532 ; free virtual = 254925
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_4_2' (reuse_test/before.cpp:4) in function 'load_a' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_15_2' (reuse_test/before.cpp:15) in function 'load_b' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-2' in function 'conv' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_40_3' (reuse_test/before.cpp:40) in function 'conv' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_26_2' (reuse_test/before.cpp:26) in function 'store_c' automatically.
+INFO: [XFORM 203-721] Extract dataflow region from loop VITIS_LOOP_65_3 (reuse_test/before.cpp:65)  of function 'region_before'.
+INFO: [XFORM 203-712] Applying dataflow to function 'dataflow_in_loop_VITIS_LOOP_65_3', detected/extracted 5 process function(s): 
+	 'dataflow_in_loop_VITIS_LOOP_65_3.entry8'
+	 'load_a'
+	 'load_b'
+	 'conv'
+	 'store_c'.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1667.754 ; gain = 1229.770 ; free physical = 224514 ; free virtual = 254908
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_25_1' (reuse_test/before.cpp:25:27) in function 'store_c'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_14_1' (reuse_test/before.cpp:14:27) in function 'load_b'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_3_1' (reuse_test/before.cpp:3:26) in function 'load_a'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_39_2' (reuse_test/before.cpp:39:28) in function 'conv'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_38_1' (reuse_test/before.cpp:38:27) in function 'conv'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'local_c' (reuse_test/before.cpp:37).
+INFO: [HLS 200-472] Inferring partial write operation for 'b_buf' (reuse_test/before.cpp:19:21)
+INFO: [HLS 200-472] Inferring partial write operation for 'a_buf' (reuse_test/before.cpp:8:21)
+INFO: [HLS 200-472] Inferring partial write operation for 'local_c' 
+INFO: [HLS 200-472] Inferring partial write operation for 'local_c' (reuse_test/before.cpp:46:24)
+INFO: [HLS 200-472] Inferring partial write operation for 'c_buf' (reuse_test/before.cpp:47:22)
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1667.754 ; gain = 1229.770 ; free physical = 224454 ; free virtual = 254847
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'region_before' ...
+WARNING: [SYN 201-103] Legalizing function name 'dataflow_in_loop_VITIS_LOOP_65_3.entry83' to 'dataflow_in_loop_VITIS_LOOP_65_3_entry83'.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dataflow_in_loop_VITIS_LOOP_65_3_entry83' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 7.62 seconds; current allocated memory: 224.290 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.01 seconds; current allocated memory: 224.456 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'load_a' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln3) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_3_1_VITIS_LOOP_4_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 485.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.25 seconds; current allocated memory: 225.258 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.59 seconds; current allocated memory: 227.208 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'load_b' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln14) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_14_1_VITIS_LOOP_15_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 485.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.33 seconds; current allocated memory: 228.226 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.6 seconds; current allocated memory: 230.283 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'conv' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP48 latency (root=empty_33) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln38_2) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=p_mid14) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1.
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_38_1_VITIS_LOOP_39_2_VITIS_LOOP_40_3'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 437.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.37 seconds; current allocated memory: 231.424 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.57 seconds; current allocated memory: 233.616 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'store_c' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln25) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_25_1_VITIS_LOOP_26_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 985.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.6 seconds; current allocated memory: 235.611 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 1.24 seconds; current allocated memory: 241.384 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dataflow_in_loop_VITIS_LOOP_65_3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.19 seconds; current allocated memory: 241.704 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.09 seconds; current allocated memory: 242.084 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dataflow_parent_loop_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.08 seconds; current allocated memory: 242.246 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.04 seconds; current allocated memory: 242.378 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dataflow_parent_loop_proc7' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.08 seconds; current allocated memory: 242.507 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.03 seconds; current allocated memory: 242.739 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'region_before' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.09 seconds; current allocated memory: 242.909 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.04 seconds; current allocated memory: 243.179 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dataflow_in_loop_VITIS_LOOP_65_3_entry83' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dataflow_in_loop_VITIS_LOOP_65_3_entry83'.
+INFO: [HLS 200-111]  Elapsed time: 0.08 seconds; current allocated memory: 243.510 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'load_a' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_7s_7s_7ns_7_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32ns_32ns_64_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'load_a'.
+INFO: [HLS 200-111]  Elapsed time: 0.19 seconds; current allocated memory: 253.417 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'load_b' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_7s_7s_7ns_7_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32ns_32ns_64_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'load_b'.
+INFO: [HLS 200-111]  Elapsed time: 0.4 seconds; current allocated memory: 265.914 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'conv' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_7s_7s_7ns_7_4_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_7s_7s_7s_7_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32ns_32ns_64_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_64ns_32ns_96_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_7s_7s_7_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'conv'.
+INFO: [HLS 200-111]  Elapsed time: 0.4 seconds; current allocated memory: 277.420 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------

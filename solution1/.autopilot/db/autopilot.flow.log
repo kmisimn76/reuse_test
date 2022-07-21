@@ -1,4 +1,4 @@
-INFO-FLOW: Workspace /home/sumin/workspace/FPGA/test/reuse_test/solution1 opened at Thu Jul 21 01:13:08 KST 2022
+INFO-FLOW: Workspace /home/sumin/workspace/FPGA/test/reuse_test/solution1 opened at Thu Jul 21 11:39:35 KST 2022
 Execute     ap_set_clock -name default -period 10 -default=false 
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
 Execute     open_platform DefaultPlatform 
@@ -25,8 +25,8 @@ Execute         source /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/x
 Execute         source /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/xilinx/ip/xfft.gen 
 Execute         source /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/xilinx/ip/xfir.gen 
 Execute         source /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/xilinx/common/dsp48.gen 
-Command       ap_source done; 0.12 sec.
-Command     ap_source done; 0.12 sec.
+Command       ap_source done; 0.11 sec.
+Command     ap_source done; 0.11 sec.
 Execute     open_platform DefaultPlatform 
 Execute     import_lib /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/xilinx/virtexuplus/virtexuplus_fpv7 
 Execute       source /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/xilinx/common/xilinx_fp.lib 
@@ -59,7 +59,7 @@ Execute         get_default_platform
 INFO: [HLS 200-10] Setting target device to 'xcu200-fsgd2104-2-e'
 Execute       ap_part_info -name xcu200-fsgd2104-2-e -data info 
 Execute       get_default_platform 
-Command     set_part done; 1.25 sec.
+Command     set_part done; 1.26 sec.
 Execute     ap_part_info -data single -name xcu200-fsgd2104-2-e 
 Execute     ap_part_info -name xcu200-fsgd2104-2-e -data resources 
 Execute     config_chip_info -resource {SLICE 147780} {LUT 1182240} {FF 2364480} {DSP 6840} {BRAM 4320} {URAM 960} {SLR 3} 
@@ -73,7 +73,7 @@ Execute     get_config_interface -m_axi_max_widen_bitwidth
 Execute     get_config_interface -default_interface 
 Execute     get_config_interface -default_slave_interface 
 Execute     get_config_rtl -register_reset_num 
-Command   open_solution done; 1.41 sec.
+Command   open_solution done; 1.4 sec.
 Execute   set_part xcu200-fsgd2104-2-e 
 INFO-FLOW: DBG:set_part: XILINX_VIVADO=/home/sumin/tools/Xilinx/Vivado/2020.1
 INFO-FLOW: DBG:set_part: RDI_DATADIR=/home/sumin/tools/Xilinx/Vivado/2020.1/data:/home/sumin/tools/Xilinx/Vitis/2020.1/data
@@ -92,6 +92,9 @@ Execute       get_default_platform
 Execute     ap_part_info -name xcu200-fsgd2104-2-e -data info 
 Execute     get_default_platform 
 Execute   create_clock -period 10 -name default 
+Execute   source ./reuse_test/solution1/directives.tcl 
+Execute     set_directive_top -name region region 
+INFO-FLOW: Setting directive 'TOP' name=region 
 Execute   csynth_design 
 Execute     get_config_compile -dump_cfg 
 Execute     get_config_compile -effort 
@@ -104,54 +107,111 @@ Execute     get_config_compile -skip_syncheck
 Execute     get_config_compile -skip_transform 
 Execute     get_config_compile -keep_printf 
 Execute     elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 -from_csynth_design=1 
-INFO: [HLS 200-10] Analyzing design file 'reuse_test/main.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'reuse_test/before.cpp' ... 
 INFO-FLOW: Compiling one TU...
 Execute       get_config_compile -pragma_strict_mode 
-INFO-FLOW: Handling reuse_test/main.cpp as C++
+INFO-FLOW: Handling reuse_test/before.cpp as C++
 Execute       ap_part_info -name xcu200-fsgd2104-2-e -data info 
 INFO-FLOW: Running: GCC PP 39
 INFO-FLOW: Source preprocessing
-Execute       ap_eval exec -ignorestderr /home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang -fsave-optimization-record -foptimization-record-file=/home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/clang.main.cpp.diag.yml -fno-limit-debug-info -gcc-toolchain /home/sumin/tools/Xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0 -fhls -fno-exceptions -E reuse_test/main.cpp -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -fno-threadsafe-statics -fno-use-cxa-atexit -std=gnu++14 -target fpga64-xilinx-linux-gnu -fno-threadsafe-statics -fno-use-cxa-atexit -I /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/autopilot/39 -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/autopilot -I /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E2__ -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/main.pp.0.cpp > /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/clang.main.cpp.out.log 2> /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/clang.main.cpp.err.log 
+Execute       ap_eval exec -ignorestderr /home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang -fsave-optimization-record -foptimization-record-file=/home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/clang.before.cpp.diag.yml -fno-limit-debug-info -gcc-toolchain /home/sumin/tools/Xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0 -fhls -fno-exceptions -E reuse_test/before.cpp -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -fno-threadsafe-statics -fno-use-cxa-atexit -std=gnu++14 -target fpga64-xilinx-linux-gnu -fno-threadsafe-statics -fno-use-cxa-atexit -I /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/autopilot/39 -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/autopilot -I /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E2__ -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/before.pp.0.cpp > /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/clang.before.cpp.out.log 2> /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/clang.before.cpp.err.log 
 INFO-FLOW: Done: GCC PP 39 time: 0 seconds per iteration
-Execute       set_directive_top region -name=region 
+Execute       set_directive_top region_before -name=region_before 
 INFO-FLOW: Setting directive 'TOP' name=region 
+INFO-FLOW: Setting directive 'TOP' name=region_before 
 INFO-FLOW: Setting directive 'TOP' name=region 
+INFO-FLOW: Setting directive 'TOP' name=region_before 
 Execute       source /home/sumin/tools/Xilinx/Vitis/2020.1/tps/tcl/tcllib1.11.1/yaml/huddle.tcl 
 Execute       source /home/sumin/tools/Xilinx/Vitis/2020.1/tps/tcl/tcllib1.11.1/yaml/json2huddle.tcl 
 Execute         source /home/sumin/tools/Xilinx/Vitis/2020.1/tps/tcl/tcllib1.11.1/try/try.tcl 
 INFO-FLOW: Setting directive 'TOP' name=region 
+INFO-FLOW: Setting directive 'TOP' name=region_before 
 Execute       list_core -type functional_unit 
-Execute       clang_tidy xilinx-systemc-detector /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/main.pp.0.cpp std=gnu++14 -target fpga  -directive=/home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/.systemc_flag 
-INFO-FLOW: exec /home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-systemc-detector -import-directive=/home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/.systemc_flag -fix-errors /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/main.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
+Execute       clang_tidy xilinx-systemc-detector /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/before.pp.0.cpp std=gnu++14 -target fpga  -directive=/home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/.systemc_flag 
+INFO-FLOW: exec /home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-systemc-detector -import-directive=/home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/.systemc_flag -fix-errors /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/before.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
 INFO-FLOW: Running: clang-tidy CDT preprocess 39
-Execute       clang_tidy xilinx-directive2pragma /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/main.pp.0.cpp std=gnu++14 -target fpga  -directive=/home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/all.directive.json 
-INFO-FLOW: exec /home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-directive2pragma -import-directive=/home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/all.directive.json -fix-errors /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/main.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
-Execute       clang_tidy xilinx-constantarray-param,xilinx-remove-assert /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/main.pp.0.cpp std=gnu++14 -target fpga  
-INFO-FLOW: exec /home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-constantarray-param,xilinx-remove-assert -fix-errors /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/main.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
+Execute       clang_tidy xilinx-directive2pragma /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/before.pp.0.cpp std=gnu++14 -target fpga  -directive=/home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/all.directive.json 
+INFO-FLOW: exec /home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-directive2pragma -import-directive=/home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/all.directive.json -fix-errors /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/before.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
+Execute       clang_tidy xilinx-constantarray-param,xilinx-remove-assert /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/before.pp.0.cpp std=gnu++14 -target fpga  
+INFO-FLOW: exec /home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-constantarray-param,xilinx-remove-assert -fix-errors /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/before.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
 INFO-FLOW: Done: clang-tidy CDT preprocess 39 time: 0.1 seconds per iteration
 INFO-FLOW: Calling xilinx-label-all-loops ... 
-Execute       clang_tidy -errorcheck xilinx-label-all-loops /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/main.pp.0.cpp std=gnu++14 -target fpga  
-Execute         ap_eval exec -ignorestderr /home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/clang-tidy.main.pp.0.cpp.diag.yml -header-filter=.* --checks=-*,xilinx-label-all-loops -fix-errors /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/main.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/clang-tidy.main.pp.0.cpp.out.log 2> /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/clang-tidy.main.pp.0.cpp.err.log 
+Execute       clang_tidy -errorcheck xilinx-label-all-loops /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/before.pp.0.cpp std=gnu++14 -target fpga  
+Execute         ap_eval exec -ignorestderr /home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/clang-tidy.before.pp.0.cpp.diag.yml -header-filter=.* --checks=-*,xilinx-label-all-loops -fix-errors /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/before.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/clang-tidy.before.pp.0.cpp.out.log 2> /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/clang-tidy.before.pp.0.cpp.err.log 
 Execute         source /home/sumin/tools/Xilinx/Vitis/2020.1/tps/tcl/tcllib1.11.1/yaml/yaml.tcl 
 Execute           source /home/sumin/tools/Xilinx/Vitis/2020.1/tps/tcl/tcllib1.11.1/cmdline/cmdline.tcl 
-Command       clang_tidy done; 0.12 sec.
-Execute       clang_tidy -errorcheck xilinx-top-parameters /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/main.pp.0.cpp std=gnu++14 -target fpga  
-Execute         ap_eval exec -ignorestderr /home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/clang-tidy.main.pp.0.cpp.diag.yml -header-filter=.* --checks=-*,xilinx-top-parameters -fix-errors /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/main.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/clang-tidy.main.pp.0.cpp.out.log 2> /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/clang-tidy.main.pp.0.cpp.err.log 
-Execute       clang_tidy -errorcheck xilinx-array-stream-check /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/main.pp.0.cpp std=gnu++14 -target fpga  
-Execute         ap_eval exec -ignorestderr /home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/clang-tidy.main.pp.0.cpp.diag.yml -header-filter=.* --checks=-*,xilinx-array-stream-check -fix-errors /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/main.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/clang-tidy.main.pp.0.cpp.out.log 2> /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/clang-tidy.main.pp.0.cpp.err.log 
+Execute       clang_tidy -errorcheck xilinx-top-parameters /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/before.pp.0.cpp std=gnu++14 -target fpga  
+Execute         ap_eval exec -ignorestderr /home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/clang-tidy.before.pp.0.cpp.diag.yml -header-filter=.* --checks=-*,xilinx-top-parameters -fix-errors /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/before.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/clang-tidy.before.pp.0.cpp.out.log 2> /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/clang-tidy.before.pp.0.cpp.err.log 
+Execute       clang_tidy -errorcheck xilinx-array-stream-check /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/before.pp.0.cpp std=gnu++14 -target fpga  
+Execute         ap_eval exec -ignorestderr /home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/clang-tidy.before.pp.0.cpp.diag.yml -header-filter=.* --checks=-*,xilinx-array-stream-check -fix-errors /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/before.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/clang-tidy.before.pp.0.cpp.out.log 2> /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/clang-tidy.before.pp.0.cpp.err.log 
 Execute       get_config_dataflow -strict_mode 
-Execute       ap_eval exec -ignorestderr /home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=/home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/xilinx-dataflow-lawyer.main.pp.0.cpp.diag.yml /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/main.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 -fstrict-dataflow > /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/xilinx-dataflow-lawyer.main.pp.0.cpp.out.log 2> /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/xilinx-dataflow-lawyer.main.pp.0.cpp.err.log 
-Execute       clang_tidy -errorcheck xilinx-warn-mayneed-no-ctor-attribute /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/main.pp.0.cpp std=gnu++14 -target fpga  
-Execute         ap_eval exec -ignorestderr /home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/clang-tidy.main.pp.0.cpp.diag.yml -header-filter=.* --checks=-*,xilinx-warn-mayneed-no-ctor-attribute -fix-errors /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/main.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/clang-tidy.main.pp.0.cpp.out.log 2> /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/clang-tidy.main.pp.0.cpp.err.log 
+Execute       ap_eval exec -ignorestderr /home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=/home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/xilinx-dataflow-lawyer.before.pp.0.cpp.diag.yml /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/before.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 -fstrict-dataflow > /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/xilinx-dataflow-lawyer.before.pp.0.cpp.out.log 2> /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/xilinx-dataflow-lawyer.before.pp.0.cpp.err.log 
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: reuse_test/before.cpp:71:12
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: reuse_test/before.cpp:71:19
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: reuse_test/before.cpp:71:24
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: reuse_test/before.cpp:72:15
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: reuse_test/before.cpp:72:22
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: reuse_test/before.cpp:73:10
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: reuse_test/before.cpp:73:17
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: reuse_test/before.cpp:73:24
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: reuse_test/before.cpp:74:16
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: reuse_test/before.cpp:74:28
+Execute       send_msg_by_id WARNING @200-471@%s%s 10 reuse_test/before.cpp 
+WARNING: [HLS 200-471] Dataflow form checks found 10 issue(s) in file reuse_test/before.cpp
+Execute       clang_tidy -errorcheck xilinx-warn-mayneed-no-ctor-attribute /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/before.pp.0.cpp std=gnu++14 -target fpga  
+Execute         ap_eval exec -ignorestderr /home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/clang-tidy.before.pp.0.cpp.diag.yml -header-filter=.* --checks=-*,xilinx-warn-mayneed-no-ctor-attribute -fix-errors /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/before.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/clang-tidy.before.pp.0.cpp.out.log 2> /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/clang-tidy.before.pp.0.cpp.err.log 
 Execute       ap_part_info -name xcu200-fsgd2104-2-e -data info 
 INFO-FLOW: compiling source code to llvm bc
-Execute       ap_eval exec -ignorestderr /home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang -fsave-optimization-record -foptimization-record-file=/home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/clang.main.pragma.2.cpp.diag.yml -fno-limit-debug-info -fhls -flto -fno-exceptions -Wno-error=c++11-narrowing /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/main.pragma.2.cpp -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -fno-threadsafe-statics -fno-use-cxa-atexit -std=gnu++14 -target fpga64-xilinx-linux-gnu -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/autopilot -I /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E2__ -g -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/main.bc > /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/clang.main.pragma.2.cpp.out.log 2> /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/clang.main.pragma.2.cpp.err.log 
-WARNING: [HLS 207-5324] unused parameter 'numa': reuse_test/main.cpp:32:88
-WARNING: [HLS 207-5324] unused parameter 'tilenuma': reuse_test/main.cpp:57:61
+Execute       ap_eval exec -ignorestderr /home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang -fsave-optimization-record -foptimization-record-file=/home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/clang.before.pragma.2.cpp.diag.yml -fno-limit-debug-info -fhls -flto -fno-exceptions -Wno-error=c++11-narrowing /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/before.pragma.2.cpp -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -fno-threadsafe-statics -fno-use-cxa-atexit -std=gnu++14 -target fpga64-xilinx-linux-gnu -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/autopilot -I /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E2__ -g -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/before.bc > /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/clang.before.pragma.2.cpp.out.log 2> /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/clang.before.pragma.2.cpp.err.log 
+WARNING: [HLS 207-5324] unused parameter 'numa': reuse_test/before.cpp:13:92
+INFO: [HLS 200-10] Analyzing design file 'reuse_test/after.cpp' ... 
+INFO-FLOW: Compiling one TU...
+Execute       get_config_compile -pragma_strict_mode 
+INFO-FLOW: Handling reuse_test/after.cpp as C++
+Execute       ap_part_info -name xcu200-fsgd2104-2-e -data info 
+INFO-FLOW: Running: GCC PP 39
+INFO-FLOW: Source preprocessing
+Execute       ap_eval exec -ignorestderr /home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang -fsave-optimization-record -foptimization-record-file=/home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/clang.after.cpp.diag.yml -fno-limit-debug-info -gcc-toolchain /home/sumin/tools/Xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0 -fhls -fno-exceptions -E reuse_test/after.cpp -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -fno-threadsafe-statics -fno-use-cxa-atexit -std=gnu++14 -target fpga64-xilinx-linux-gnu -fno-threadsafe-statics -fno-use-cxa-atexit -I /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/autopilot/39 -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/autopilot -I /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E2__ -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/after.pp.0.cpp > /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/clang.after.cpp.out.log 2> /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/clang.after.cpp.err.log 
+INFO-FLOW: Done: GCC PP 39 time: 0 seconds per iteration
+Execute       set_directive_top region_before -name=region_before 
+INFO-FLOW: Setting directive 'TOP' name=region 
+INFO-FLOW: Setting directive 'TOP' name=region_before 
+INFO-FLOW: Setting directive 'TOP' name=region_before 
+INFO-FLOW: Setting directive 'TOP' name=region 
+INFO-FLOW: Setting directive 'TOP' name=region_before 
+INFO-FLOW: Setting directive 'TOP' name=region_before 
+INFO-FLOW: Setting directive 'TOP' name=region 
+INFO-FLOW: Setting directive 'TOP' name=region_before 
+INFO-FLOW: Setting directive 'TOP' name=region_before 
+Execute       list_core -type functional_unit 
+Execute       clang_tidy xilinx-systemc-detector /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/after.pp.0.cpp std=gnu++14 -target fpga  -directive=/home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/.systemc_flag 
+INFO-FLOW: exec /home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-systemc-detector -import-directive=/home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/.systemc_flag -fix-errors /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/after.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
+INFO-FLOW: Running: clang-tidy CDT preprocess 39
+Execute       clang_tidy xilinx-directive2pragma /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/after.pp.0.cpp std=gnu++14 -target fpga  -directive=/home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/all.directive.json 
+INFO-FLOW: exec /home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-directive2pragma -import-directive=/home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/all.directive.json -fix-errors /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/after.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
+Execute       clang_tidy xilinx-constantarray-param,xilinx-remove-assert /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/after.pp.0.cpp std=gnu++14 -target fpga  
+INFO-FLOW: exec /home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-constantarray-param,xilinx-remove-assert -fix-errors /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/after.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
+INFO-FLOW: Done: clang-tidy CDT preprocess 39 time: 0 seconds per iteration
+INFO-FLOW: Calling xilinx-label-all-loops ... 
+Execute       clang_tidy -errorcheck xilinx-label-all-loops /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/after.pp.0.cpp std=gnu++14 -target fpga  
+Execute         ap_eval exec -ignorestderr /home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/clang-tidy.after.pp.0.cpp.diag.yml -header-filter=.* --checks=-*,xilinx-label-all-loops -fix-errors /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/after.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/clang-tidy.after.pp.0.cpp.out.log 2> /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/clang-tidy.after.pp.0.cpp.err.log 
+Execute       clang_tidy -errorcheck xilinx-top-parameters /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/after.pp.0.cpp std=gnu++14 -target fpga  
+Execute         ap_eval exec -ignorestderr /home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/clang-tidy.after.pp.0.cpp.diag.yml -header-filter=.* --checks=-*,xilinx-top-parameters -fix-errors /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/after.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/clang-tidy.after.pp.0.cpp.out.log 2> /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/clang-tidy.after.pp.0.cpp.err.log 
+Execute       clang_tidy -errorcheck xilinx-array-stream-check /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/after.pp.0.cpp std=gnu++14 -target fpga  
+Execute         ap_eval exec -ignorestderr /home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/clang-tidy.after.pp.0.cpp.diag.yml -header-filter=.* --checks=-*,xilinx-array-stream-check -fix-errors /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/after.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/clang-tidy.after.pp.0.cpp.out.log 2> /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/clang-tidy.after.pp.0.cpp.err.log 
+Execute       get_config_dataflow -strict_mode 
+Execute       ap_eval exec -ignorestderr /home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=/home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/xilinx-dataflow-lawyer.after.pp.0.cpp.diag.yml /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/after.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 -fstrict-dataflow > /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/xilinx-dataflow-lawyer.after.pp.0.cpp.out.log 2> /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/xilinx-dataflow-lawyer.after.pp.0.cpp.err.log 
+Execute       clang_tidy -errorcheck xilinx-warn-mayneed-no-ctor-attribute /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/after.pp.0.cpp std=gnu++14 -target fpga  
+Execute         ap_eval exec -ignorestderr /home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/clang-tidy.after.pp.0.cpp.diag.yml -header-filter=.* --checks=-*,xilinx-warn-mayneed-no-ctor-attribute -fix-errors /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/after.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/clang-tidy.after.pp.0.cpp.out.log 2> /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/clang-tidy.after.pp.0.cpp.err.log 
+Execute       ap_part_info -name xcu200-fsgd2104-2-e -data info 
+INFO-FLOW: compiling source code to llvm bc
+Execute       ap_eval exec -ignorestderr /home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang -fsave-optimization-record -foptimization-record-file=/home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/clang.after.pragma.2.cpp.diag.yml -fno-limit-debug-info -fhls -flto -fno-exceptions -Wno-error=c++11-narrowing /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/after.pragma.2.cpp -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -fno-threadsafe-statics -fno-use-cxa-atexit -std=gnu++14 -target fpga64-xilinx-linux-gnu -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/autopilot -I /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E2__ -g -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/after.bc > /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/clang.after.pragma.2.cpp.out.log 2> /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/clang.after.pragma.2.cpp.err.log 
+WARNING: [HLS 207-5324] unused parameter 'numa': reuse_test/after.cpp:32:88
+WARNING: [HLS 207-5324] unused parameter 'tilenuma': reuse_test/after.cpp:57:61
 INFO-FLOW: Linking Debug ...
 INFO-FLOW: Linking dut bc code.
-Execute       run_link_or_opt -out /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/a.g.ld.0.bc -args  "/home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/main.g.bc"  
-Execute         ap_eval exec -ignorestderr /home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/llvm-link /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/main.g.bc -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/a.g.ld.0.bc > /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/llvm-link.a.g.ld.0.bc.out.log 2> /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/llvm-link.a.g.ld.0.bc.err.log 
+Execute       run_link_or_opt -out /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/a.g.ld.0.bc -args  "/home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/before.g.bc" "/home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/after.g.bc"  
+Execute         ap_eval exec -ignorestderr /home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/llvm-link /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/before.g.bc /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/after.g.bc -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/a.g.ld.0.bc > /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/llvm-link.a.g.ld.0.bc.out.log 2> /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/llvm-link.a.g.ld.0.bc.err.log 
 INFO-FLOW: 
 Execute       run_link_or_opt -opt -out /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/a.g.ld.1.lower.bc -args /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/a.g.ld.0.bc -reflow-lower-math-intrinsics 
 Execute         ap_eval exec -ignorestderr /home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=.* -pass-remarks-output=/home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/opt.a.g.ld.1.lower.bc.diag.yml /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/a.g.ld.0.bc -reflow-lower-math-intrinsics -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/a.g.ld.1.lower.bc > /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/opt.a.g.ld.1.lower.bc.out.log 2> /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/opt.a.g.ld.1.lower.bc.err.log 
@@ -159,19 +219,19 @@ INFO-FLOW:
 INFO-FLOW: Linking math bc lib
 Execute       run_link_or_opt -out /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/a.g.ld.2.m1.bc -args /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/a.g.ld.1.lower.bc -only-needed /home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/lib/libhlsm_39.bc /home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/lib/libhlsmc++_39.bc 
 Execute         ap_eval exec -ignorestderr /home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/llvm-link /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/a.g.ld.1.lower.bc -only-needed /home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/lib/libhlsm_39.bc /home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/lib/libhlsmc++_39.bc -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/a.g.ld.2.m1.bc > /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/llvm-link.a.g.ld.2.m1.bc.out.log 2> /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/llvm-link.a.g.ld.2.m1.bc.err.log 
-Command         ap_eval done; 2.18 sec.
+Command         ap_eval done; 2.16 sec.
 INFO-FLOW: 
-Command       run_link_or_opt done; 2.18 sec.
-Execute       run_link_or_opt -opt -out /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/a.g.ld.3.fpc.bc -args /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=region -reflow-float-conversion 
-Execute         ap_eval exec -ignorestderr /home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=.* -pass-remarks-output=/home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/opt.a.g.ld.3.fpc.bc.diag.yml /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=region -reflow-float-conversion -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/a.g.ld.3.fpc.bc > /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/opt.a.g.ld.3.fpc.bc.out.log 2> /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/opt.a.g.ld.3.fpc.bc.err.log 
+Command       run_link_or_opt done; 2.16 sec.
+Execute       run_link_or_opt -opt -out /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/a.g.ld.3.fpc.bc -args /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=region_before -reflow-float-conversion 
+Execute         ap_eval exec -ignorestderr /home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=.* -pass-remarks-output=/home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/opt.a.g.ld.3.fpc.bc.diag.yml /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=region_before -reflow-float-conversion -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/a.g.ld.3.fpc.bc > /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/opt.a.g.ld.3.fpc.bc.out.log 2> /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/opt.a.g.ld.3.fpc.bc.err.log 
 Command         ap_eval done; 0.74 sec.
 INFO-FLOW: 
 Command       run_link_or_opt done; 0.74 sec.
 Execute       run_link_or_opt -out /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/a.g.ld.4.m2.bc -args /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/a.g.ld.3.fpc.bc -only-needed /home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/lib/libfloatconversion_39.bc 
 Execute         ap_eval exec -ignorestderr /home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/llvm-link /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/a.g.ld.3.fpc.bc -only-needed /home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/lib/libfloatconversion_39.bc -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/a.g.ld.4.m2.bc > /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/llvm-link.a.g.ld.4.m2.bc.out.log 2> /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/llvm-link.a.g.ld.4.m2.bc.err.log 
 INFO-FLOW: 
-Execute       run_link_or_opt -opt -out /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/a.g.ld.5.gdce.bc -args /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/a.g.ld.4.m2.bc -reflow-globaldce -hls-top-function-name=region 
-Execute         ap_eval exec -ignorestderr /home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=.* -pass-remarks-output=/home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/opt.a.g.ld.5.gdce.bc.diag.yml /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/a.g.ld.4.m2.bc -reflow-globaldce -hls-top-function-name=region -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/a.g.ld.5.gdce.bc > /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/opt.a.g.ld.5.gdce.bc.out.log 2> /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/opt.a.g.ld.5.gdce.bc.err.log 
+Execute       run_link_or_opt -opt -out /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/a.g.ld.5.gdce.bc -args /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/a.g.ld.4.m2.bc -reflow-globaldce -hls-top-function-name=region_before 
+Execute         ap_eval exec -ignorestderr /home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=.* -pass-remarks-output=/home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/opt.a.g.ld.5.gdce.bc.diag.yml /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/a.g.ld.4.m2.bc -reflow-globaldce -hls-top-function-name=region_before -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/a.g.ld.5.gdce.bc > /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/opt.a.g.ld.5.gdce.bc.out.log 2> /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/opt.a.g.ld.5.gdce.bc.err.log 
 INFO-FLOW: 
 Execute       get_solution -flow_target 
 Execute       get_config_export -xo 
@@ -209,106 +269,83 @@ Execute       get_config_interface -s_axilite_data64
 Execute       get_config_interface -m_axi_alignment_byte_size 
 Execute       get_config_compile -pragma_strict_mode 
 INFO-FLOW: Doing LTO.
-Execute       ap_eval exec -ignorestderr /home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang -fsave-optimization-record -foptimization-record-file=/home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/clang.a.g.ld.0.bc.diag.yml -fhls -mllvm -hls-top-function-name=region -mllvm -hls-db-dir -mllvm /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db -emit-llvm -c -mllvm -hls-bitcode-version=3.1 -target fpga64-xilinx-none -mllvm -xcl-xmlinfo=/home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/kernel.internal.xml -mllvm -top-io-mapping-info=/home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/top-io-fe.xml -mllvm -pass-remarks=supported-subset -mllvm -reflow-enable-interface-default-setting=false -mllvm -reflow-enable-slave-interface-default-setting=false -mllvm -gen-kernel-xml=false -mllvm -maxi-latency=0 -mllvm -hls-maxi-data-size-in-bits=8 -mllvm -hls-maxi-max-data-size-in-bits=1024 -mllvm -hls-max-widen-size-in-bits=0 -mllvm -xcl-kernel-max-mem-ports=0 -mllvm -maxi-read-trans=16 -mllvm -maxi-write-trans=16 -mllvm -maxi-read-burst-len=16 -mllvm -maxi-write-burst-len=16 -mllvm -reflow-enable-saxi-64bits=0 -mllvm -assume-maxi-align=0 -mllvm -no-unaligned-maxi-accesses -x ir /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/a.g.ld.5.gdce.bc -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/a.g.lto.bc > /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/clang.a.g.ld.0.bc.out.log 2> /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/clang.a.g.ld.0.bc.err.log 
-Command       ap_eval done; 1.07 sec.
-INFO: [HLS 214-131] Inlining function 'hls::stream<buf, 0>::write(buf const&)' into 'load_a(int volatile*, hls::stream<buf, 0>&, int, int, int, int, int, int)' (reuse_test/main.cpp:26:9)
-INFO: [HLS 214-131] Inlining function 'hls::stream<buf, 0>::write(buf const&)' into 'load_b(int volatile*, hls::stream<buf, 0>&, int, int, int, int, int, int, int)' (reuse_test/main.cpp:50:10)
-INFO: [HLS 214-131] Inlining function 'hls::stream<buf, 0>::read(buf&)' into 'hls::stream<buf, 0>::read()' (/home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/autopilot/hls_stream_39.h:156:9)
-INFO: [HLS 214-131] Inlining function 'hls::stream<buf, 0>::read()' into 'conv(hls::stream<buf, 0>&, hls::stream<buf, 0>&, hls::stream<buf, 0>&, int, int, int, int, int, int)' (reuse_test/main.cpp:91:17)
-INFO: [HLS 214-131] Inlining function 'hls::stream<buf, 0>::write(buf const&)' into 'conv(hls::stream<buf, 0>&, hls::stream<buf, 0>&, hls::stream<buf, 0>&, int, int, int, int, int, int)' (reuse_test/main.cpp:114:10)
-INFO: [HLS 214-131] Inlining function 'hls::stream<buf, 0>::read()' into 'conv(hls::stream<buf, 0>&, hls::stream<buf, 0>&, hls::stream<buf, 0>&, int, int, int, int, int, int)' (reuse_test/main.cpp:94:17)
-INFO: [HLS 214-131] Inlining function 'hls::stream<buf, 0>::read()' into 'store_c(int volatile*, hls::stream<buf, 0>&, int, int, int, int, int, int, int)' (reuse_test/main.cpp:66:21)
-INFO: [HLS 214-131] Inlining function 'hls::stream<buf, 0>::stream()' into 'region(int volatile*, int volatile*, int volatile*, int, int, int, int, int, int, int, int, int)' (reuse_test/main.cpp:127:19)
-INFO: [HLS 214-131] Inlining function 'hls::stream<buf, 0>::stream()' into 'region(int volatile*, int volatile*, int volatile*, int, int, int, int, int, int, int, int, int)' (reuse_test/main.cpp:128:19)
-INFO: [HLS 214-131] Inlining function 'hls::stream<buf, 0>::stream()' into 'region(int volatile*, int volatile*, int volatile*, int, int, int, int, int, int, int, int, int)' (reuse_test/main.cpp:129:19)
+Execute       ap_eval exec -ignorestderr /home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang -fsave-optimization-record -foptimization-record-file=/home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/clang.a.g.ld.0.bc.diag.yml -fhls -mllvm -hls-top-function-name=region_before -mllvm -hls-db-dir -mllvm /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db -emit-llvm -c -mllvm -hls-bitcode-version=3.1 -target fpga64-xilinx-none -mllvm -xcl-xmlinfo=/home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/kernel.internal.xml -mllvm -top-io-mapping-info=/home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/top-io-fe.xml -mllvm -pass-remarks=supported-subset -mllvm -reflow-enable-interface-default-setting=false -mllvm -reflow-enable-slave-interface-default-setting=false -mllvm -gen-kernel-xml=false -mllvm -maxi-latency=0 -mllvm -hls-maxi-data-size-in-bits=8 -mllvm -hls-maxi-max-data-size-in-bits=1024 -mllvm -hls-max-widen-size-in-bits=0 -mllvm -xcl-kernel-max-mem-ports=0 -mllvm -maxi-read-trans=16 -mllvm -maxi-write-trans=16 -mllvm -maxi-read-burst-len=16 -mllvm -maxi-write-burst-len=16 -mllvm -reflow-enable-saxi-64bits=0 -mllvm -assume-maxi-align=0 -mllvm -no-unaligned-maxi-accesses -x ir /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/a.g.ld.5.gdce.bc -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/a.g.lto.bc > /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/clang.a.g.ld.0.bc.out.log 2> /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/clang.a.g.ld.0.bc.err.log 
 INFO-FLOW: DBG:CMD: copy_raw_kernel_xml ap_link_39: kernel.xml not generated: /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/kernel.internal.xml
-INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:37 ; elapsed = 00:00:37 . Memory (MB): peak = 1667.754 ; gain = 1229.770 ; free physical = 222221 ; free virtual = 252574
-INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:37 ; elapsed = 00:00:37 . Memory (MB): peak = 1667.754 ; gain = 1229.770 ; free physical = 222221 ; free virtual = 252574
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1667.754 ; gain = 1229.770 ; free physical = 224533 ; free virtual = 254927
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1667.754 ; gain = 1229.770 ; free physical = 224533 ; free virtual = 254927
 Execute       opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 
 Execute         cleanup_all_models 
 INFO: [HLS 200-10] Starting code transformations ...
 INFO-FLOW: Running Standard Transforms...
-Execute         transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -mem2reg -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top region -deadargelim -mem2reg -instcombine -dce -presyn-prepare -auto-rom-infer -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -func-inst -deadargelim -auto-shift-reg-idiom -promote-dbg-pointer -norm-name /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/a.g.0.bc -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/a.g.1.bc -f -phase std-opt 
-Command         transform done; 1.85 sec.
-INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:38 ; elapsed = 00:00:38 . Memory (MB): peak = 1667.754 ; gain = 1229.770 ; free physical = 222216 ; free virtual = 252568
+Execute         transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -mem2reg -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top region_before -deadargelim -mem2reg -instcombine -dce -presyn-prepare -auto-rom-infer -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -func-inst -deadargelim -auto-shift-reg-idiom -promote-dbg-pointer -norm-name /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/a.g.0.bc -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/a.g.1.bc -f -phase std-opt 
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 1667.754 ; gain = 1229.770 ; free physical = 224532 ; free virtual = 254925
 INFO: [HLS 200-10] Checking synthesizability ...
 INFO-FLOW: Checking Synthesizability 1/2..
 Execute         transform -hls -syn-check -check-rec-only -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -function-uniquify -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce -pag -array-normalize -instcombine -dce -warn-fifo-pointer -array-seg-normalize -instcombine -dce -data-pack -instcombine -dce -inst-simplify -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -resolve-double-ptr -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -function-uniquify -directive-preproc -mem2reg -dse -dce -globaldce -check-dspbuiltin /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/a.g.1.bc -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/a.g.2.prechk.bc -f 
-Command         transform done; 5.74 sec.
 INFO-FLOW: Checking Synthesizability 2/2..
 Execute         transform -syn-check /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/a.g.2.prechk.bc -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/a.g.2.bc -f -phase syn-check 
-INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:44 ; elapsed = 00:00:44 . Memory (MB): peak = 1667.754 ; gain = 1229.770 ; free physical = 222215 ; free virtual = 252567
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 1667.754 ; gain = 1229.770 ; free physical = 224532 ; free virtual = 254925
 INFO-FLOW: Compiler optimizing ...
 INFO-FLOW: Share syncheck's 1.bc for syn flow: copy /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/a.g.1.bc to /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/a.o.1.bc
 INFO-FLOW: Presyn 1...
 Execute         transform -hls -tmp /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db -interface-port-rename -function-uniquify -directive-preproc -mem2reg -dse -dce -disaggr -scalarrepl -norm-name -deadargelim -mem2reg -instcombine -dce -simplifycfg -auto-rom-infer -dce -function-uniquify -resource-proc -clib-intrinsic-prepare -dce -func-buffer -dce -pag -array-normalize -func-legal -instcombine -gvn -constprop -dce -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -ptrArgReplace -mem2reg -dce -array-seg-normalize -deadargelim -instcombine -dce -function-uniquify -directive-preproc -mem2reg -dse -dce -pointer-simplify -dce -port-alignment -dce -interface-preproc -data-pack -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -loop-simplify -indvars -instcombine -gvn -loop-simplify -mem2reg -dce -find-region -instcombine -auto-loop-pipeline -inst-simplify -interface-preproc -cfgopt -instcombine -indvars -auto-loop-unroll -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -clean-region -attach-range -gvn -inst-simplify -constprop -simplifycfg -dce -pointer-simplify -dce -globalopt -constprop -dce -array-promote -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -auto-par -instcombine -dce -array-transform-check -array-reshape -instcombine -simplifycfg -dce -ptrArgReplace -deadargelim -mem2reg -instcombine -simplifycfg -dce -indvars -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -duplicate-dataflow-processes -globaldce -instcombine -array-partition -instcombine -simplifycfg -dce -ptrArgReplace -global-constprop -deadargelim -mem2reg -func-legal -dce -global-constprop -deadargelim -mem2reg -simplifycfg -dce -merge-param -deadargelim -globalopt -constprop -dce -array-promote -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -mem-intrinsic-preproc -dce -global-internalize -global-privatize -mem2reg -globaldce -promote-global-argument -ptrArgReplace -mem2reg -dce -globalopt -mergereturn -simplify-global-access -mem2reg -dce -pointer-simplify -dce -functionattrs -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -dce -norm-name -function-inline -complex-op-raise -inst-simplify -globaldce -func-inst -constprop -instcombine -simplifycfg -dce -func-legal -dce -loop-bound -arraycheck -bitwidthmin2 -bitwidthmin2 -on-by-dataflow -loop-delete -instcombine -simplifycfg -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments -loop-stream -instcombine -simplifycfg -dce -globaldce -duplicate-dataflow-processes -stream-intrinsic-preproc -dce -check-ap-stream -loop-simplify -eliminate-keepreads -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse -check-dataflow-syntax -legalize-stream-variable -legalize-global -extract-subproc -dce -dead-channel-elimination -canonicalize-gep -globaldce -dce -gvn -deadargelim -directive-preproc -annotate-dataflow-channels -scalar-propagation -deadargelim -globaldce -mem2reg -check-dataflow-channels -function-stream -dce -globaldce -prop-fifo-spec -internal-stream-gen -canonicalize-gep -globaldce -dce -gvn -deadargelim -mergereturn -indvars -loop-simplify -instcombine -array-stream -array-seg-normalize -array-partition -func-legal -instcombine -simplifycfg -dce -bundle-memfifo-ops -deadargelim -function-uniquify -directive-preproc -mem2reg -dse -dce -group-axi-access -licm -simplifycfg -dce -loop-delete -norm-name /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/a.o.1.bc -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/a.o.1.tmp.bc -f 
-INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_69_5' (reuse_test/main.cpp:69) in function 'store_c' automatically.
-INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_101_6' (reuse_test/main.cpp:101) in function 'conv' automatically.
-INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_18_5' (reuse_test/main.cpp:18) in function 'load_a' automatically.
-INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_42_5' (reuse_test/main.cpp:42) in function 'load_b' automatically.
-WARNING: [HLS 200-786] Detected dataflow-on-top in function  'region'  with default interface mode 'ap_ctrl_hs'. Overlapped execution of successive kernel calls will not happen unless interface mode 'ap_ctrl_chain' is used (or 'ap_ctrl_none' for a purely data-driven design).
-INFO: [XFORM 203-712] Applying dataflow to function 'region', detected/extracted 5 process function(s): 
-	 'region.entry6'
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_4_2' (reuse_test/before.cpp:4) in function 'load_a' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_15_2' (reuse_test/before.cpp:15) in function 'load_b' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-2' in function 'conv' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_40_3' (reuse_test/before.cpp:40) in function 'conv' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_26_2' (reuse_test/before.cpp:26) in function 'store_c' automatically.
+INFO: [XFORM 203-721] Extract dataflow region from loop VITIS_LOOP_65_3 (reuse_test/before.cpp:65)  of function 'region_before'.
+INFO: [XFORM 203-712] Applying dataflow to function 'dataflow_in_loop_VITIS_LOOP_65_3', detected/extracted 5 process function(s): 
+	 'dataflow_in_loop_VITIS_LOOP_65_3.entry8'
 	 'load_a'
 	 'load_b'
 	 'conv'
 	 'store_c'.
-Command         transform done; 6.8 sec.
+Command         transform done; 0.32 sec.
 INFO-FLOW: Presyn 2...
 Execute         transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin2 -bitwidthmin2 -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -auto-burst -barrier -norm-name /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/a.o.1.tmp.bc -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/a.o.2.bc -f -phase presyn 
-Command         transform done; 0.91 sec.
-INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:52 ; elapsed = 00:00:52 . Memory (MB): peak = 1667.754 ; gain = 1229.770 ; free physical = 222187 ; free virtual = 252540
+Command         transform done; 0.23 sec.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1667.754 ; gain = 1229.770 ; free physical = 224514 ; free virtual = 254908
 Execute         get_config_compile -enable_loop_extract 
 INFO-FLOW: Building ssdm...
 Execute         transform -hls -function-uniquify -auto-function-inline -globaldce -ptrArgReplace -mem2reg -dce -reset-lda -loop-simplify -indvars -aggr-aa -licm -loop-dep -loop-bound -licm -loop-simplify -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify -array-burst -promote-global-argument -dce -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -disaggr -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -cfgopt -simplifycfg -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -bitwidthmin2 -bitwidthmin2 -deadargelim -dce -canonicalize-dataflow -dce -scalar-propagation -deadargelim -globaldce -mem2reg -read-loop-dep -interface-preproc -directive-preproc -interface-gen -bram-byte-enable -deadargelim -inst-simplify -dce -gvn -mem2reg -instcombine -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -complex-op-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg -loop-simplify -mergereturn -inst-simplify -inst-rectify -dce -load-elim -bitop-lower -loop-rewind -pointer-simplify -dce -cfgopt -dce -loop-bound -loop-dep -read-loop-dep -dce -check-stream -norm-name -legalize -validate-dataflow -inst-clarity -bitwidth -dump-loop-dep-to-ir -check-all-ssdm -cdfg-build /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/a.o.2.bc -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
-INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_67_4' (reuse_test/main.cpp:67:27) in function 'store_c'.
-WARNING: [HLS 200-960] Cannot flatten loop 'VITIS_LOOP_63_3' (reuse_test/main.cpp:63:29) in function 'store_c' the outer loop is not a perfect loop because there is nontrivial logic before entering the inner loop.
-INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_62_2' (reuse_test/main.cpp:62:28) in function 'store_c'.
-INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_61_1' (reuse_test/main.cpp:61:27) in function 'store_c'.
-INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_40_4' (reuse_test/main.cpp:40:28) in function 'load_b'.
-WARNING: [HLS 200-960] Cannot flatten loop 'VITIS_LOOP_37_3' (reuse_test/main.cpp:37:29) in function 'load_b' the outer loop is not a perfect loop because there is nontrivial logic in the loop latch.
-INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_36_2' (reuse_test/main.cpp:36:28) in function 'load_b'.
-INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_35_1' (reuse_test/main.cpp:35:27) in function 'load_b'.
-INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_16_4' (reuse_test/main.cpp:16:27) in function 'load_a'.
-WARNING: [HLS 200-960] Cannot flatten loop 'VITIS_LOOP_14_3' (reuse_test/main.cpp:14:29) in function 'load_a' the outer loop is not a perfect loop because there is nontrivial logic in the loop latch.
-INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_13_2' (reuse_test/main.cpp:13:28) in function 'load_a'.
-INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_12_1' (reuse_test/main.cpp:12:27) in function 'load_a'.
-INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_99_5' (reuse_test/main.cpp:99:27) in function 'conv'.
-INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_97_4' (reuse_test/main.cpp:97:27) in function 'conv'.
-WARNING: [HLS 200-960] Cannot flatten loop 'VITIS_LOOP_89_3' (reuse_test/main.cpp:89:29) in function 'conv' the outer loop is not a perfect loop because there is nontrivial logic before entering the inner loop.
-INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_88_2' (reuse_test/main.cpp:88:28) in function 'conv'.
-INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_87_1' (reuse_test/main.cpp:87:27) in function 'conv'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'local_c'.
-INFO: [HLS 200-472] Inferring partial write operation for 'tmp.data' (/home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/autopilot/hls_stream_39.h:145:9)
-INFO: [HLS 200-472] Inferring partial write operation for 'b_buf.data.1' (reuse_test/main.cpp:47:27)
-INFO: [HLS 200-472] Inferring partial write operation for 'a_buf.data.1' (reuse_test/main.cpp:23:26)
-INFO: [HLS 200-472] Inferring partial write operation for 'local_c' (reuse_test/main.cpp:108:24)
-INFO: [HLS 200-472] Inferring partial write operation for 'c_buf.data' (reuse_test/main.cpp:109:27)
-INFO: [HLS 200-472] Inferring partial write operation for 'a_buf.data' (reuse_test/main.cpp:91:8)
-INFO: [HLS 200-472] Inferring partial write operation for 'b_buf.data' (reuse_test/main.cpp:94:8)
-Command         transform done; 2.56 sec.
-INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:54 ; elapsed = 00:00:55 . Memory (MB): peak = 1667.754 ; gain = 1229.770 ; free physical = 222144 ; free virtual = 252497
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_25_1' (reuse_test/before.cpp:25:27) in function 'store_c'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_14_1' (reuse_test/before.cpp:14:27) in function 'load_b'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_3_1' (reuse_test/before.cpp:3:26) in function 'load_a'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_39_2' (reuse_test/before.cpp:39:28) in function 'conv'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_38_1' (reuse_test/before.cpp:38:27) in function 'conv'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'local_c' (reuse_test/before.cpp:37).
+INFO: [HLS 200-472] Inferring partial write operation for 'b_buf' (reuse_test/before.cpp:19:21)
+INFO: [HLS 200-472] Inferring partial write operation for 'a_buf' (reuse_test/before.cpp:8:21)
+INFO: [HLS 200-472] Inferring partial write operation for 'local_c' 
+INFO: [HLS 200-472] Inferring partial write operation for 'local_c' (reuse_test/before.cpp:46:24)
+INFO: [HLS 200-472] Inferring partial write operation for 'c_buf' (reuse_test/before.cpp:47:22)
+Command         transform done; 0.58 sec.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1667.754 ; gain = 1229.770 ; free physical = 224454 ; free virtual = 254847
 INFO-FLOW: Finish building internal data model.
-Command       opt_and_import_c done; 17.9 sec.
-Command     elaborate done; 52.81 sec.
+Command       opt_and_import_c done; 1.28 sec.
+Command     elaborate done; 5.9 sec.
 Execute     autosyn -from_csynth_design=1 
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO-FLOW: Synthesizing C/C++ design ...
-INFO: [HLS 200-10] Synthesizing 'region' ...
-Execute       ap_set_top_model region 
-WARNING: [SYN 201-103] Legalizing function name 'region.entry64' to 'region_entry64'.
-Execute       get_model_list region -filter all-wo-channel -topdown 
-Execute       preproc_iomode -model region 
+INFO: [HLS 200-10] Synthesizing 'region_before' ...
+Execute       ap_set_top_model region_before 
+WARNING: [SYN 201-103] Legalizing function name 'dataflow_in_loop_VITIS_LOOP_65_3.entry83' to 'dataflow_in_loop_VITIS_LOOP_65_3_entry83'.
+Execute       get_model_list region_before -filter all-wo-channel -topdown 
+Execute       preproc_iomode -model region_before 
+Execute       preproc_iomode -model dataflow_parent_loop_proc7 
+Execute       preproc_iomode -model dataflow_parent_loop_proc 
+Execute       preproc_iomode -model dataflow_in_loop_VITIS_LOOP_65_3 
 Execute       preproc_iomode -model store_c 
 Execute       preproc_iomode -model conv 
 Execute       preproc_iomode -model load_b 
 Execute       preproc_iomode -model load_a 
-Execute       preproc_iomode -model region.entry64 
-Execute       get_model_list region -filter all-wo-channel 
-INFO-FLOW: Model list for configure: region.entry64 load_a load_b conv store_c region
-INFO-FLOW: Configuring Module : region.entry64 ...
-Execute       set_default_model region.entry64 
-Execute       apply_spec_resource_limit region.entry64 
+Execute       preproc_iomode -model dataflow_in_loop_VITIS_LOOP_65_3.entry83 
+Execute       get_model_list region_before -filter all-wo-channel 
+INFO-FLOW: Model list for configure: dataflow_in_loop_VITIS_LOOP_65_3.entry83 load_a load_b conv store_c dataflow_in_loop_VITIS_LOOP_65_3 dataflow_parent_loop_proc dataflow_parent_loop_proc7 region_before
+INFO-FLOW: Configuring Module : dataflow_in_loop_VITIS_LOOP_65_3.entry83 ...
+Execute       set_default_model dataflow_in_loop_VITIS_LOOP_65_3.entry83 
+Execute       apply_spec_resource_limit dataflow_in_loop_VITIS_LOOP_65_3.entry83 
 INFO-FLOW: Configuring Module : load_a ...
 Execute       set_default_model load_a 
 Execute       apply_spec_resource_limit load_a 
@@ -321,14 +358,23 @@ Execute       apply_spec_resource_limit conv
 INFO-FLOW: Configuring Module : store_c ...
 Execute       set_default_model store_c 
 Execute       apply_spec_resource_limit store_c 
-INFO-FLOW: Configuring Module : region ...
-Execute       set_default_model region 
-Execute       apply_spec_resource_limit region 
-INFO-FLOW: Model list for preprocess: region.entry64 load_a load_b conv store_c region
-INFO-FLOW: Preprocessing Module: region.entry64 ...
-Execute       set_default_model region.entry64 
-Execute       cdfg_preprocess -model region.entry64 
-Execute       rtl_gen_preprocess region.entry64 
+INFO-FLOW: Configuring Module : dataflow_in_loop_VITIS_LOOP_65_3 ...
+Execute       set_default_model dataflow_in_loop_VITIS_LOOP_65_3 
+Execute       apply_spec_resource_limit dataflow_in_loop_VITIS_LOOP_65_3 
+INFO-FLOW: Configuring Module : dataflow_parent_loop_proc ...
+Execute       set_default_model dataflow_parent_loop_proc 
+Execute       apply_spec_resource_limit dataflow_parent_loop_proc 
+INFO-FLOW: Configuring Module : dataflow_parent_loop_proc7 ...
+Execute       set_default_model dataflow_parent_loop_proc7 
+Execute       apply_spec_resource_limit dataflow_parent_loop_proc7 
+INFO-FLOW: Configuring Module : region_before ...
+Execute       set_default_model region_before 
+Execute       apply_spec_resource_limit region_before 
+INFO-FLOW: Model list for preprocess: dataflow_in_loop_VITIS_LOOP_65_3.entry83 load_a load_b conv store_c dataflow_in_loop_VITIS_LOOP_65_3 dataflow_parent_loop_proc dataflow_parent_loop_proc7 region_before
+INFO-FLOW: Preprocessing Module: dataflow_in_loop_VITIS_LOOP_65_3.entry83 ...
+Execute       set_default_model dataflow_in_loop_VITIS_LOOP_65_3.entry83 
+Execute       cdfg_preprocess -model dataflow_in_loop_VITIS_LOOP_65_3.entry83 
+Execute       rtl_gen_preprocess dataflow_in_loop_VITIS_LOOP_65_3.entry83 
 INFO-FLOW: Preprocessing Module: load_a ...
 Execute       set_default_model load_a 
 Execute       cdfg_preprocess -model load_a 
@@ -345,53 +391,65 @@ INFO-FLOW: Preprocessing Module: store_c ...
 Execute       set_default_model store_c 
 Execute       cdfg_preprocess -model store_c 
 Execute       rtl_gen_preprocess store_c 
-INFO-FLOW: Preprocessing Module: region ...
-Execute       set_default_model region 
-Execute       cdfg_preprocess -model region 
-Execute       rtl_gen_preprocess region 
-INFO-FLOW: Model list for synthesis: region.entry64 load_a load_b conv store_c region
+INFO-FLOW: Preprocessing Module: dataflow_in_loop_VITIS_LOOP_65_3 ...
+Execute       set_default_model dataflow_in_loop_VITIS_LOOP_65_3 
+Execute       cdfg_preprocess -model dataflow_in_loop_VITIS_LOOP_65_3 
+Execute       rtl_gen_preprocess dataflow_in_loop_VITIS_LOOP_65_3 
+INFO-FLOW: Preprocessing Module: dataflow_parent_loop_proc ...
+Execute       set_default_model dataflow_parent_loop_proc 
+Execute       cdfg_preprocess -model dataflow_parent_loop_proc 
+Execute       rtl_gen_preprocess dataflow_parent_loop_proc 
+INFO-FLOW: Preprocessing Module: dataflow_parent_loop_proc7 ...
+Execute       set_default_model dataflow_parent_loop_proc7 
+Execute       cdfg_preprocess -model dataflow_parent_loop_proc7 
+Execute       rtl_gen_preprocess dataflow_parent_loop_proc7 
+INFO-FLOW: Preprocessing Module: region_before ...
+Execute       set_default_model region_before 
+Execute       cdfg_preprocess -model region_before 
+Execute       rtl_gen_preprocess region_before 
+INFO-FLOW: Model list for synthesis: dataflow_in_loop_VITIS_LOOP_65_3.entry83 load_a load_b conv store_c dataflow_in_loop_VITIS_LOOP_65_3 dataflow_parent_loop_proc dataflow_parent_loop_proc7 region_before
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'region_entry64' 
+INFO: [HLS 200-42] -- Implementing module 'dataflow_in_loop_VITIS_LOOP_65_3_entry83' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
-Execute       set_default_model region.entry64 
-Execute       schedule -model region.entry64 
+Execute       set_default_model dataflow_in_loop_VITIS_LOOP_65_3.entry83 
+Execute       schedule -model dataflow_in_loop_VITIS_LOOP_65_3.entry83 
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 54.59 seconds; current allocated memory: 264.569 MB.
-Execute       syn_report -verbosereport -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region_entry64.verbose.sched.rpt 
+INFO: [HLS 200-111]  Elapsed time: 7.62 seconds; current allocated memory: 224.290 MB.
+Execute       syn_report -verbosereport -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/dataflow_in_loop_VITIS_LOOP_65_3_entry83.verbose.sched.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
-Execute       db_write -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region_entry64.sched.adb -f 
-INFO-FLOW: Finish scheduling region.entry64.
-Execute       set_default_model region.entry64 
-Execute       bind -model region.entry64 
+Execute       db_write -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/dataflow_in_loop_VITIS_LOOP_65_3_entry83.sched.adb -f 
+INFO-FLOW: Finish scheduling dataflow_in_loop_VITIS_LOOP_65_3.entry83.
+Execute       set_default_model dataflow_in_loop_VITIS_LOOP_65_3.entry83 
+Execute       bind -model dataflow_in_loop_VITIS_LOOP_65_3.entry83 
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.01 seconds; current allocated memory: 264.848 MB.
-Execute       syn_report -verbosereport -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region_entry64.verbose.bind.rpt 
+INFO: [HLS 200-111]  Elapsed time: 0.01 seconds; current allocated memory: 224.456 MB.
+Execute       syn_report -verbosereport -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/dataflow_in_loop_VITIS_LOOP_65_3_entry83.verbose.bind.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
-Execute       db_write -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region_entry64.bind.adb -f 
-INFO-FLOW: Finish binding region.entry64.
+Execute       db_write -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/dataflow_in_loop_VITIS_LOOP_65_3_entry83.bind.adb -f 
+INFO-FLOW: Finish binding dataflow_in_loop_VITIS_LOOP_65_3.entry83.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'load_a' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 Execute       set_default_model load_a 
 Execute       schedule -model load_a 
 INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln16) to 3 in order to utilize available DSP registers.
-INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_16_4_VITIS_LOOP_18_5'.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln3) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_3_1_VITIS_LOOP_4_2'.
 INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 485.
 INFO: [SCHED 204-11] Finished scheduling.
-Command       schedule done; 0.39 sec.
-INFO: [HLS 200-111]  Elapsed time: 0.4 seconds; current allocated memory: 266.271 MB.
+Command       schedule done; 0.24 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.25 seconds; current allocated memory: 225.258 MB.
 Execute       syn_report -verbosereport -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/load_a.verbose.sched.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
-Command       syn_report done; 0.48 sec.
+Command       syn_report done; 0.35 sec.
 Execute       db_write -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/load_a.sched.adb -f 
 INFO-FLOW: Finish scheduling load_a.
 Execute       set_default_model load_a 
@@ -401,12 +459,11 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-Command       bind done; 0.34 sec.
-INFO: [HLS 200-111]  Elapsed time: 0.83 seconds; current allocated memory: 269.365 MB.
+Command       bind done; 0.24 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.59 seconds; current allocated memory: 227.208 MB.
 Execute       syn_report -verbosereport -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/load_a.verbose.bind.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
-Command       syn_report done; 0.19 sec.
 Execute       db_write -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/load_a.bind.adb -f 
 INFO-FLOW: Finish binding load_a.
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -415,16 +472,16 @@ INFO: [HLS 200-10] -------------------------------------------------------------
 Execute       set_default_model load_b 
 Execute       schedule -model load_b 
 INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln40) to 3 in order to utilize available DSP registers.
-INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_40_4_VITIS_LOOP_42_5'.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln14) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_14_1_VITIS_LOOP_15_2'.
 INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 485.
 INFO: [SCHED 204-11] Finished scheduling.
-Command       schedule done; 0.38 sec.
-INFO: [HLS 200-111]  Elapsed time: 0.59 seconds; current allocated memory: 270.706 MB.
+Command       schedule done; 0.24 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.33 seconds; current allocated memory: 228.226 MB.
 Execute       syn_report -verbosereport -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/load_b.verbose.sched.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
-Command       syn_report done; 0.49 sec.
+Command       syn_report done; 0.36 sec.
 Execute       db_write -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/load_b.sched.adb -f 
 INFO-FLOW: Finish scheduling load_b.
 Execute       set_default_model load_b 
@@ -434,12 +491,11 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-Command       bind done; 0.34 sec.
-INFO: [HLS 200-111]  Elapsed time: 0.84 seconds; current allocated memory: 273.721 MB.
+Command       bind done; 0.24 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.6 seconds; current allocated memory: 230.283 MB.
 Execute       syn_report -verbosereport -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/load_b.verbose.bind.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
-Command       syn_report done; 0.19 sec.
 Execute       db_write -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/load_b.bind.adb -f 
 INFO-FLOW: Finish binding load_b.
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -448,18 +504,20 @@ INFO: [HLS 200-10] -------------------------------------------------------------
 Execute       set_default_model conv 
 Execute       schedule -model conv 
 INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [HLS 200-486] Changing DSP48 latency (root=empty_51) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln97) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP48 latency (root=p_mid15) to 3 in order to utilize available DSP registers.
-INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_97_4_VITIS_LOOP_99_5_VITIS_LOOP_101_6'.
+INFO: [HLS 200-486] Changing DSP48 latency (root=empty_33) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln38_2) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=p_mid14) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1.
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_38_1_VITIS_LOOP_39_2_VITIS_LOOP_40_3'.
 INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 437.
 INFO: [SCHED 204-11] Finished scheduling.
-Command       schedule done; 0.67 sec.
-INFO: [HLS 200-111]  Elapsed time: 0.89 seconds; current allocated memory: 276.414 MB.
+Command       schedule done; 0.27 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.37 seconds; current allocated memory: 231.424 MB.
 Execute       syn_report -verbosereport -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/conv.verbose.sched.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
-Command       syn_report done; 0.56 sec.
+Command       syn_report done; 0.34 sec.
 Execute       db_write -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/conv.sched.adb -f 
 INFO-FLOW: Finish scheduling conv.
 Execute       set_default_model conv 
@@ -469,12 +527,12 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-Command       bind done; 0.46 sec.
-INFO: [HLS 200-111]  Elapsed time: 1.07 seconds; current allocated memory: 281.836 MB.
+Command       bind done; 0.23 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.57 seconds; current allocated memory: 233.616 MB.
 Execute       syn_report -verbosereport -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/conv.verbose.bind.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
-Command       syn_report done; 0.32 sec.
+Command       syn_report done; 0.11 sec.
 Execute       db_write -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/conv.bind.adb -f 
 INFO-FLOW: Finish binding conv.
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -483,16 +541,16 @@ INFO: [HLS 200-10] -------------------------------------------------------------
 Execute       set_default_model store_c 
 Execute       schedule -model store_c 
 INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln67) to 3 in order to utilize available DSP registers.
-INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_67_4_VITIS_LOOP_69_5'.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln25) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_25_1_VITIS_LOOP_26_2'.
 INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 985.
 INFO: [SCHED 204-11] Finished scheduling.
-Command       schedule done; 0.67 sec.
-INFO: [HLS 200-111]  Elapsed time: 1.06 seconds; current allocated memory: 284.230 MB.
+Command       schedule done; 0.48 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.6 seconds; current allocated memory: 235.611 MB.
 Execute       syn_report -verbosereport -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/store_c.verbose.sched.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
-Command       syn_report done; 0.81 sec.
+Command       syn_report done; 0.71 sec.
 Execute       db_write -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/store_c.sched.adb -f 
 INFO-FLOW: Finish scheduling store_c.
 Execute       set_default_model store_c 
@@ -502,78 +560,154 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-Command       bind done; 0.76 sec.
-INFO: [HLS 200-111]  Elapsed time: 1.6 seconds; current allocated memory: 291.593 MB.
+Command       bind done; 0.53 sec.
+INFO: [HLS 200-111]  Elapsed time: 1.24 seconds; current allocated memory: 241.384 MB.
 Execute       syn_report -verbosereport -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/store_c.verbose.bind.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
-Command       syn_report done; 0.25 sec.
+Command       syn_report done; 0.16 sec.
 Execute       db_write -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/store_c.bind.adb -f 
 INFO-FLOW: Finish binding store_c.
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'region' 
+INFO: [HLS 200-42] -- Implementing module 'dataflow_in_loop_VITIS_LOOP_65_3' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
-Execute       set_default_model region 
-Execute       schedule -model region 
+Execute       set_default_model dataflow_in_loop_VITIS_LOOP_65_3 
+Execute       schedule -model dataflow_in_loop_VITIS_LOOP_65_3 
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-WARNING: [HLS 200-1018] Consider increasing the depth of FIFO a_buf (from load_a_U0 to conv_U0) to 2 to improve performance and/or avoid deadlocks.
-WARNING: [HLS 200-1018] Consider increasing the depth of FIFO b_buf (from load_b_U0 to conv_U0) to 2 to improve performance and/or avoid deadlocks.
-WARNING: [HLS 200-1018] Consider increasing the depth of FIFO c_buf (from conv_U0 to store_c_U0) to 2 to improve performance and/or avoid deadlocks.
-INFO: [HLS 200-111]  Elapsed time: 0.32 seconds; current allocated memory: 291.812 MB.
-Execute       syn_report -verbosereport -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.verbose.sched.rpt 
+INFO: [HLS 200-111]  Elapsed time: 0.19 seconds; current allocated memory: 241.704 MB.
+Execute       syn_report -verbosereport -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/dataflow_in_loop_VITIS_LOOP_65_3.verbose.sched.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
-Execute       db_write -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.sched.adb -f 
-INFO-FLOW: Finish scheduling region.
-Execute       set_default_model region 
-Execute       bind -model region 
+Execute       db_write -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/dataflow_in_loop_VITIS_LOOP_65_3.sched.adb -f 
+INFO-FLOW: Finish scheduling dataflow_in_loop_VITIS_LOOP_65_3.
+Execute       set_default_model dataflow_in_loop_VITIS_LOOP_65_3 
+Execute       bind -model dataflow_in_loop_VITIS_LOOP_65_3 
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-Command       bind done; 0.28 sec.
-INFO: [HLS 200-111]  Elapsed time: 0.29 seconds; current allocated memory: 292.453 MB.
-Execute       syn_report -verbosereport -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.verbose.bind.rpt 
+INFO: [HLS 200-111]  Elapsed time: 0.09 seconds; current allocated memory: 242.084 MB.
+Execute       syn_report -verbosereport -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/dataflow_in_loop_VITIS_LOOP_65_3.verbose.bind.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
-Command       syn_report done; 0.21 sec.
-Execute       db_write -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.bind.adb -f 
-INFO-FLOW: Finish binding region.
-Execute       get_model_list region -filter all-wo-channel 
+Execute       db_write -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/dataflow_in_loop_VITIS_LOOP_65_3.bind.adb -f 
+INFO-FLOW: Finish binding dataflow_in_loop_VITIS_LOOP_65_3.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dataflow_parent_loop_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model dataflow_parent_loop_proc 
+Execute       schedule -model dataflow_parent_loop_proc 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.08 seconds; current allocated memory: 242.246 MB.
+Execute       syn_report -verbosereport -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/dataflow_parent_loop_proc.verbose.sched.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Execute       db_write -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/dataflow_parent_loop_proc.sched.adb -f 
+INFO-FLOW: Finish scheduling dataflow_parent_loop_proc.
+Execute       set_default_model dataflow_parent_loop_proc 
+Execute       bind -model dataflow_parent_loop_proc 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.04 seconds; current allocated memory: 242.378 MB.
+Execute       syn_report -verbosereport -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/dataflow_parent_loop_proc.verbose.bind.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Execute       db_write -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/dataflow_parent_loop_proc.bind.adb -f 
+INFO-FLOW: Finish binding dataflow_parent_loop_proc.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dataflow_parent_loop_proc7' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model dataflow_parent_loop_proc7 
+Execute       schedule -model dataflow_parent_loop_proc7 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.08 seconds; current allocated memory: 242.507 MB.
+Execute       syn_report -verbosereport -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/dataflow_parent_loop_proc7.verbose.sched.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Execute       db_write -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/dataflow_parent_loop_proc7.sched.adb -f 
+INFO-FLOW: Finish scheduling dataflow_parent_loop_proc7.
+Execute       set_default_model dataflow_parent_loop_proc7 
+Execute       bind -model dataflow_parent_loop_proc7 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.03 seconds; current allocated memory: 242.739 MB.
+Execute       syn_report -verbosereport -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/dataflow_parent_loop_proc7.verbose.bind.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Execute       db_write -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/dataflow_parent_loop_proc7.bind.adb -f 
+INFO-FLOW: Finish binding dataflow_parent_loop_proc7.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'region_before' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model region_before 
+Execute       schedule -model region_before 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.09 seconds; current allocated memory: 242.909 MB.
+Execute       syn_report -verbosereport -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region_before.verbose.sched.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Execute       db_write -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region_before.sched.adb -f 
+INFO-FLOW: Finish scheduling region_before.
+Execute       set_default_model region_before 
+Execute       bind -model region_before 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.04 seconds; current allocated memory: 243.179 MB.
+Execute       syn_report -verbosereport -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region_before.verbose.bind.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Execute       db_write -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region_before.bind.adb -f 
+INFO-FLOW: Finish binding region_before.
+Execute       get_model_list region_before -filter all-wo-channel 
 INFO-FLOW: Preprocessing for RTLGen ...
-Execute       rtl_gen_preprocess region.entry64 
+Execute       rtl_gen_preprocess dataflow_in_loop_VITIS_LOOP_65_3.entry83 
 Execute       rtl_gen_preprocess load_a 
 Execute       rtl_gen_preprocess load_b 
 Execute       rtl_gen_preprocess conv 
 Execute       rtl_gen_preprocess store_c 
-Execute       rtl_gen_preprocess region 
-INFO-FLOW: Model list for RTL generation: region.entry64 load_a load_b conv store_c region
+Execute       rtl_gen_preprocess dataflow_in_loop_VITIS_LOOP_65_3 
+Execute       rtl_gen_preprocess dataflow_parent_loop_proc 
+Execute       rtl_gen_preprocess dataflow_parent_loop_proc7 
+Execute       rtl_gen_preprocess region_before 
+INFO-FLOW: Model list for RTL generation: dataflow_in_loop_VITIS_LOOP_65_3.entry83 load_a load_b conv store_c dataflow_in_loop_VITIS_LOOP_65_3 dataflow_parent_loop_proc dataflow_parent_loop_proc7 region_before
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'region_entry64' 
+INFO: [HLS 200-10] -- Generating RTL for module 'dataflow_in_loop_VITIS_LOOP_65_3_entry83' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 Execute       get_config_rtl -module_prefix 
 Execute       get_config_rtl -module_auto_prefix 
 Execute       get_config_rtl -module_prefix 
 Execute       get_config_rtl -module_auto_prefix 
-Execute       create_rtl_model region.entry64 -top_prefix region_ -sub_prefix region_ -mg_file /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region_entry64.compgen.tcl 
-INFO: [RTGEN 206-100] Finished creating RTL model for 'region_entry64'.
-INFO: [HLS 200-111]  Elapsed time: 0.24 seconds; current allocated memory: 292.757 MB.
-Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.rtl_wrap.cfg.tcl 
-Execute       gen_rtl region.entry64 -style xilinx -f -lang vhdl -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/syn/vhdl/region_region_entry64 
-Execute       gen_rtl region.entry64 -style xilinx -f -lang vlog -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/syn/verilog/region_region_entry64 
-Execute       syn_report -csynth -model region.entry64 -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/syn/report/region_entry64_csynth.rpt 
+Execute       create_rtl_model dataflow_in_loop_VITIS_LOOP_65_3.entry83 -top_prefix region_before_ -sub_prefix region_before_ -mg_file /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/dataflow_in_loop_VITIS_LOOP_65_3_entry83.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dataflow_in_loop_VITIS_LOOP_65_3_entry83'.
+INFO: [HLS 200-111]  Elapsed time: 0.08 seconds; current allocated memory: 243.510 MB.
+Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region_before.rtl_wrap.cfg.tcl 
+Execute       gen_rtl dataflow_in_loop_VITIS_LOOP_65_3.entry83 -style xilinx -f -lang vhdl -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/syn/vhdl/region_before_dataflow_in_loop_VITIS_LOOP_65_3_entry83 
+Execute       gen_rtl dataflow_in_loop_VITIS_LOOP_65_3.entry83 -style xilinx -f -lang vlog -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/syn/verilog/region_before_dataflow_in_loop_VITIS_LOOP_65_3_entry83 
+Execute       syn_report -csynth -model dataflow_in_loop_VITIS_LOOP_65_3.entry83 -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/syn/report/dataflow_in_loop_VITIS_LOOP_65_3_entry83_csynth.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
-Execute       syn_report -rtlxml -model region.entry64 -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/syn/report/region_entry64_csynth.xml 
+Execute       syn_report -rtlxml -model dataflow_in_loop_VITIS_LOOP_65_3.entry83 -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/syn/report/dataflow_in_loop_VITIS_LOOP_65_3_entry83_csynth.xml 
 Execute         get_solution -flow_target
 Execute           get_solution -flow_target 
-Execute       syn_report -verbosereport -model region.entry64 -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region_entry64.verbose.rpt 
+Execute       syn_report -verbosereport -model dataflow_in_loop_VITIS_LOOP_65_3.entry83 -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/dataflow_in_loop_VITIS_LOOP_65_3_entry83.verbose.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
-Execute       db_write -model region.entry64 -f -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region_entry64.adb 
-Execute       gen_tb_info region.entry64 -p /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region_entry64 
+Execute       db_write -model dataflow_in_loop_VITIS_LOOP_65_3.entry83 -f -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/dataflow_in_loop_VITIS_LOOP_65_3_entry83.adb 
+Execute       gen_tb_info dataflow_in_loop_VITIS_LOOP_65_3.entry83 -p /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/dataflow_in_loop_VITIS_LOOP_65_3_entry83 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'load_a' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -581,16 +715,15 @@ Execute       get_config_rtl -module_prefix
 Execute       get_config_rtl -module_auto_prefix 
 Execute       get_config_rtl -module_prefix 
 Execute       get_config_rtl -module_auto_prefix 
-Execute       create_rtl_model load_a -top_prefix region_ -sub_prefix region_ -mg_file /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/load_a.compgen.tcl 
+Execute       create_rtl_model load_a -top_prefix region_before_ -sub_prefix region_before_ -mg_file /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/load_a.compgen.tcl 
 INFO: [RTGEN 206-100] Generating core module 'mac_muladd_7s_7s_7ns_7_4_1': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'mul_32ns_32ns_64_1_1': 2 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'mul_64ns_32ns_96_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32ns_32ns_64_1_1': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'load_a'.
-Command       create_rtl_model done; 0.22 sec.
-INFO: [HLS 200-111]  Elapsed time: 0.25 seconds; current allocated memory: 304.619 MB.
-Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.rtl_wrap.cfg.tcl 
-Execute       gen_rtl load_a -style xilinx -f -lang vhdl -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/syn/vhdl/region_load_a 
-Execute       gen_rtl load_a -style xilinx -f -lang vlog -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/syn/verilog/region_load_a 
+Command       create_rtl_model done; 0.16 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.19 seconds; current allocated memory: 253.417 MB.
+Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region_before.rtl_wrap.cfg.tcl 
+Execute       gen_rtl load_a -style xilinx -f -lang vhdl -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/syn/vhdl/region_before_load_a 
+Execute       gen_rtl load_a -style xilinx -f -lang vlog -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/syn/verilog/region_before_load_a 
 Execute       syn_report -csynth -model load_a -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/syn/report/load_a_csynth.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
@@ -600,7 +733,6 @@ Execute           get_solution -flow_target
 Execute       syn_report -verbosereport -model load_a -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/load_a.verbose.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
-Command       syn_report done; 0.2 sec.
 Execute       db_write -model load_a -f -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/load_a.adb 
 Execute       gen_tb_info load_a -p /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/load_a 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -610,16 +742,15 @@ Execute       get_config_rtl -module_prefix
 Execute       get_config_rtl -module_auto_prefix 
 Execute       get_config_rtl -module_prefix 
 Execute       get_config_rtl -module_auto_prefix 
-Execute       create_rtl_model load_b -top_prefix region_ -sub_prefix region_ -mg_file /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/load_b.compgen.tcl 
+Execute       create_rtl_model load_b -top_prefix region_before_ -sub_prefix region_before_ -mg_file /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/load_b.compgen.tcl 
 INFO: [RTGEN 206-100] Generating core module 'mac_muladd_7s_7s_7ns_7_4_1': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'mul_32ns_32ns_64_1_1': 2 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'mul_64ns_32ns_96_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32ns_32ns_64_1_1': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'load_b'.
-Command       create_rtl_model done; 0.21 sec.
-INFO: [HLS 200-111]  Elapsed time: 0.66 seconds; current allocated memory: 321.869 MB.
-Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.rtl_wrap.cfg.tcl 
-Execute       gen_rtl load_b -style xilinx -f -lang vhdl -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/syn/vhdl/region_load_b 
-Execute       gen_rtl load_b -style xilinx -f -lang vlog -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/syn/verilog/region_load_b 
+Command       create_rtl_model done; 0.15 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.4 seconds; current allocated memory: 265.914 MB.
+Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region_before.rtl_wrap.cfg.tcl 
+Execute       gen_rtl load_b -style xilinx -f -lang vhdl -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/syn/vhdl/region_before_load_b 
+Execute       gen_rtl load_b -style xilinx -f -lang vlog -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/syn/verilog/region_before_load_b 
 Execute       syn_report -csynth -model load_b -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/syn/report/load_b_csynth.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
@@ -629,7 +760,6 @@ Execute           get_solution -flow_target
 Execute       syn_report -verbosereport -model load_b -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/load_b.verbose.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
-Command       syn_report done; 0.2 sec.
 Execute       db_write -model load_b -f -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/load_b.adb 
 Execute       gen_tb_info load_b -p /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/load_b 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -639,33 +769,30 @@ Execute       get_config_rtl -module_prefix
 Execute       get_config_rtl -module_auto_prefix 
 Execute       get_config_rtl -module_prefix 
 Execute       get_config_rtl -module_auto_prefix 
-Execute       create_rtl_model conv -top_prefix region_ -sub_prefix region_ -mg_file /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/conv.compgen.tcl 
-INFO: [RTGEN 206-104] Estimated max fanout for 'conv' is 6277 from HDL expression: (~(((1'b0 == a_buf_s_empty_n) & (icmp_ln87_fu_2342_p2 == 1'd0)) | ((icmp_ln87_fu_2342_p2 == 1'd0) & (b_buf_s_empty_n == 1'b0))) & (icmp_ln87_fu_2342_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state3))
+Execute       create_rtl_model conv -top_prefix region_before_ -sub_prefix region_before_ -mg_file /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/conv.compgen.tcl 
 INFO: [RTGEN 206-100] Generating core module 'mac_muladd_7s_7s_7ns_7_4_1': 2 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'mac_muladd_7s_7s_7s_7_4_1': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'mul_32ns_32ns_64_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32ns_32ns_64_1_1': 1 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_32_1_1': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'mul_64ns_32ns_96_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_64ns_32ns_96_1_1': 1 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'mul_7s_7s_7_1_1': 2 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'conv'.
-Command       create_rtl_model done; 0.46 sec.
-INFO: [HLS 200-111]  Elapsed time: 0.9 seconds; current allocated memory: 341.366 MB.
-Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.rtl_wrap.cfg.tcl 
-Execute       gen_rtl conv -style xilinx -f -lang vhdl -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/syn/vhdl/region_conv 
-Execute       gen_rtl conv -style xilinx -f -lang vlog -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/syn/verilog/region_conv 
+Command       create_rtl_model done; 0.16 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.4 seconds; current allocated memory: 277.420 MB.
+Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region_before.rtl_wrap.cfg.tcl 
+Execute       gen_rtl conv -style xilinx -f -lang vhdl -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/syn/vhdl/region_before_conv 
+Execute       gen_rtl conv -style xilinx -f -lang vlog -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/syn/verilog/region_before_conv 
 Execute       syn_report -csynth -model conv -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/syn/report/conv_csynth.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
-Command       syn_report done; 0.12 sec.
 Execute       syn_report -rtlxml -model conv -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/syn/report/conv_csynth.xml 
 Execute         get_solution -flow_target
 Execute           get_solution -flow_target 
 Execute       syn_report -verbosereport -model conv -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/conv.verbose.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
-Command       syn_report done; 0.38 sec.
+Command       syn_report done; 0.15 sec.
 Execute       db_write -model conv -f -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/conv.adb 
-Command       db_write done; 0.19 sec.
 Execute       gen_tb_info conv -p /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/conv 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'store_c' 
@@ -674,228 +801,248 @@ Execute       get_config_rtl -module_prefix
 Execute       get_config_rtl -module_auto_prefix 
 Execute       get_config_rtl -module_prefix 
 Execute       get_config_rtl -module_auto_prefix 
-Execute       create_rtl_model store_c -top_prefix region_ -sub_prefix region_ -mg_file /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/store_c.compgen.tcl 
+Execute       create_rtl_model store_c -top_prefix region_before_ -sub_prefix region_before_ -mg_file /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/store_c.compgen.tcl 
 INFO: [RTGEN 206-104] Estimated max fanout for 'store_c' is 32413 from HDL expression: (1'b0 == ap_block_pp0_stage0_11001)
 INFO: [RTGEN 206-100] Generating core module 'mac_muladd_7s_7s_7ns_7_4_1': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'mul_32ns_32ns_64_1_1': 2 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'mul_64ns_32ns_96_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32ns_32ns_64_1_1': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'store_c'.
-Command       create_rtl_model done; 0.85 sec.
-INFO: [HLS 200-111]  Elapsed time: 1.78 seconds; current allocated memory: 389.402 MB.
-Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.rtl_wrap.cfg.tcl 
-Execute       gen_rtl store_c -style xilinx -f -lang vhdl -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/syn/vhdl/region_store_c 
-Execute       gen_rtl store_c -style xilinx -f -lang vlog -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/syn/verilog/region_store_c 
+Command       create_rtl_model done; 0.63 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.99 seconds; current allocated memory: 313.329 MB.
+Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region_before.rtl_wrap.cfg.tcl 
+Execute       gen_rtl store_c -style xilinx -f -lang vhdl -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/syn/vhdl/region_before_store_c 
+Execute       gen_rtl store_c -style xilinx -f -lang vlog -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/syn/verilog/region_before_store_c 
 Execute       syn_report -csynth -model store_c -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/syn/report/store_c_csynth.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
-Command       syn_report done; 0.12 sec.
 Execute       syn_report -rtlxml -model store_c -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/syn/report/store_c_csynth.xml 
 Execute         get_solution -flow_target
 Execute           get_solution -flow_target 
 Execute       syn_report -verbosereport -model store_c -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/store_c.verbose.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
-Command       syn_report done; 0.32 sec.
+Command       syn_report done; 0.16 sec.
 Execute       db_write -model store_c -f -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/store_c.adb 
-Command       db_write done; 0.2 sec.
 Execute       gen_tb_info store_c -p /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/store_c 
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'region' 
+INFO: [HLS 200-10] -- Generating RTL for module 'dataflow_in_loop_VITIS_LOOP_65_3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       create_rtl_model dataflow_in_loop_VITIS_LOOP_65_3 -top_prefix region_before_ -sub_prefix region_before_ -mg_file /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/dataflow_in_loop_VITIS_LOOP_65_3.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dataflow_in_loop_VITIS_LOOP_65_3'.
+INFO: [HLS 200-111]  Elapsed time: 0.5 seconds; current allocated memory: 319.285 MB.
+Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region_before.rtl_wrap.cfg.tcl 
+Execute       gen_rtl dataflow_in_loop_VITIS_LOOP_65_3 -style xilinx -f -lang vhdl -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/syn/vhdl/region_before_dataflow_in_loop_VITIS_LOOP_65_3 
+Execute       gen_rtl dataflow_in_loop_VITIS_LOOP_65_3 -style xilinx -f -lang vlog -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/syn/verilog/region_before_dataflow_in_loop_VITIS_LOOP_65_3 
+Execute       syn_report -csynth -model dataflow_in_loop_VITIS_LOOP_65_3 -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/syn/report/dataflow_in_loop_VITIS_LOOP_65_3_csynth.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Execute       syn_report -rtlxml -model dataflow_in_loop_VITIS_LOOP_65_3 -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/syn/report/dataflow_in_loop_VITIS_LOOP_65_3_csynth.xml 
+Execute         get_solution -flow_target
+Execute           get_solution -flow_target 
+Execute       syn_report -verbosereport -model dataflow_in_loop_VITIS_LOOP_65_3 -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/dataflow_in_loop_VITIS_LOOP_65_3.verbose.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Execute       db_write -model dataflow_in_loop_VITIS_LOOP_65_3 -f -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/dataflow_in_loop_VITIS_LOOP_65_3.adb 
+Execute       gen_tb_info dataflow_in_loop_VITIS_LOOP_65_3 -p /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/dataflow_in_loop_VITIS_LOOP_65_3 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dataflow_parent_loop_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       create_rtl_model dataflow_parent_loop_proc -top_prefix region_before_ -sub_prefix region_before_ -mg_file /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/dataflow_parent_loop_proc.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dataflow_parent_loop_proc'.
+INFO: [HLS 200-111]  Elapsed time: 0.13 seconds; current allocated memory: 320.305 MB.
+Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region_before.rtl_wrap.cfg.tcl 
+Execute       gen_rtl dataflow_parent_loop_proc -style xilinx -f -lang vhdl -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/syn/vhdl/region_before_dataflow_parent_loop_proc 
+Execute       gen_rtl dataflow_parent_loop_proc -style xilinx -f -lang vlog -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/syn/verilog/region_before_dataflow_parent_loop_proc 
+Execute       syn_report -csynth -model dataflow_parent_loop_proc -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/syn/report/dataflow_parent_loop_proc_csynth.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Execute       syn_report -rtlxml -model dataflow_parent_loop_proc -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/syn/report/dataflow_parent_loop_proc_csynth.xml 
+Execute         get_solution -flow_target
+Execute           get_solution -flow_target 
+Execute       syn_report -verbosereport -model dataflow_parent_loop_proc -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/dataflow_parent_loop_proc.verbose.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Execute       db_write -model dataflow_parent_loop_proc -f -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/dataflow_parent_loop_proc.adb 
+Execute       gen_tb_info dataflow_parent_loop_proc -p /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/dataflow_parent_loop_proc 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dataflow_parent_loop_proc7' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       create_rtl_model dataflow_parent_loop_proc7 -top_prefix region_before_ -sub_prefix region_before_ -mg_file /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/dataflow_parent_loop_proc7.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dataflow_parent_loop_proc7'.
+INFO: [HLS 200-111]  Elapsed time: 0.11 seconds; current allocated memory: 321.009 MB.
+Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region_before.rtl_wrap.cfg.tcl 
+Execute       gen_rtl dataflow_parent_loop_proc7 -style xilinx -f -lang vhdl -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/syn/vhdl/region_before_dataflow_parent_loop_proc7 
+Execute       gen_rtl dataflow_parent_loop_proc7 -style xilinx -f -lang vlog -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/syn/verilog/region_before_dataflow_parent_loop_proc7 
+Execute       syn_report -csynth -model dataflow_parent_loop_proc7 -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/syn/report/dataflow_parent_loop_proc7_csynth.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Execute       syn_report -rtlxml -model dataflow_parent_loop_proc7 -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/syn/report/dataflow_parent_loop_proc7_csynth.xml 
+Execute         get_solution -flow_target
+Execute           get_solution -flow_target 
+Execute       syn_report -verbosereport -model dataflow_parent_loop_proc7 -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/dataflow_parent_loop_proc7.verbose.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Execute       db_write -model dataflow_parent_loop_proc7 -f -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/dataflow_parent_loop_proc7.adb 
+Execute       gen_tb_info dataflow_parent_loop_proc7 -p /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/dataflow_parent_loop_proc7 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'region_before' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 Execute       get_config_rtl -module_prefix 
 Execute       get_config_rtl -module_prefix 
 Execute       get_config_rtl -module_auto_prefix 
-Execute       create_rtl_model region -top_prefix  -sub_prefix region_ -mg_file /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.compgen.tcl 
-INFO: [RTGEN 206-500] Setting interface mode on port 'region/A' to 'ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'region/B' to 'ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'region/C' to 'ap_ovld'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'region/numa' to 'ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'region/numc' to 'ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'region/n' to 'ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'region/tilenuma' to 'ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'region/tilenumc' to 'ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'region/tilen' to 'ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'region/numa_iter' to 'ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'region/numc_iter' to 'ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'region/n_iter' to 'ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on function 'region' to 'ap_ctrl_hs'.
-WARNING: [RTGEN 206-101] Port 'region/numa' has no fanin or fanout and is left dangling.
+Execute       create_rtl_model region_before -top_prefix  -sub_prefix region_before_ -mg_file /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region_before.compgen.tcl 
+INFO: [RTGEN 206-500] Setting interface mode on port 'region_before/A' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'region_before/B' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'region_before/C' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'region_before/numa' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'region_before/numc' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'region_before/n' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'region_before/tilenuma' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'region_before/tilenumc' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'region_before/tilen' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'region_before/numa_iter' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'region_before/numc_iter' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'region_before/n_iter' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'region_before' to 'ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Port 'region_before/numa' has no fanin or fanout and is left dangling.
                Please use C simulation to confirm this function argument can be read from or written to.
-WARNING: [RTGEN 206-101] Port 'region/numc' has no fanin or fanout and is left dangling.
+WARNING: [RTGEN 206-101] Port 'region_before/numc' has no fanin or fanout and is left dangling.
                Please use C simulation to confirm this function argument can be read from or written to.
-WARNING: [RTGEN 206-101] Port 'region/n' has no fanin or fanout and is left dangling.
+WARNING: [RTGEN 206-101] Port 'region_before/n' has no fanin or fanout and is left dangling.
                Please use C simulation to confirm this function argument can be read from or written to.
-INFO: [RTGEN 206-100] Finished creating RTL model for 'region'.
-INFO: [HLS 200-111]  Elapsed time: 0.91 seconds; current allocated memory: 400.635 MB.
-Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.rtl_wrap.cfg.tcl 
-Execute       gen_rtl region -istop -style xilinx -f -lang vhdl -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/syn/vhdl/region 
-Execute       gen_rtl region -istop -style xilinx -f -lang vlog -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/syn/verilog/region 
-Execute       syn_report -csynth -model region -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/syn/report/region_csynth.rpt 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'region_before'.
+INFO: [HLS 200-111]  Elapsed time: 0.14 seconds; current allocated memory: 321.707 MB.
+Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region_before.rtl_wrap.cfg.tcl 
+Execute       gen_rtl region_before -istop -style xilinx -f -lang vhdl -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/syn/vhdl/region_before 
+Execute       gen_rtl region_before -istop -style xilinx -f -lang vlog -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/syn/verilog/region_before 
+Execute       syn_report -csynth -model region_before -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/syn/report/region_before_csynth.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
-Execute       syn_report -rtlxml -model region -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/syn/report/region_csynth.xml 
+Execute       syn_report -rtlxml -model region_before -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/syn/report/region_before_csynth.xml 
 Execute         get_solution -flow_target
 Execute           get_solution -flow_target 
-Execute       syn_report -verbosereport -model region -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.verbose.rpt 
+Execute       syn_report -verbosereport -model region_before -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region_before.verbose.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
-Command       syn_report done; 0.23 sec.
-Execute       db_write -model region -f -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.adb 
-Execute       gen_tb_info region -p /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region 
-Execute       export_constraint_db -f -tool general -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.constraint.tcl 
-Execute       syn_report -designview -model region -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.design.xml 
-Command       syn_report done; 0.35 sec.
+Execute       db_write -model region_before -f -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region_before.adb 
+Execute       gen_tb_info region_before -p /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region_before 
+Execute       export_constraint_db -f -tool general -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region_before.constraint.tcl 
+Execute       syn_report -designview -model region_before -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region_before.design.xml 
+Command       syn_report done; 0.24 sec.
 Execute       get_config_rtl -disable_wave_debug 
-Execute       syn_report -wcfg -model region -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region_dataflow_ana.wcfg 
-Execute       syn_report -protoinst -model region -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.protoinst 
+Execute       syn_report -wcfg -model region_before -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region_before_dataflow_ana.wcfg 
+Execute       syn_report -protoinst -model region_before -o /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region_before.protoinst 
 Execute       get_config_debug -directory 
-Execute       sc_get_clocks region 
+Execute       sc_get_clocks region_before 
 Execute       get_config_export -vivado_clock 
 Execute       get_config_rtl -module_prefix 
 Execute       get_config_rtl -module_prefix 
 Execute       get_config_rtl -module_auto_prefix 
-Execute       sc_get_portdomain region 
-INFO-FLOW: Model list for RTL component generation: region.entry64 load_a load_b conv store_c region
-INFO-FLOW: Handling components in module [region_entry64] ... 
-Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region_entry64.compgen.tcl 
+Execute       sc_get_portdomain region_before 
+INFO-FLOW: Model list for RTL component generation: dataflow_in_loop_VITIS_LOOP_65_3.entry83 load_a load_b conv store_c dataflow_in_loop_VITIS_LOOP_65_3 dataflow_parent_loop_proc dataflow_parent_loop_proc7 region_before
+INFO-FLOW: Handling components in module [dataflow_in_loop_VITIS_LOOP_65_3_entry83] ... 
+Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/dataflow_in_loop_VITIS_LOOP_65_3_entry83.compgen.tcl 
 INFO-FLOW: Handling components in module [load_a] ... 
 Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/load_a.compgen.tcl 
-INFO-FLOW: Found component region_mul_32ns_32ns_64_1_1.
-INFO-FLOW: Append model region_mul_32ns_32ns_64_1_1
-INFO-FLOW: Found component region_mul_64ns_32ns_96_1_1.
-INFO-FLOW: Append model region_mul_64ns_32ns_96_1_1
-INFO-FLOW: Found component region_mac_muladd_7s_7s_7ns_7_4_1.
-INFO-FLOW: Append model region_mac_muladd_7s_7s_7ns_7_4_1
-INFO-FLOW: Found component region_load_a_a_buf_data_1.
-INFO-FLOW: Append model region_load_a_a_buf_data_1
+INFO-FLOW: Found component region_before_mul_32ns_32ns_64_1_1.
+INFO-FLOW: Append model region_before_mul_32ns_32ns_64_1_1
+INFO-FLOW: Found component region_before_mac_muladd_7s_7s_7ns_7_4_1.
+INFO-FLOW: Append model region_before_mac_muladd_7s_7s_7ns_7_4_1
 INFO-FLOW: Handling components in module [load_b] ... 
 Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/load_b.compgen.tcl 
 INFO-FLOW: Handling components in module [conv] ... 
 Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/conv.compgen.tcl 
-INFO-FLOW: Found component region_mul_7s_7s_7_1_1.
-INFO-FLOW: Append model region_mul_7s_7s_7_1_1
-INFO-FLOW: Found component region_mul_32s_32s_32_1_1.
-INFO-FLOW: Append model region_mul_32s_32s_32_1_1
-INFO-FLOW: Found component region_mac_muladd_7s_7s_7s_7_4_1.
-INFO-FLOW: Append model region_mac_muladd_7s_7s_7s_7_4_1
-INFO-FLOW: Found component region_conv_b_buf_data.
-INFO-FLOW: Append model region_conv_b_buf_data
-INFO-FLOW: Found component region_conv_local_c.
-INFO-FLOW: Append model region_conv_local_c
+INFO-FLOW: Found component region_before_mul_64ns_32ns_96_1_1.
+INFO-FLOW: Append model region_before_mul_64ns_32ns_96_1_1
+INFO-FLOW: Found component region_before_mul_7s_7s_7_1_1.
+INFO-FLOW: Append model region_before_mul_7s_7s_7_1_1
+INFO-FLOW: Found component region_before_mul_32s_32s_32_1_1.
+INFO-FLOW: Append model region_before_mul_32s_32s_32_1_1
+INFO-FLOW: Found component region_before_mac_muladd_7s_7s_7s_7_4_1.
+INFO-FLOW: Append model region_before_mac_muladd_7s_7s_7s_7_4_1
+INFO-FLOW: Found component region_before_conv_local_c.
+INFO-FLOW: Append model region_before_conv_local_c
 INFO-FLOW: Handling components in module [store_c] ... 
 Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/store_c.compgen.tcl 
-INFO-FLOW: Found component region_store_c_tmp_data.
-INFO-FLOW: Append model region_store_c_tmp_data
-INFO-FLOW: Handling components in module [region] ... 
-Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.compgen.tcl 
-INFO-FLOW: Found component region_fifo_w32_d2_S.
-INFO-FLOW: Append model region_fifo_w32_d2_S
-INFO-FLOW: Found component region_fifo_w32_d2_S.
-INFO-FLOW: Append model region_fifo_w32_d2_S
-INFO-FLOW: Found component region_fifo_w32_d2_S.
-INFO-FLOW: Append model region_fifo_w32_d2_S
-INFO-FLOW: Found component region_fifo_w32_d3_S.
-INFO-FLOW: Append model region_fifo_w32_d3_S
-INFO-FLOW: Found component region_fifo_w32_d2_S.
-INFO-FLOW: Append model region_fifo_w32_d2_S
-INFO-FLOW: Found component region_fifo_w32_d2_S.
-INFO-FLOW: Append model region_fifo_w32_d2_S
-INFO-FLOW: Found component region_fifo_w32_d2_S.
-INFO-FLOW: Append model region_fifo_w32_d2_S
-INFO-FLOW: Found component region_fifo_w32_d2_S.
-INFO-FLOW: Append model region_fifo_w32_d2_S
-INFO-FLOW: Found component region_fifo_w32_d2_S.
-INFO-FLOW: Append model region_fifo_w32_d2_S
-INFO-FLOW: Found component region_fifo_w32_d2_S.
-INFO-FLOW: Append model region_fifo_w32_d2_S
-INFO-FLOW: Found component region_fifo_w32_d2_S.
-INFO-FLOW: Append model region_fifo_w32_d2_S
-INFO-FLOW: Found component region_fifo_w3200_d1_S.
-INFO-FLOW: Append model region_fifo_w3200_d1_S
-INFO-FLOW: Found component region_fifo_w32_d2_S.
-INFO-FLOW: Append model region_fifo_w32_d2_S
-INFO-FLOW: Found component region_fifo_w32_d2_S.
-INFO-FLOW: Append model region_fifo_w32_d2_S
-INFO-FLOW: Found component region_fifo_w32_d2_S.
-INFO-FLOW: Append model region_fifo_w32_d2_S
-INFO-FLOW: Found component region_fifo_w32_d2_S.
-INFO-FLOW: Append model region_fifo_w32_d2_S
-INFO-FLOW: Found component region_fifo_w32_d2_S.
-INFO-FLOW: Append model region_fifo_w32_d2_S
-INFO-FLOW: Found component region_fifo_w3200_d1_S.
-INFO-FLOW: Append model region_fifo_w3200_d1_S
-INFO-FLOW: Found component region_fifo_w3200_d1_S.
-INFO-FLOW: Append model region_fifo_w3200_d1_S
-INFO-FLOW: Found component region_fifo_w32_d2_S.
-INFO-FLOW: Append model region_fifo_w32_d2_S
-INFO-FLOW: Found component region_fifo_w32_d2_S.
-INFO-FLOW: Append model region_fifo_w32_d2_S
-INFO-FLOW: Found component region_fifo_w32_d2_S.
-INFO-FLOW: Append model region_fifo_w32_d2_S
-INFO-FLOW: Found component region_fifo_w32_d2_S.
-INFO-FLOW: Append model region_fifo_w32_d2_S
-INFO-FLOW: Found component region_fifo_w32_d2_S.
-INFO-FLOW: Append model region_fifo_w32_d2_S
-INFO-FLOW: Found component region_start_for_load_a_U0.
-INFO-FLOW: Append model region_start_for_load_a_U0
-INFO-FLOW: Found component region_start_for_load_b_U0.
-INFO-FLOW: Append model region_start_for_load_b_U0
-INFO-FLOW: Found component region_start_for_conv_U0.
-INFO-FLOW: Append model region_start_for_conv_U0
-INFO-FLOW: Found component region_start_for_store_c_U0.
-INFO-FLOW: Append model region_start_for_store_c_U0
-INFO-FLOW: Append model region_entry64
+INFO-FLOW: Handling components in module [dataflow_in_loop_VITIS_LOOP_65_3] ... 
+Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/dataflow_in_loop_VITIS_LOOP_65_3.compgen.tcl 
+INFO-FLOW: Found component region_before_fifo_w32_d2_S.
+INFO-FLOW: Append model region_before_fifo_w32_d2_S
+INFO-FLOW: Found component region_before_fifo_w32_d2_S.
+INFO-FLOW: Append model region_before_fifo_w32_d2_S
+INFO-FLOW: Found component region_before_fifo_w32_d2_S.
+INFO-FLOW: Append model region_before_fifo_w32_d2_S
+INFO-FLOW: Found component region_before_fifo_w32_d2_S.
+INFO-FLOW: Append model region_before_fifo_w32_d2_S
+INFO-FLOW: Found component region_before_fifo_w32_d3_S.
+INFO-FLOW: Append model region_before_fifo_w32_d3_S
+INFO-FLOW: Found component region_before_fifo_w32_d2_S.
+INFO-FLOW: Append model region_before_fifo_w32_d2_S
+INFO-FLOW: Found component region_before_fifo_w32_d2_S.
+INFO-FLOW: Append model region_before_fifo_w32_d2_S
+INFO-FLOW: Found component region_before_fifo_w32_d2_S.
+INFO-FLOW: Append model region_before_fifo_w32_d2_S
+INFO-FLOW: Found component region_before_fifo_w32_d2_S.
+INFO-FLOW: Append model region_before_fifo_w32_d2_S
+INFO-FLOW: Found component region_before_start_for_load_a_U0.
+INFO-FLOW: Append model region_before_start_for_load_a_U0
+INFO-FLOW: Found component region_before_start_for_load_b_U0.
+INFO-FLOW: Append model region_before_start_for_load_b_U0
+INFO-FLOW: Handling components in module [dataflow_parent_loop_proc] ... 
+Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/dataflow_parent_loop_proc.compgen.tcl 
+INFO-FLOW: Handling components in module [dataflow_parent_loop_proc7] ... 
+Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/dataflow_parent_loop_proc7.compgen.tcl 
+INFO-FLOW: Handling components in module [region_before] ... 
+Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region_before.compgen.tcl 
+INFO-FLOW: Append model dataflow_in_loop_VITIS_LOOP_65_3_entry83
 INFO-FLOW: Append model load_a
 INFO-FLOW: Append model load_b
 INFO-FLOW: Append model conv
 INFO-FLOW: Append model store_c
-INFO-FLOW: Append model region
+INFO-FLOW: Append model dataflow_in_loop_VITIS_LOOP_65_3
+INFO-FLOW: Append model dataflow_parent_loop_proc
+INFO-FLOW: Append model dataflow_parent_loop_proc7
+INFO-FLOW: Append model region_before
 INFO-FLOW: Generating RTL model list ...
-INFO-FLOW: All models in this session: region_mul_32ns_32ns_64_1_1 region_mul_64ns_32ns_96_1_1 region_mac_muladd_7s_7s_7ns_7_4_1 region_load_a_a_buf_data_1 region_mul_7s_7s_7_1_1 region_mul_32s_32s_32_1_1 region_mac_muladd_7s_7s_7s_7_4_1 region_conv_b_buf_data region_conv_local_c region_store_c_tmp_data region_fifo_w32_d2_S region_fifo_w32_d2_S region_fifo_w32_d2_S region_fifo_w32_d3_S region_fifo_w32_d2_S region_fifo_w32_d2_S region_fifo_w32_d2_S region_fifo_w32_d2_S region_fifo_w32_d2_S region_fifo_w32_d2_S region_fifo_w32_d2_S region_fifo_w3200_d1_S region_fifo_w32_d2_S region_fifo_w32_d2_S region_fifo_w32_d2_S region_fifo_w32_d2_S region_fifo_w32_d2_S region_fifo_w3200_d1_S region_fifo_w3200_d1_S region_fifo_w32_d2_S region_fifo_w32_d2_S region_fifo_w32_d2_S region_fifo_w32_d2_S region_fifo_w32_d2_S region_start_for_load_a_U0 region_start_for_load_b_U0 region_start_for_conv_U0 region_start_for_store_c_U0 region_entry64 load_a load_b conv store_c region
-INFO-FLOW: To file: write model region_mul_32ns_32ns_64_1_1
-INFO-FLOW: To file: write model region_mul_64ns_32ns_96_1_1
-INFO-FLOW: To file: write model region_mac_muladd_7s_7s_7ns_7_4_1
-INFO-FLOW: To file: write model region_load_a_a_buf_data_1
-INFO-FLOW: To file: write model region_mul_7s_7s_7_1_1
-INFO-FLOW: To file: write model region_mul_32s_32s_32_1_1
-INFO-FLOW: To file: write model region_mac_muladd_7s_7s_7s_7_4_1
-INFO-FLOW: To file: write model region_conv_b_buf_data
-INFO-FLOW: To file: write model region_conv_local_c
-INFO-FLOW: To file: write model region_store_c_tmp_data
-INFO-FLOW: To file: write model region_fifo_w32_d2_S
-INFO-FLOW: To file: write model region_fifo_w32_d2_S
-INFO-FLOW: To file: write model region_fifo_w32_d2_S
-INFO-FLOW: To file: write model region_fifo_w32_d3_S
-INFO-FLOW: To file: write model region_fifo_w32_d2_S
-INFO-FLOW: To file: write model region_fifo_w32_d2_S
-INFO-FLOW: To file: write model region_fifo_w32_d2_S
-INFO-FLOW: To file: write model region_fifo_w32_d2_S
-INFO-FLOW: To file: write model region_fifo_w32_d2_S
-INFO-FLOW: To file: write model region_fifo_w32_d2_S
-INFO-FLOW: To file: write model region_fifo_w32_d2_S
-INFO-FLOW: To file: write model region_fifo_w3200_d1_S
-INFO-FLOW: To file: write model region_fifo_w32_d2_S
-INFO-FLOW: To file: write model region_fifo_w32_d2_S
-INFO-FLOW: To file: write model region_fifo_w32_d2_S
-INFO-FLOW: To file: write model region_fifo_w32_d2_S
-INFO-FLOW: To file: write model region_fifo_w32_d2_S
-INFO-FLOW: To file: write model region_fifo_w3200_d1_S
-INFO-FLOW: To file: write model region_fifo_w3200_d1_S
-INFO-FLOW: To file: write model region_fifo_w32_d2_S
-INFO-FLOW: To file: write model region_fifo_w32_d2_S
-INFO-FLOW: To file: write model region_fifo_w32_d2_S
-INFO-FLOW: To file: write model region_fifo_w32_d2_S
-INFO-FLOW: To file: write model region_fifo_w32_d2_S
-INFO-FLOW: To file: write model region_start_for_load_a_U0
-INFO-FLOW: To file: write model region_start_for_load_b_U0
-INFO-FLOW: To file: write model region_start_for_conv_U0
-INFO-FLOW: To file: write model region_start_for_store_c_U0
-INFO-FLOW: To file: write model region_entry64
+INFO-FLOW: All models in this session: region_before_mul_32ns_32ns_64_1_1 region_before_mac_muladd_7s_7s_7ns_7_4_1 region_before_mul_64ns_32ns_96_1_1 region_before_mul_7s_7s_7_1_1 region_before_mul_32s_32s_32_1_1 region_before_mac_muladd_7s_7s_7s_7_4_1 region_before_conv_local_c region_before_fifo_w32_d2_S region_before_fifo_w32_d2_S region_before_fifo_w32_d2_S region_before_fifo_w32_d2_S region_before_fifo_w32_d3_S region_before_fifo_w32_d2_S region_before_fifo_w32_d2_S region_before_fifo_w32_d2_S region_before_fifo_w32_d2_S region_before_start_for_load_a_U0 region_before_start_for_load_b_U0 dataflow_in_loop_VITIS_LOOP_65_3_entry83 load_a load_b conv store_c dataflow_in_loop_VITIS_LOOP_65_3 dataflow_parent_loop_proc dataflow_parent_loop_proc7 region_before
+INFO-FLOW: To file: write model region_before_mul_32ns_32ns_64_1_1
+INFO-FLOW: To file: write model region_before_mac_muladd_7s_7s_7ns_7_4_1
+INFO-FLOW: To file: write model region_before_mul_64ns_32ns_96_1_1
+INFO-FLOW: To file: write model region_before_mul_7s_7s_7_1_1
+INFO-FLOW: To file: write model region_before_mul_32s_32s_32_1_1
+INFO-FLOW: To file: write model region_before_mac_muladd_7s_7s_7s_7_4_1
+INFO-FLOW: To file: write model region_before_conv_local_c
+INFO-FLOW: To file: write model region_before_fifo_w32_d2_S
+INFO-FLOW: To file: write model region_before_fifo_w32_d2_S
+INFO-FLOW: To file: write model region_before_fifo_w32_d2_S
+INFO-FLOW: To file: write model region_before_fifo_w32_d2_S
+INFO-FLOW: To file: write model region_before_fifo_w32_d3_S
+INFO-FLOW: To file: write model region_before_fifo_w32_d2_S
+INFO-FLOW: To file: write model region_before_fifo_w32_d2_S
+INFO-FLOW: To file: write model region_before_fifo_w32_d2_S
+INFO-FLOW: To file: write model region_before_fifo_w32_d2_S
+INFO-FLOW: To file: write model region_before_start_for_load_a_U0
+INFO-FLOW: To file: write model region_before_start_for_load_b_U0
+INFO-FLOW: To file: write model dataflow_in_loop_VITIS_LOOP_65_3_entry83
 INFO-FLOW: To file: write model load_a
 INFO-FLOW: To file: write model load_b
 INFO-FLOW: To file: write model conv
 INFO-FLOW: To file: write model store_c
-INFO-FLOW: To file: write model region
+INFO-FLOW: To file: write model dataflow_in_loop_VITIS_LOOP_65_3
+INFO-FLOW: To file: write model dataflow_parent_loop_proc
+INFO-FLOW: To file: write model dataflow_parent_loop_proc7
+INFO-FLOW: To file: write model region_before
 INFO-FLOW: Finished generating RTL model list.
 
 
@@ -907,7 +1054,7 @@ Execute       get_config_export -ipname
 Execute       get_config_export -xo 
 Execute       get_config_export -format 
 Execute       get_config_rtl -module_auto_prefix 
-INFO-FLOW: DBG:CMD:   auto_impl: set ipname to top (module_auto_prefix): region
+INFO-FLOW: DBG:CMD:   auto_impl: set ipname to top (module_auto_prefix): region_before
 INFO-FLOW: DBG:CMD: auto_generate_csynth_design
 INFO-FLOW: DBG:CMD:     auto_generate --sim-model -phase csynth_design -d /home/sumin/workspace/FPGA/test/reuse_test/solution1
 Execute       get_solution -flow_target 
@@ -946,134 +1093,84 @@ Execute       ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet
 Execute       ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
 Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/global.setting.tcl 
 Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/global.setting.tcl 
-Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region_entry64.compgen.tcl 
+Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/dataflow_in_loop_VITIS_LOOP_65_3_entry83.compgen.tcl 
 Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/load_a.compgen.tcl 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
-INFO: [RTMG 210-282] Generating pipelined core: 'region_mul_32ns_32ns_64_1_1_Multiplier_0'
-Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
-Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
-Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
-Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
-INFO: [RTMG 210-282] Generating pipelined core: 'region_mul_64ns_32ns_96_1_1_Multiplier_1'
+INFO: [RTMG 210-282] Generating pipelined core: 'region_before_mul_32ns_32ns_64_1_1_Multiplier_0'
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info 
-INFO: [RTMG 210-278] Implementing memory 'region_load_a_a_buf_data_1_ram (RAM)' using block RAMs.
-Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
-Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
-Command       ap_source done; 0.12 sec.
 Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/load_b.compgen.tcl 
 Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/conv.compgen.tcl 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
-INFO: [RTMG 210-282] Generating pipelined core: 'region_mul_7s_7s_7_1_1_Multiplier_2'
+INFO: [RTMG 210-282] Generating pipelined core: 'region_before_mul_64ns_32ns_96_1_1_Multiplier_1'
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
-INFO: [RTMG 210-282] Generating pipelined core: 'region_mul_32s_32s_32_1_1_Multiplier_3'
+INFO: [RTMG 210-282] Generating pipelined core: 'region_before_mul_7s_7s_7_1_1_Multiplier_2'
+Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
+Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
+Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
+Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
+INFO: [RTMG 210-282] Generating pipelined core: 'region_before_mul_32s_32s_32_1_1_Multiplier_3'
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info 
-INFO: [RTMG 210-278] Implementing memory 'region_conv_b_buf_data_ram (RAM)' using block RAMs with power-on initialization.
+INFO: [RTMG 210-278] Implementing memory 'region_before_conv_local_c_ram (RAM)' using block RAMs.
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
-INFO: [RTMG 210-278] Implementing memory 'region_conv_local_c_ram (RAM)' using block RAMs with power-on initialization.
-Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
-Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
-Command       ap_source done; 0.14 sec.
+Command       ap_source done; 0.15 sec.
 Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/store_c.compgen.tcl 
-INFO: [RTMG 210-278] Implementing memory 'region_store_c_tmp_data_ram (RAM)' using block RAMs.
-Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
-Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
-Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.compgen.tcl 
-Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
-Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
-INFO: [RTMG 210-285] Implementing FIFO 'tilenuma_c_U(region_fifo_w32_d2_S)' using Shift Registers.
-Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
-Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
-INFO: [RTMG 210-285] Implementing FIFO 'tilenuma_c11_U(region_fifo_w32_d2_S)' using Shift Registers.
-Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
-Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
-INFO: [RTMG 210-285] Implementing FIFO 'tilenumc_c_U(region_fifo_w32_d2_S)' using Shift Registers.
-Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
-Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
-INFO: [RTMG 210-285] Implementing FIFO 'tilenumc_c12_U(region_fifo_w32_d3_S)' using Shift Registers.
-Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
-Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
-INFO: [RTMG 210-285] Implementing FIFO 'tilen_c_U(region_fifo_w32_d2_S)' using Shift Registers.
-Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
-Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
-INFO: [RTMG 210-285] Implementing FIFO 'numa_iter_c_U(region_fifo_w32_d2_S)' using Shift Registers.
-Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
-Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
-INFO: [RTMG 210-285] Implementing FIFO 'numa_iter_c13_U(region_fifo_w32_d2_S)' using Shift Registers.
-Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
-Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
-INFO: [RTMG 210-285] Implementing FIFO 'numc_iter_c_U(region_fifo_w32_d2_S)' using Shift Registers.
-Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
-Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
-INFO: [RTMG 210-285] Implementing FIFO 'numc_iter_c14_U(region_fifo_w32_d2_S)' using Shift Registers.
-Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
-Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
-INFO: [RTMG 210-285] Implementing FIFO 'n_iter_c_U(region_fifo_w32_d2_S)' using Shift Registers.
-Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
-Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
-INFO: [RTMG 210-285] Implementing FIFO 'n_iter_c15_U(region_fifo_w32_d2_S)' using Shift Registers.
+Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/dataflow_in_loop_VITIS_LOOP_65_3.compgen.tcl 
+Execute         send_msg_by_id INFO @200-741@%s region_before_dataflow_in_loop_VITIS_LOOP_65_3_a_buf_memcore 
+INFO: [HLS 200-741] Implementing PIPO region_before_dataflow_in_loop_VITIS_LOOP_65_3_a_buf_memcore using a single memory for all blocks
+INFO: [RTMG 210-278] Implementing memory 'region_before_dataflow_in_loop_VITIS_LOOP_65_3_a_buf_memcore_ram (RAM)' using block RAMs.
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
-INFO: [RTMG 210-285] Implementing FIFO 'tilenuma_c16_U(region_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'tilenuma_c_U(region_before_fifo_w32_d2_S)' using Shift Registers.
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
-INFO: [RTMG 210-285] Implementing FIFO 'tilen_c17_U(region_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'tilenuma_c1_U(region_before_fifo_w32_d2_S)' using Shift Registers.
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
-INFO: [RTMG 210-285] Implementing FIFO 'numa_iter_c18_U(region_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'tilen_c_U(region_before_fifo_w32_d2_S)' using Shift Registers.
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
-INFO: [RTMG 210-285] Implementing FIFO 'n_iter_c19_U(region_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'tilenumc_c_U(region_before_fifo_w32_d2_S)' using Shift Registers.
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
-INFO: [RTMG 210-285] Implementing FIFO 'numc_iter_c20_U(region_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'tilenumc_c2_U(region_before_fifo_w32_d3_S)' using Shift Registers.
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
+INFO: [RTMG 210-285] Implementing FIFO 'tilenuma_c3_U(region_before_fifo_w32_d2_S)' using Shift Registers.
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
+INFO: [RTMG 210-285] Implementing FIFO 'tilen_c4_U(region_before_fifo_w32_d2_S)' using Shift Registers.
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
-INFO: [RTMG 210-285] Implementing FIFO 'tilen_c21_U(region_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'tilen_c5_U(region_before_fifo_w32_d2_S)' using Shift Registers.
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
-INFO: [RTMG 210-285] Implementing FIFO 'tilenumc_c22_U(region_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'tilenumc_c6_U(region_before_fifo_w32_d2_S)' using Shift Registers.
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
-INFO: [RTMG 210-285] Implementing FIFO 'numa_iter_c23_U(region_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_load_a_U0_U(region_before_start_for_load_a_U0)' using Shift Registers.
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
-INFO: [RTMG 210-285] Implementing FIFO 'n_iter_c24_U(region_fifo_w32_d2_S)' using Shift Registers.
-Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
-Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
-INFO: [RTMG 210-285] Implementing FIFO 'numc_iter_c25_U(region_fifo_w32_d2_S)' using Shift Registers.
-Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
-Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
-INFO: [RTMG 210-285] Implementing FIFO 'start_for_load_a_U0_U(region_start_for_load_a_U0)' using Shift Registers.
-Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
-Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
-INFO: [RTMG 210-285] Implementing FIFO 'start_for_load_b_U0_U(region_start_for_load_b_U0)' using Shift Registers.
-Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
-Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
-INFO: [RTMG 210-285] Implementing FIFO 'start_for_conv_U0_U(region_start_for_conv_U0)' using Shift Registers.
-Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
-Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
-INFO: [RTMG 210-285] Implementing FIFO 'start_for_store_c_U0_U(region_start_for_store_c_U0)' using Shift Registers.
-Command       ap_source done; 0.49 sec.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_load_b_U0_U(region_before_start_for_load_b_U0)' using Shift Registers.
+Command       ap_source done; 0.22 sec.
+Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/dataflow_parent_loop_proc.compgen.tcl 
+Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/dataflow_parent_loop_proc7.compgen.tcl 
+Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region_before.compgen.tcl 
 INFO-FLOW: DBG:CMD:     auto_generate -export -impltomg_flag -rtl both -tool Vivado -pcore_version 1.00.a -phase csynth_design -d /home/sumin/workspace/FPGA/test/reuse_test/solution1
 Execute       get_solution -flow_target 
 Execute       get_config_export -xo 
@@ -1104,29 +1201,39 @@ Command         ap_source done; 0.11 sec.
 Command       ap_source done; 0.11 sec.
 Execute       source /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/xilinx/virtexuplus/virtexuplus_fpv7.gen 
 Execute         source /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/xilinx/common/xilinx_fp.gen 
-INFO-FLOW: DBG:CMD:       initCTypeInfo top_module=region xml_exists=0
-Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.rtl_wrap.cfg.tcl 
-Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.rtl_wrap.cfg.tcl 
-Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.rtl_wrap.cfg.tcl 
-Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.tbgen.tcl 
-Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.tbgen.tcl 
+INFO-FLOW: DBG:CMD:       initCTypeInfo top_module=region_before xml_exists=0
+Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region_before.rtl_wrap.cfg.tcl 
+Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region_before.rtl_wrap.cfg.tcl 
+Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region_before.rtl_wrap.cfg.tcl 
+Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region_before.tbgen.tcl 
+Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region_before.tbgen.tcl 
 INFO-FLOW: DBG:CMD:       export_impl_rtl
 INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=0 expOnly=0 dstVlogDir=impl/.verilog
 Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/global.setting.tcl 
-Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region_entry64.compgen.tcl 
+Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/dataflow_in_loop_VITIS_LOOP_65_3_entry83.compgen.tcl 
 Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/load_a.compgen.tcl 
 Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/load_b.compgen.tcl 
 Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/conv.compgen.tcl 
 Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/store_c.compgen.tcl 
-Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.compgen.tcl 
+Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/dataflow_in_loop_VITIS_LOOP_65_3.compgen.tcl 
+Execute         send_msg_by_id INFO @200-741@%s region_before_dataflow_in_loop_VITIS_LOOP_65_3_a_buf_memcore 
+INFO: [HLS 200-741] Implementing PIPO region_before_dataflow_in_loop_VITIS_LOOP_65_3_a_buf_memcore using a single memory for all blocks
+Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
+Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
+Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/dataflow_parent_loop_proc.compgen.tcl 
+Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/dataflow_parent_loop_proc7.compgen.tcl 
+Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region_before.compgen.tcl 
 INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=1 expOnly=1 dstVlogDir=impl/.pcores/verilog
 Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/global.setting.tcl 
-Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region_entry64.compgen.tcl 
+Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/dataflow_in_loop_VITIS_LOOP_65_3_entry83.compgen.tcl 
 Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/load_a.compgen.tcl 
 Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/load_b.compgen.tcl 
 Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/conv.compgen.tcl 
 Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/store_c.compgen.tcl 
-Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.compgen.tcl 
+Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/dataflow_in_loop_VITIS_LOOP_65_3.compgen.tcl 
+Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/dataflow_parent_loop_proc.compgen.tcl 
+Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/dataflow_parent_loop_proc7.compgen.tcl 
+Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region_before.compgen.tcl 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
@@ -1159,17 +1266,24 @@ Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
-Command       ap_source done; 0.18 sec.
+Command       ap_source done; 0.17 sec.
 Execute       ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute       ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
 INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=0 expOnly=0 dstVlogDir=impl/.pcores/verilog_sim
 Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/global.setting.tcl 
-Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region_entry64.compgen.tcl 
+Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/dataflow_in_loop_VITIS_LOOP_65_3_entry83.compgen.tcl 
 Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/load_a.compgen.tcl 
 Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/load_b.compgen.tcl 
 Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/conv.compgen.tcl 
 Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/store_c.compgen.tcl 
-Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.compgen.tcl 
+Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/dataflow_in_loop_VITIS_LOOP_65_3.compgen.tcl 
+Execute         send_msg_by_id INFO @200-741@%s region_before_dataflow_in_loop_VITIS_LOOP_65_3_a_buf_memcore 
+INFO: [HLS 200-741] Implementing PIPO region_before_dataflow_in_loop_VITIS_LOOP_65_3_a_buf_memcore using a single memory for all blocks
+Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
+Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
+Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/dataflow_parent_loop_proc.compgen.tcl 
+Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/dataflow_parent_loop_proc7.compgen.tcl 
+Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region_before.compgen.tcl 
 Execute       ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute       ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
 Execute       ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
@@ -1177,27 +1291,30 @@ Execute       ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet
 Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/global.setting.tcl 
 Execute       ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute       ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
-Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.constraint.tcl 
-Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.tbgen.tcl 
+Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region_before.constraint.tcl 
+Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region_before.tbgen.tcl 
 INFO-FLOW: DBG:CMD:       hasPcoreIpAdapter=false #gSsdmPorts=20
 INFO-FLOW: DBG:CMD: Skipping loadAnalyze_DB, #g_database=12
-INFO-FLOW: DBG:CMD:       generate_json is_phase_csynth=1 g_has_adaptors=false generate_bd_files=0 #modelList=44 #gSsdmPorts=20
+INFO-FLOW: DBG:CMD:       generate_json is_phase_csynth=1 g_has_adaptors=false generate_bd_files=0 #modelList=27 #gSsdmPorts=20
 Execute       source /home/sumin/tools/Xilinx/Vitis/2020.1/tps/tcl/tcllib1.11.1/fileutil/fileutil.tcl 
 Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/global.setting.tcl 
 Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/global.setting.tcl 
 Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/top-io-be.tcl 
-Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.tbgen.tcl 
-Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.rtl_wrap.cfg.tcl 
-Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.compgen.dataonly.tcl 
+Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region_before.tbgen.tcl 
+Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region_before.rtl_wrap.cfg.tcl 
+Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region_before.compgen.dataonly.tcl 
 Execute       get_config_export -format 
 Execute       ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute       ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
-Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region_entry64.tbgen.tcl 
+Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/dataflow_in_loop_VITIS_LOOP_65_3_entry83.tbgen.tcl 
 Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/load_a.tbgen.tcl 
 Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/load_b.tbgen.tcl 
 Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/conv.tbgen.tcl 
 Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/store_c.tbgen.tcl 
-Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.tbgen.tcl 
+Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/dataflow_in_loop_VITIS_LOOP_65_3.tbgen.tcl 
+Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/dataflow_parent_loop_proc.tbgen.tcl 
+Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/dataflow_parent_loop_proc7.tbgen.tcl 
+Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region_before.tbgen.tcl 
 Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/global.setting.tcl 
 Execute       ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute       ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
@@ -1206,219 +1323,18 @@ Execute       get_config_rtl -kernel_profile
 Execute       get_config_rtl -kernel_profile 
 Execute       get_config_rtl -stall_sig_gen 
 Execute       get_config_rtl -profile 
-Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.constraint.tcl 
-Execute       sc_get_clocks region 
+Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region_before.constraint.tcl 
+Execute       sc_get_clocks region_before 
 Execute       source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/global.setting.tcl 
 Execute       get_config_debug -directory 
 INFO-FLOW: DBG:CMD:       delete-temp-dirs (skipped for debug)
-INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:01:08 ; elapsed = 00:01:10 . Memory (MB): peak = 1667.754 ; gain = 1229.770 ; free physical = 221956 ; free virtual = 252349
-INFO: [VHDL 208-304] Generating VHDL RTL for region.
-INFO: [VLOG 209-307] Generating Verilog RTL for region.
-Execute       syn_report -model region -printsummary 
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1667.754 ; gain = 1229.770 ; free physical = 224324 ; free virtual = 254732
+INFO: [VHDL 208-304] Generating VHDL RTL for region_before.
+INFO: [VLOG 209-307] Generating Verilog RTL for region_before.
+Execute       syn_report -model region_before -printsummary 
 INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
 INFO: [HLS 200-789] **** Estimated Fmax: 157.08 MHz
-Command     autosyn done; 15.17 sec.
-Command   csynth_design done; 67.98 sec.
-Command ap_source done; 69.47 sec.
+Command     autosyn done; 9.91 sec.
+Command   csynth_design done; 15.81 sec.
+Command ap_source done; 17.29 sec.
 Execute cleanup_all 
-INFO-FLOW: Workspace /home/sumin/workspace/FPGA/test/reuse_test/solution1 opened at Thu Jul 21 01:15:16 KST 2022
-Execute     ap_set_clock -name default -period 10 -default=false 
-INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
-Execute     open_platform DefaultPlatform 
-Execute     import_lib /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/xilinx/virtexuplus/virtexuplus 
-Execute       source /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/xilinx/common/xilinx.lib 
-Execute         source /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/xilinx/common/dsp48.lib 
-Execute       source /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/xilinx/common/xilinx.hlp 
-Execute         source /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/xilinx/interface/xilinx_interface.hlp 
-Execute           source /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/xilinx/interface/maxi.hlp 
-Execute           source /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/xilinx/interface/saxilite.hlp 
-Execute         source /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/xilinx/common/dsp48.hlp 
-Execute       source /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/xilinx/virtexuplus/dsp48e2.hlp 
-Execute     source /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/xilinx/virtexuplus/virtexuplus.gen 
-Execute       source /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/xilinx/common/xilinx.gen 
-Execute         source /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/xilinx/interface/plb46.gen 
-Execute         source /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/xilinx/interface/axi4.gen 
-Execute         source /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/xilinx/interface/nativeAXI4.gen 
-Execute           source /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/xilinx/interface/saxilite.gen 
-Execute           source /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/xilinx/interface/maxi.gen 
-Execute         source /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
-Execute         source /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
-Execute         source /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/xilinx/ip/dds_compiler.gen 
-Execute         source /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/xilinx/ip/util.gen 
-Execute         source /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/xilinx/ip/xfft.gen 
-Execute         source /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/xilinx/ip/xfir.gen 
-Execute         source /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/xilinx/common/dsp48.gen 
-Command       ap_source done; 0.12 sec.
-Command     ap_source done; 0.12 sec.
-Execute     open_platform DefaultPlatform 
-Execute     import_lib /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/xilinx/virtexuplus/virtexuplus_fpv7 
-Execute       source /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/xilinx/common/xilinx_fp.lib 
-Execute       source /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/xilinx/common/xilinx_fp.hlp 
-Execute         source /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/xilinx/common/xilinx.hlp 
-Execute           source /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/xilinx/interface/xilinx_interface.hlp 
-Execute             source /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/xilinx/interface/maxi.hlp 
-Execute             source /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/xilinx/interface/saxilite.hlp 
-Execute           source /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/xilinx/common/dsp48.hlp 
-Execute     source /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/xilinx/virtexuplus/virtexuplus_fpv7.gen 
-Execute       source /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/xilinx/common/xilinx_fp.gen 
-Execute     set_part xcu200-fsgd2104-2-e 
-INFO-FLOW: DBG:set_part: XILINX_VIVADO=/home/sumin/tools/Xilinx/Vivado/2020.1
-INFO-FLOW: DBG:set_part: RDI_DATADIR=/home/sumin/tools/Xilinx/Vivado/2020.1/data:/home/sumin/tools/Xilinx/Vitis/2020.1/data
-Execute       ap_part_info -name xcu200-fsgd2104-2-e -data single -quiet 
-DBG:HLSDevice: Trying to load device library: /home/sumin/tools/Xilinx/Vitis/2020.1/lib/lnx64.o/librdi_hlsvwrap.so
-DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: /home/sumin/tools/Xilinx/Vivado/2020.1/data/parts/arch.xml
-Command       ap_part_info done; 1.16 sec.
-Execute       ap_part_info -name xcu200-fsgd2104-2-e -data info 
-Execute       ap_family_info -name virtexuplus -data info 
-Execute       add_library xilinx/virtexuplus/virtexuplus:xcu200:-fsgd2104:-2-e 
-Execute         get_default_platform 
-Execute         ap_part_info -data single -name xcu200-fsgd2104-2-e 
-Execute         ap_part_info -name xcu200-fsgd2104-2-e -data resources 
-Execute         config_chip_info -resource {SLICE 147780} {LUT 1182240} {FF 2364480} {DSP 6840} {BRAM 4320} {URAM 960} {SLR 3} 
-Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info 
-Execute         config_chip_info -speed medium 
-Execute       add_library xilinx/virtexuplus/virtexuplus_fpv7 
-Execute         get_default_platform 
-INFO: [HLS 200-10] Setting target device to 'xcu200-fsgd2104-2-e'
-Execute       ap_part_info -name xcu200-fsgd2104-2-e -data info 
-Execute       get_default_platform 
-Command     set_part done; 1.23 sec.
-Execute     ap_part_info -data single -name xcu200-fsgd2104-2-e 
-Execute     ap_part_info -name xcu200-fsgd2104-2-e -data resources 
-Execute     config_chip_info -resource {SLICE 147780} {LUT 1182240} {FF 2364480} {DSP 6840} {BRAM 4320} {URAM 960} {SLR 3} 
-Execute     ap_part_info -name xcu200-fsgd2104-2-e -data info 
-Execute     config_chip_info -speed medium 
-Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
-INFO: [HLS 200-1505] Using flow_target 'vivado'
-Execute     get_config_interface -m_axi_latency 
-Execute     get_config_interface -m_axi_alignment_byte_size 
-Execute     get_config_interface -m_axi_max_widen_bitwidth 
-Execute     get_config_interface -default_interface 
-Execute     get_config_interface -default_slave_interface 
-Execute     get_config_rtl -register_reset_num 
-Command   open_solution done; 1.37 sec.
-Execute   set_part xcu200-fsgd2104-2-e 
-INFO-FLOW: DBG:set_part: XILINX_VIVADO=/home/sumin/tools/Xilinx/Vivado/2020.1
-INFO-FLOW: DBG:set_part: RDI_DATADIR=/home/sumin/tools/Xilinx/Vivado/2020.1/data:/home/sumin/tools/Xilinx/Vitis/2020.1/data
-Execute     ap_part_info -name xcu200-fsgd2104-2-e -data single -quiet 
-Execute     ap_part_info -name xcu200-fsgd2104-2-e -data info 
-Execute     ap_family_info -name virtexuplus -data info 
-Execute     add_library xilinx/virtexuplus/virtexuplus:xcu200:-fsgd2104:-2-e 
-Execute       get_default_platform 
-Execute       ap_part_info -data single -name xcu200-fsgd2104-2-e 
-Execute       ap_part_info -name xcu200-fsgd2104-2-e -data resources 
-Execute       config_chip_info -resource {SLICE 147780} {LUT 1182240} {FF 2364480} {DSP 6840} {BRAM 4320} {URAM 960} {SLR 3} 
-Execute       ap_part_info -name xcu200-fsgd2104-2-e -data info 
-Execute       config_chip_info -speed medium 
-Execute     add_library xilinx/virtexuplus/virtexuplus_fpv7 
-Execute       get_default_platform 
-Execute     ap_part_info -name xcu200-fsgd2104-2-e -data info 
-Execute     get_default_platform 
-Execute   create_clock -period 10 -name default 
-Execute     ap_set_clock -name default -period 10 -default=false 
-INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
-Execute   cosim_design -wave_debug -enable_dataflow_profiling -trace_level all 
-Execute     source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/global.setting.tcl 
-Execute     source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/global.setting.tcl 
-Execute     source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/global.setting.tcl 
-Execute     send_msg_by_id WARNING @200-626@ 
-WARNING: [HLS 200-626] This design is unable to schedule all read ports in the first II cycle. The RTL testbench may treat the design as non-pipelined
-INFO-FLOW: DBG:CMD: read_platform_lib /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/global.setting.tcl
-Execute     source /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/generic/autopilot/common.gen 
-Execute       source /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/generic/autopilot/APCoreGen.gen 
-Execute     source /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/generic/autopilot/op.gen 
-Execute     source /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/generic/autopilot/op_simcore.gen 
-Execute     source /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/generic/autopilot/interface.gen 
-Execute     source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/global.setting.tcl 
-Execute     source /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/xilinx/virtexuplus/virtexuplus.gen 
-Execute       source /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/xilinx/common/xilinx.gen 
-Execute         source /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/xilinx/interface/plb46.gen 
-Execute         source /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/xilinx/interface/axi4.gen 
-Execute         source /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/xilinx/interface/nativeAXI4.gen 
-Execute           source /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/xilinx/interface/saxilite.gen 
-Execute           source /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/xilinx/interface/maxi.gen 
-Execute         source /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
-Execute         source /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
-Execute         source /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/xilinx/ip/dds_compiler.gen 
-Execute         source /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/xilinx/ip/util.gen 
-Execute         source /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/xilinx/ip/xfft.gen 
-Execute         source /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/xilinx/ip/xfir.gen 
-Execute         source /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/xilinx/common/dsp48.gen 
-Command       ap_source done; 0.11 sec.
-Command     ap_source done; 0.11 sec.
-Execute     source /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/xilinx/virtexuplus/virtexuplus_fpv7.gen 
-Execute       source /home/sumin/tools/Xilinx/Vitis/2020.1/common/technology/xilinx/common/xilinx_fp.gen 
-INFO-FLOW: DBG:CMD:   using AESL_AUTOCG::g_clock_period=10.000 (was NA)
-Execute     ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
-Execute     ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
-Execute     source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/global.setting.tcl 
-Execute     source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.rtl_wrap.cfg.tcl 
-Execute     source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.tbgen.tcl 
-Execute     is_encrypted /home/sumin/workspace/FPGA/test/reuse_test/test.cpp 
-Execute     is_encrypted /home/sumin/workspace/FPGA/test/reuse_test/main.cpp 
-Execute     source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.tbgen.tcl 
-Execute     source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.tbgen.tcl 
-INFO: [COSIM 212-47] Using XSIM for RTL simulation.
-INFO: [COSIM 212-14] Instrumenting C test bench ...
-Execute     ap_part_info -name xcu200-fsgd2104-2-e -data info 
-INFO-FLOW: TB processing: /home/sumin/workspace/FPGA/test/reuse_test/test.cpp /home/sumin/workspace/FPGA/test/reuse_test/solution1/./sim/autowrap/testbench/test.cpp_pre.cpp
-Execute     clang_tidy xilinx-tb-process /home/sumin/workspace/FPGA/test/reuse_test/solution1/./sim/autowrap/testbench/test.cpp_pre.cpp.tb.cpp std=c++11 
-INFO-FLOW: exec /home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-tb-process -fix-errors /home/sumin/workspace/FPGA/test/reuse_test/solution1/./sim/autowrap/testbench/test.cpp_pre.cpp.tb.cpp -- -std=c++11 -fhls -ferror-limit=0
-Execute     ap_part_info -name xcu200-fsgd2104-2-e -data info 
-INFO-FLOW: TB processing: /home/sumin/workspace/FPGA/test/reuse_test/main.cpp /home/sumin/workspace/FPGA/test/reuse_test/solution1/./sim/autowrap/testbench/main.cpp_pre.cpp
-Execute     clang_tidy xilinx-tb-process /home/sumin/workspace/FPGA/test/reuse_test/solution1/./sim/autowrap/testbench/main.cpp_pre.cpp.tb.cpp std=c++11 
-INFO-FLOW: exec /home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-tb-process -fix-errors /home/sumin/workspace/FPGA/test/reuse_test/solution1/./sim/autowrap/testbench/main.cpp_pre.cpp.tb.cpp -- -std=c++11 -fhls -ferror-limit=0
-Command     clang_tidy done; 0.36 sec.
-Execute     source /home/sumin/workspace/FPGA/test/reuse_test/solution1/./sim/autowrap/testbench/tb.status.tcl 
-Execute     source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/global.setting.tcl 
-Execute     source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.rtl_wrap.cfg.tcl 
-Execute     source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.rtl_wrap.cfg.tcl 
-Execute     source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.rtl_wrap.cfg.tcl 
-Execute     source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.tbgen.tcl 
-Execute     source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.tbgen.tcl 
-Execute     ap_part_info -name xcu200-fsgd2104-2-e -data info 
-Execute     source .run_sim.tcl 
-INFO: [COSIM 212-302] Starting C TB testing ... 
-Command     ap_source done; 0.22 sec.
-INFO: [COSIM 212-333] Generating C post check test bench ...
-Execute     ap_part_info -name xcu200-fsgd2104-2-e -data info 
-INFO: [COSIM 212-12] Generating RTL test bench ...
-Execute     source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.tbgen.tcl 
-Execute     source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.tbgen.tcl 
-Execute     source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.tbgen.tcl 
-Execute     source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.tbgen.tcl 
-Execute     source ../tv/cdatafile/ref.tcl 
-Execute     source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.tbgen.tcl 
-Execute     source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.tbgen.tcl 
-Execute     source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.tbgen.tcl 
-Execute     source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.tbgen.tcl 
-Execute     source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.tbgen.tcl 
-Execute     source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.tbgen.tcl 
-Execute     source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.tbgen.tcl 
-Execute     source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.tbgen.tcl 
-Execute     source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.tbgen.tcl 
-Execute     source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.tbgen.tcl 
-Execute     source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.tbgen.tcl 
-Execute     source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.tbgen.tcl 
-Execute     source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.tbgen.tcl 
-Execute     source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.tbgen.tcl 
-Execute     source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.tbgen.tcl 
-Execute     source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.tbgen.tcl 
-Execute     source ../tv/cdatafile/ref.tcl 
-Execute     source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.tbgen.tcl 
-Execute     source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.tbgen.tcl 
-Execute     source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.tbgen.tcl 
-Execute     source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.tbgen.tcl 
-Execute     source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.tbgen.tcl 
-Execute     source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.tbgen.tcl 
-Execute     source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.tbgen.tcl 
-Execute     source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.tbgen.tcl 
-Execute     source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.tbgen.tcl 
-Execute     source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.tbgen.tcl 
-Execute     source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.tbgen.tcl 
-Execute     source /home/sumin/workspace/FPGA/test/reuse_test/solution1/.autopilot/db/region.tbgen.tcl 
-INFO: [COSIM 212-1] *** C/RTL co-simulation file generation completed. ***
-Execute     source .run_sim.tcl 
-Execute       source check_sim.tcl 
-Execute       source dataflow_monitor_API.tcl 
-Execute       source .sim.status.tcl 

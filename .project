@@ -42,9 +42,14 @@
 			<location>/home/sumin/workspace/FPGA/test/reuse_test/solution1/.tcls</location>
 		</link>
 		<link>
-			<name>source/main.cpp</name>
+			<name>source/after.cpp</name>
 			<type>1</type>
-			<location>/home/sumin/workspace/FPGA/test/reuse_test/main.cpp</location>
+			<location>/home/sumin/workspace/FPGA/test/reuse_test/after.cpp</location>
+		</link>
+		<link>
+			<name>source/before.cpp</name>
+			<type>1</type>
+			<location>/home/sumin/workspace/FPGA/test/reuse_test/before.cpp</location>
 		</link>
 		<link>
 			<name>testbench/test.cpp</name>

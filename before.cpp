@@ -50,7 +50,7 @@ void conv(int* a_buf, int* b_buf, int* c_buf, int tilen, int tilenuma, int tilen
 	}
 }
 
-void region(volatile int* A, volatile int* B, volatile int* C,
+void region_before(volatile int* A, volatile int* B, volatile int* C,
 		int numa, int numc, int n,
 		int tilenuma, int tilenumc, int tilen,
 		int numa_iter, int numc_iter, int n_iter) {
@@ -68,13 +68,13 @@ void region(volatile int* A, volatile int* B, volatile int* C,
 #pragma HLS stable variable=C
 				#pragma HLS dataflow
 				//#pragma HLS interface ap_ctrl_none port=return
-				load_a(A, a_buf, tilenuma, tilen, n, numa_iter, n_iter, numc_iter);
-				load_b(B, b_buf, tilenuma, tilenumc, numa, numc, numa_iter, n_iter, numc_iter);
-				conv(a_buf, b_buf, c_buf, tilen, tilenuma, tilenumc, numa_iter, n_iter, numc_iter);
-				store_c(C, c_buf, tilenuma, tilenumc, tilen, n, numa_iter, n_iter, numc_iter);
-			//}
-		//}
-	//}
+				load_a(A, a_buf, ona, on, tilenuma, tilen, n);
+				load_b(B, b_buf, ona, tilenuma, onc, tilenumc, numa, numc);
+				conv(a_buf, b_buf, c_buf, tilen, tilenuma, tilenumc);
+				store_c(C,  c_buf, onc, on, tilenumc, tilen, n);
+			}
+		}
+	}
 }
 
 

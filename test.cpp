@@ -1,6 +1,11 @@
 
 
-void region(volatile int* A, volatile int* B, volatile int* C,
+void region_after(volatile int* A, volatile int* B, volatile int* C,
+		int numa, int numc, int n,
+		int tilenuma, int tilenumc, int tilen,
+		int numa_iter, int numc_iter, int n_iter);
+
+void region_before(volatile int* A, volatile int* B, volatile int* C,
 		int numa, int numc, int n,
 		int tilenuma, int tilenumc, int tilen,
 		int numa_iter, int numc_iter, int n_iter);
@@ -19,7 +24,9 @@ int main() {
 	int numc_iter = numc / tilenumc;
 	int n_iter = n / tilen;
 
-	region(A,B,C,numa,numc,n,tilenuma,tilenumc,tilen,numa_iter,numc_iter,n_iter);
+// must modify synthesis setting
+	//region_after(A,B,C,numa,numc,n,tilenuma,tilenumc,tilen,numa_iter,numc_iter,n_iter);
+	region_before(A,B,C,numa,numc,n,tilenuma,tilenumc,tilen,numa_iter,numc_iter,n_iter);
 
 	return 0;
 }

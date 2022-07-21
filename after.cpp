@@ -117,7 +117,7 @@ void conv(hls::stream<buf>& a_buf_, hls::stream<buf>& b_buf_, hls::stream<buf>& 
 		}
 }
 
-void region(volatile int* A, volatile int* B, volatile int* C,
+void region_after(volatile int* A, volatile int* B, volatile int* C,
 		int numa, int numc, int n,
 		int tilenuma, int tilenumc, int tilen,
 		int numa_iter, int numc_iter, int n_iter) {

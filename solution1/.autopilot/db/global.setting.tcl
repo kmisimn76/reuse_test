@@ -1,5 +1,5 @@
 
-set TopModule "region"
+set TopModule "region_before"
 set ClockPeriod 10
 set ClockList ap_clk
 set HasVivadoClockPeriod 0
@@ -22,7 +22,7 @@ set ResetVariableFlag 0
 set FsmEncStyle onehot
 set MaxFanout 0
 set RtlPrefix {}
-set RtlSubPrefix region_
+set RtlSubPrefix region_before_
 set ExtraCCFlags {}
 set ExtraCLdFlags {}
 set SynCheckOptions {}
@@ -41,8 +41,8 @@ set SCTraceFileName mytrace
 set SCTraceFileFormat vcd
 set SCTraceOption all
 set TargetInfo xcu200:-fsgd2104:-2-e
-set SourceFiles {sc {} c ../main.cpp}
-set SourceFlags {sc {} c {{}}}
+set SourceFiles {sc {} c {../before.cpp ../after.cpp}}
+set SourceFlags {sc {} c {{} {}}}
 set DirectiveFile /home/sumin/workspace/FPGA/test/reuse_test/solution1/solution1.directive
 set TBFiles {verilog ../test.cpp bc ../test.cpp vhdl ../test.cpp sc ../test.cpp cas ../test.cpp c {}}
 set SpecLanguage C

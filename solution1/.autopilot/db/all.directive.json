@@ -1,6 +1,7 @@
 {"sourceFile": [{
       "name": "",
-      "directive": [{
+      "directive": [
+        {
           "functionName": "region",
           "label": "",
           "functionLabel": "",
@@ -11,5 +12,30 @@
                 "value": "region"
               }]
           }
-        }]
+        },
+        {
+          "functionName": "region_before",
+          "label": "",
+          "functionLabel": "",
+          "pragma": {
+            "name": "TOP",
+            "option": [{
+                "name": "name",
+                "value": "region_before"
+              }]
+          }
+        },
+        {
+          "functionName": "region_before",
+          "label": "",
+          "functionLabel": "",
+          "pragma": {
+            "name": "TOP",
+            "option": [{
+                "name": "name",
+                "value": "region_before"
+              }]
+          }
+        }
+      ]
     }]}
