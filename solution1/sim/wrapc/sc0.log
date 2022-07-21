@@ -1,0 +1,5 @@
+   Build using "/home/sumin/tools/Xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/bin/g++"
+   Compiling main.cpp_pre.cpp.tb.cpp
+   Compiling test.cpp_pre.cpp.tb.cpp
+   Compiling apatb_region.cpp
+   Generating cosim.tv.exe

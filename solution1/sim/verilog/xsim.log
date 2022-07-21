@@ -1,0 +1,133 @@
+#-----------------------------------------------------------
+# xsim v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Thu Jul 21 01:15:35 2022
+# Process ID: 20111
+# Current directory: /home/sumin/workspace/FPGA/test/reuse_test/solution1/sim/verilog
+# Command line: xsim -source {xsim.dir/region/xsim_script.tcl}
+# Log file: /home/sumin/workspace/FPGA/test/reuse_test/solution1/sim/verilog/xsim.log
+# Journal file: /home/sumin/workspace/FPGA/test/reuse_test/solution1/sim/verilog/xsim.jou
+#-----------------------------------------------------------
+start_gui
+source xsim.dir/region/xsim_script.tcl
+# set_param project.enableReportConfiguration 0
+# load_feature core
+# current_fileset
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/sumin/tools/Xilinx/Vivado/2020.1/data/ip'.
+current_fileset: Time (s): cpu = 00:00:08 ; elapsed = 00:00:05 . Memory (MB): peak = 14343.719 ; gain = 290.852 ; free physical = 221333 ; free virtual = 251685
+# xsim {region} -view {{region_dataflow_ana.wcfg}} -tclbatch {region.tcl} -protoinst {region.protoinst}
+Vivado Simulator 2020.1
+INFO: [Wavedata 42-565] Reading protoinst file region.protoinst
+INFO: [Wavedata 42-564]   Found protocol instance at /apatb_region_top/AESL_inst_region//AESL_inst_region_activity
+INFO: [Wavedata 42-564]   Found protocol instance at /apatb_region_top/AESL_inst_region/conv_U0/conv_U0_activity
+INFO: [Wavedata 42-564]   Found protocol instance at /apatb_region_top/AESL_inst_region/load_a_U0/load_a_U0_activity
+INFO: [Wavedata 42-564]   Found protocol instance at /apatb_region_top/AESL_inst_region/load_b_U0/load_b_U0_activity
+INFO: [Wavedata 42-564]   Found protocol instance at /apatb_region_top/AESL_inst_region/region_entry64_U0/region_entry64_U0_activity
+INFO: [Wavedata 42-564]   Found protocol instance at /apatb_region_top/AESL_inst_region/store_c_U0/store_c_U0_activity
+Time resolution is 1 ps
+open_wave_config region_dataflow_ana.wcfg
+source region.tcl
+## log_wave -r /
+WARNING: [Simtcl 6-197] One or more HDL objects could not be logged because of object type or size limitations.  To see details please rerun the command with -verbose (-v).
+## set designtopgroup [add_wave_group "Design Top Signals"]
+## set cinoutgroup [add_wave_group "C InOuts" -into $designtopgroup]
+## set C_group [add_wave_group C(wire) -into $cinoutgroup]
+## add_wave /apatb_region_top/AESL_inst_region/C_o_ap_vld -into $C_group -color #ffff00 -radix hex
+## add_wave /apatb_region_top/AESL_inst_region/C_o -into $C_group -radix hex
+## add_wave /apatb_region_top/AESL_inst_region/C_i -into $C_group -radix hex
+## set cinputgroup [add_wave_group "C Inputs" -into $designtopgroup]
+## set n_iter_group [add_wave_group n_iter(wire) -into $cinputgroup]
+## add_wave /apatb_region_top/AESL_inst_region/n_iter -into $n_iter_group -radix hex
+## set numc_iter_group [add_wave_group numc_iter(wire) -into $cinputgroup]
+## add_wave /apatb_region_top/AESL_inst_region/numc_iter -into $numc_iter_group -radix hex
+## set numa_iter_group [add_wave_group numa_iter(wire) -into $cinputgroup]
+## add_wave /apatb_region_top/AESL_inst_region/numa_iter -into $numa_iter_group -radix hex
+## set tilen_group [add_wave_group tilen(wire) -into $cinputgroup]
+## add_wave /apatb_region_top/AESL_inst_region/tilen -into $tilen_group -radix hex
+## set tilenumc_group [add_wave_group tilenumc(wire) -into $cinputgroup]
+## add_wave /apatb_region_top/AESL_inst_region/tilenumc -into $tilenumc_group -radix hex
+## set tilenuma_group [add_wave_group tilenuma(wire) -into $cinputgroup]
+## add_wave /apatb_region_top/AESL_inst_region/tilenuma -into $tilenuma_group -radix hex
+## set n_group [add_wave_group n(wire) -into $cinputgroup]
+## add_wave /apatb_region_top/AESL_inst_region/n -into $n_group -radix hex
+## set numc_group [add_wave_group numc(wire) -into $cinputgroup]
+## add_wave /apatb_region_top/AESL_inst_region/numc -into $numc_group -radix hex
+## set numa_group [add_wave_group numa(wire) -into $cinputgroup]
+## add_wave /apatb_region_top/AESL_inst_region/numa -into $numa_group -radix hex
+## set B_group [add_wave_group B(wire) -into $cinputgroup]
+## add_wave /apatb_region_top/AESL_inst_region/B -into $B_group -radix hex
+## set A_group [add_wave_group A(wire) -into $cinputgroup]
+## add_wave /apatb_region_top/AESL_inst_region/A -into $A_group -radix hex
+## set blocksiggroup [add_wave_group "Block-level IO Handshake" -into $designtopgroup]
+## add_wave /apatb_region_top/AESL_inst_region/ap_start -into $blocksiggroup
+## add_wave /apatb_region_top/AESL_inst_region/ap_done -into $blocksiggroup
+## add_wave /apatb_region_top/AESL_inst_region/ap_ready -into $blocksiggroup
+## add_wave /apatb_region_top/AESL_inst_region/ap_idle -into $blocksiggroup
+## set resetgroup [add_wave_group "Reset" -into $designtopgroup]
+## add_wave /apatb_region_top/AESL_inst_region/ap_rst -into $resetgroup
+## set clockgroup [add_wave_group "Clock" -into $designtopgroup]
+## add_wave /apatb_region_top/AESL_inst_region/ap_clk -into $clockgroup
+## set testbenchgroup [add_wave_group "Test Bench Signals"]
+## set tbinternalsiggroup [add_wave_group "Internal Signals" -into $testbenchgroup]
+## set tb_simstatus_group [add_wave_group "Simulation Status" -into $tbinternalsiggroup]
+## set tb_portdepth_group [add_wave_group "Port Depth" -into $tbinternalsiggroup]
+## add_wave /apatb_region_top/AUTOTB_TRANSACTION_NUM -into $tb_simstatus_group -radix hex
+## add_wave /apatb_region_top/ready_cnt -into $tb_simstatus_group -radix hex
+## add_wave /apatb_region_top/done_cnt -into $tb_simstatus_group -radix hex
+## add_wave /apatb_region_top/LENGTH_A -into $tb_portdepth_group -radix hex
+## add_wave /apatb_region_top/LENGTH_B -into $tb_portdepth_group -radix hex
+## add_wave /apatb_region_top/LENGTH_C -into $tb_portdepth_group -radix hex
+## add_wave /apatb_region_top/LENGTH_numa -into $tb_portdepth_group -radix hex
+## add_wave /apatb_region_top/LENGTH_numc -into $tb_portdepth_group -radix hex
+## add_wave /apatb_region_top/LENGTH_n -into $tb_portdepth_group -radix hex
+## add_wave /apatb_region_top/LENGTH_tilenuma -into $tb_portdepth_group -radix hex
+## add_wave /apatb_region_top/LENGTH_tilenumc -into $tb_portdepth_group -radix hex
+## add_wave /apatb_region_top/LENGTH_tilen -into $tb_portdepth_group -radix hex
+## add_wave /apatb_region_top/LENGTH_numa_iter -into $tb_portdepth_group -radix hex
+## add_wave /apatb_region_top/LENGTH_numc_iter -into $tb_portdepth_group -radix hex
+## add_wave /apatb_region_top/LENGTH_n_iter -into $tb_portdepth_group -radix hex
+## set tbcinoutgroup [add_wave_group "C InOuts" -into $testbenchgroup]
+## set tb_C_group [add_wave_group C(wire) -into $tbcinoutgroup]
+## add_wave /apatb_region_top/C_o_ap_vld -into $tb_C_group -color #ffff00 -radix hex
+## add_wave /apatb_region_top/C_o -into $tb_C_group -radix hex
+## add_wave /apatb_region_top/C_i -into $tb_C_group -radix hex
+## set tbcinputgroup [add_wave_group "C Inputs" -into $testbenchgroup]
+## set tb_n_iter_group [add_wave_group n_iter(wire) -into $tbcinputgroup]
+## add_wave /apatb_region_top/n_iter -into $tb_n_iter_group -radix hex
+## set tb_numc_iter_group [add_wave_group numc_iter(wire) -into $tbcinputgroup]
+## add_wave /apatb_region_top/numc_iter -into $tb_numc_iter_group -radix hex
+## set tb_numa_iter_group [add_wave_group numa_iter(wire) -into $tbcinputgroup]
+## add_wave /apatb_region_top/numa_iter -into $tb_numa_iter_group -radix hex
+## set tb_tilen_group [add_wave_group tilen(wire) -into $tbcinputgroup]
+## add_wave /apatb_region_top/tilen -into $tb_tilen_group -radix hex
+## set tb_tilenumc_group [add_wave_group tilenumc(wire) -into $tbcinputgroup]
+## add_wave /apatb_region_top/tilenumc -into $tb_tilenumc_group -radix hex
+## set tb_tilenuma_group [add_wave_group tilenuma(wire) -into $tbcinputgroup]
+## add_wave /apatb_region_top/tilenuma -into $tb_tilenuma_group -radix hex
+## set tb_n_group [add_wave_group n(wire) -into $tbcinputgroup]
+## add_wave /apatb_region_top/n -into $tb_n_group -radix hex
+## set tb_numc_group [add_wave_group numc(wire) -into $tbcinputgroup]
+## add_wave /apatb_region_top/numc -into $tb_numc_group -radix hex
+## set tb_numa_group [add_wave_group numa(wire) -into $tbcinputgroup]
+## add_wave /apatb_region_top/numa -into $tb_numa_group -radix hex
+## set tb_B_group [add_wave_group B(wire) -into $tbcinputgroup]
+## add_wave /apatb_region_top/B -into $tb_B_group -radix hex
+## set tb_A_group [add_wave_group A(wire) -into $tbcinputgroup]
+## add_wave /apatb_region_top/A -into $tb_A_group -radix hex
+## save_wave_config region.wcfg
+## run all
+////////////////////////////////////////////////////////////////////////////////////
+// Inter-Transaction Progress: Completed Transaction / Total Transaction
+// Intra-Transaction Progress: Measured Latency / Latency Estimation * 100%
+//
+// RTL Simulation : "Inter-Transaction Progress" ["Intra-Transaction Progress"] @ "Simulation Time"
+////////////////////////////////////////////////////////////////////////////////////
+// RTL Simulation : 0 / 1 [n/a] @ "1125000"
+// RTL Simulation : 1 / 1 [n/a] @ "63325000"
+////////////////////////////////////////////////////////////////////////////////////
+$finish called at time : 63375 ns : File "/home/sumin/workspace/FPGA/test/reuse_test/solution1/sim/verilog/region.autotb.v" Line 797
+run: Time (s): cpu = 00:00:14 ; elapsed = 00:00:11 . Memory (MB): peak = 18010.602 ; gain = 0.000 ; free physical = 221057 ; free virtual = 251460
+xsim: Time (s): cpu = 00:00:27 ; elapsed = 00:00:21 . Memory (MB): peak = 18010.602 ; gain = 3666.883 ; free physical = 221055 ; free virtual = 251458

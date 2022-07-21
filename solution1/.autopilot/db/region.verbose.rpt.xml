@@ -1,0 +1,158 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'region'" level="0">
+<item name = "Date">Thu Jul 21 01:14:15 2022
+</item>
+<item name = "Version">2020.1 (Build 2902540 on Wed May 27 20:16:15 MDT 2020)</item>
+<item name = "Project">reuse_test</item>
+<item name = "Solution">solution1 (Vivado IP Flow Target)</item>
+<item name = "Product family">virtexuplus</item>
+<item name = "Target device">xcu200-fsgd2104-2-e</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00 ns, 6.366 ns, 2.70 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">?, ?, ?, ?, ?, ?, dataflow</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+<column name="conv_U0">conv, ?, ?, ?, ?, ?, ?, none</column>
+<column name="store_c_U0">store_c, ?, ?, ?, ?, ?, ?, none</column>
+<column name="load_a_U0">load_a, ?, ?, ?, ?, ?, ?, none</column>
+<column name="load_b_U0">load_b, ?, ?, ?, ?, ?, ?, none</column>
+<column name="region_entry64_U0">region_entry64, 0, 0, 0 ns, 0 ns, 0, 0, none</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="6">Name, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="DSP">-, -, -, -, -</column>
+<column name="Expression">-, -, 0, 4, -</column>
+<column name="FIFO">-, -, 2376, 1608, -</column>
+<column name="Instance">13, 81, 25437, 9766, -</column>
+<column name="Memory">-, -, -, -, -</column>
+<column name="Multiplexer">-, -, -, -, -</column>
+<column name="Register">-, -, -, -, -</column>
+<specialColumn name="Available SLR">1440, 2280, 788160, 394080, 320</specialColumn>
+<specialColumn name="Utilization SLR (%)">~0, 3, 3, 2, 0</specialColumn>
+<specialColumn name="Available">4320, 6840, 2364480, 1182240, 960</specialColumn>
+<specialColumn name="Utilization (%)">~0, 1, 1, ~0, 0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="conv_U0">conv, 7, 30, 11374, 4556, 0</column>
+<column name="load_a_U0">load_a, 2, 17, 4435, 1400, 0</column>
+<column name="load_b_U0">load_b, 2, 17, 4435, 1355, 0</column>
+<column name="region_entry64_U0">region_entry64, 0, 0, 3, 119, 0</column>
+<column name="store_c_U0">store_c, 2, 17, 5190, 2336, 0</column>
+</table>
+</item>
+<item name = "DSP"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="8">Name, BRAM_18K, FF, LUT, URAM, Depth, Bits, Size:D*B</keys>
+<column name="a_buf_U">0, 99, 0, -, 1, 3200, 3200</column>
+<column name="b_buf_U">0, 99, 0, -, 1, 3200, 3200</column>
+<column name="c_buf_U">0, 99, 0, -, 1, 3200, 3200</column>
+<column name="n_iter_c15_U">0, 99, 0, -, 2, 32, 64</column>
+<column name="n_iter_c19_U">0, 99, 0, -, 2, 32, 64</column>
+<column name="n_iter_c24_U">0, 99, 0, -, 2, 32, 64</column>
+<column name="n_iter_c_U">0, 99, 0, -, 2, 32, 64</column>
+<column name="numa_iter_c13_U">0, 99, 0, -, 2, 32, 64</column>
+<column name="numa_iter_c18_U">0, 99, 0, -, 2, 32, 64</column>
+<column name="numa_iter_c23_U">0, 99, 0, -, 2, 32, 64</column>
+<column name="numa_iter_c_U">0, 99, 0, -, 2, 32, 64</column>
+<column name="numc_iter_c14_U">0, 99, 0, -, 2, 32, 64</column>
+<column name="numc_iter_c20_U">0, 99, 0, -, 2, 32, 64</column>
+<column name="numc_iter_c25_U">0, 99, 0, -, 2, 32, 64</column>
+<column name="numc_iter_c_U">0, 99, 0, -, 2, 32, 64</column>
+<column name="tilen_c17_U">0, 99, 0, -, 2, 32, 64</column>
+<column name="tilen_c21_U">0, 99, 0, -, 2, 32, 64</column>
+<column name="tilen_c_U">0, 99, 0, -, 2, 32, 64</column>
+<column name="tilenuma_c11_U">0, 99, 0, -, 2, 32, 64</column>
+<column name="tilenuma_c16_U">0, 99, 0, -, 2, 32, 64</column>
+<column name="tilenuma_c_U">0, 99, 0, -, 2, 32, 64</column>
+<column name="tilenumc_c12_U">0, 99, 0, -, 3, 32, 96</column>
+<column name="tilenumc_c22_U">0, 99, 0, -, 2, 32, 64</column>
+<column name="tilenumc_c_U">0, 99, 0, -, 2, 32, 64</column>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="ap_idle">and, 0, 0, 2, 1, 1</column>
+<column name="region_entry64_U0_start_full_n">and, 0, 0, 2, 1, 1</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="A">in, 32, ap_none, A, pointer</column>
+<column name="B">in, 32, ap_none, B, pointer</column>
+<column name="C_i">in, 32, ap_ovld, C, pointer</column>
+<column name="C_o">out, 32, ap_ovld, C, pointer</column>
+<column name="C_o_ap_vld">out, 1, ap_ovld, C, pointer</column>
+<column name="numa">in, 32, ap_none, numa, scalar</column>
+<column name="numc">in, 32, ap_none, numc, scalar</column>
+<column name="n">in, 32, ap_none, n, scalar</column>
+<column name="tilenuma">in, 32, ap_none, tilenuma, scalar</column>
+<column name="tilenumc">in, 32, ap_none, tilenumc, scalar</column>
+<column name="tilen">in, 32, ap_none, tilen, scalar</column>
+<column name="numa_iter">in, 32, ap_none, numa_iter, scalar</column>
+<column name="numc_iter">in, 32, ap_none, numc_iter, scalar</column>
+<column name="n_iter">in, 32, ap_none, n_iter, scalar</column>
+<column name="ap_clk">in, 1, ap_ctrl_hs, region, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, region, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, region, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, region, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, region, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, region, return value</column>
+</table>
+</item>
+</section>
+</profile>

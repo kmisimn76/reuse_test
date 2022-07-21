@@ -1,0 +1,157 @@
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: /home/sumin/tools/Xilinx/Vivado/2020.1/bin/unwrapped/lnx64.o/xelab xil_defaultlib.apatb_region_top glbl -prj region.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm --lib ieee_proposed=./ieee_proposed -s region -debug wave 
+Multi-threading is on. Using 46 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by Xilinx, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/FPGA/test/reuse_test/solution1/sim/verilog/glbl.v" into library work
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/FPGA/test/reuse_test/solution1/sim/verilog/AESL_deadlock_detection_unit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_deadlock_detect_unit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/FPGA/test/reuse_test/solution1/sim/verilog/region_load_a.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module region_load_a
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/FPGA/test/reuse_test/solution1/sim/verilog/region_start_for_load_b_U0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module region_start_for_load_b_U0_shiftReg
+INFO: [VRFC 10-311] analyzing module region_start_for_load_b_U0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/FPGA/test/reuse_test/solution1/sim/verilog/region_mul_32ns_32ns_64_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module region_mul_32ns_32ns_64_1_1_Multiplier_0
+INFO: [VRFC 10-311] analyzing module region_mul_32ns_32ns_64_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/FPGA/test/reuse_test/solution1/sim/verilog/region_load_a_a_buf_data_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module region_load_a_a_buf_data_1_ram
+INFO: [VRFC 10-311] analyzing module region_load_a_a_buf_data_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/FPGA/test/reuse_test/solution1/sim/verilog/region_mac_muladd_7s_7s_7s_7_4_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module region_mac_muladd_7s_7s_7s_7_4_1_DSP48_1
+INFO: [VRFC 10-311] analyzing module region_mac_muladd_7s_7s_7s_7_4_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/FPGA/test/reuse_test/solution1/sim/verilog/region_start_for_store_c_U0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module region_start_for_store_c_U0_shiftReg
+INFO: [VRFC 10-311] analyzing module region_start_for_store_c_U0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/FPGA/test/reuse_test/solution1/sim/verilog/region_fifo_w32_d3_S.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module region_fifo_w32_d3_S_shiftReg
+INFO: [VRFC 10-311] analyzing module region_fifo_w32_d3_S
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/FPGA/test/reuse_test/solution1/sim/verilog/region_mul_32s_32s_32_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module region_mul_32s_32s_32_1_1_Multiplier_3
+INFO: [VRFC 10-311] analyzing module region_mul_32s_32s_32_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/FPGA/test/reuse_test/solution1/sim/verilog/region_conv.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module region_conv
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/FPGA/test/reuse_test/solution1/sim/verilog/AESL_deadlock_report_unit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_deadlock_report_unit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/FPGA/test/reuse_test/solution1/sim/verilog/region_start_for_conv_U0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module region_start_for_conv_U0_shiftReg
+INFO: [VRFC 10-311] analyzing module region_start_for_conv_U0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/FPGA/test/reuse_test/solution1/sim/verilog/region_conv_b_buf_data.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module region_conv_b_buf_data_ram
+INFO: [VRFC 10-311] analyzing module region_conv_b_buf_data
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/FPGA/test/reuse_test/solution1/sim/verilog/region_region_entry64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module region_region_entry64
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/FPGA/test/reuse_test/solution1/sim/verilog/region_fifo_w3200_d1_S.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module region_fifo_w3200_d1_S_shiftReg
+INFO: [VRFC 10-311] analyzing module region_fifo_w3200_d1_S
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/FPGA/test/reuse_test/solution1/sim/verilog/region_conv_local_c.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module region_conv_local_c_ram
+INFO: [VRFC 10-311] analyzing module region_conv_local_c
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/FPGA/test/reuse_test/solution1/sim/verilog/region.autotb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module apatb_region_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/FPGA/test/reuse_test/solution1/sim/verilog/AESL_deadlock_detector.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_deadlock_detector
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/FPGA/test/reuse_test/solution1/sim/verilog/region_fifo_w32_d2_S.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module region_fifo_w32_d2_S_shiftReg
+INFO: [VRFC 10-311] analyzing module region_fifo_w32_d2_S
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/FPGA/test/reuse_test/solution1/sim/verilog/region_store_c.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module region_store_c
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/FPGA/test/reuse_test/solution1/sim/verilog/region_mul_64ns_32ns_96_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module region_mul_64ns_32ns_96_1_1_Multiplier_1
+INFO: [VRFC 10-311] analyzing module region_mul_64ns_32ns_96_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/FPGA/test/reuse_test/solution1/sim/verilog/region_mul_7s_7s_7_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module region_mul_7s_7s_7_1_1_Multiplier_2
+INFO: [VRFC 10-311] analyzing module region_mul_7s_7s_7_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/FPGA/test/reuse_test/solution1/sim/verilog/region_mac_muladd_7s_7s_7ns_7_4_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module region_mac_muladd_7s_7s_7ns_7_4_1_DSP48_0
+INFO: [VRFC 10-311] analyzing module region_mac_muladd_7s_7s_7ns_7_4_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/FPGA/test/reuse_test/solution1/sim/verilog/region_start_for_load_a_U0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module region_start_for_load_a_U0_shiftReg
+INFO: [VRFC 10-311] analyzing module region_start_for_load_a_U0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/FPGA/test/reuse_test/solution1/sim/verilog/region_load_b.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module region_load_b
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/FPGA/test/reuse_test/solution1/sim/verilog/region_store_c_tmp_data.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module region_store_c_tmp_data_ram
+INFO: [VRFC 10-311] analyzing module region_store_c_tmp_data
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/FPGA/test/reuse_test/solution1/sim/verilog/region.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module region
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/FPGA/test/reuse_test/solution1/sim/verilog/df_process_monitor.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/FPGA/test/reuse_test/solution1/sim/verilog/nodf_module_interface.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/FPGA/test/reuse_test/solution1/sim/verilog/dataflow_monitor.sv" into library xil_defaultlib
+WARNING: [VRFC 10-3609] overwriting previous definition of interface 'df_process_intf' [df_process_interface.sv:4]
+WARNING: [VRFC 10-3609] overwriting previous definition of interface 'nodf_module_intf' [nodf_module_interface.sv:4]
+INFO: [VRFC 10-311] analyzing module dataflow_monitor
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/FPGA/test/reuse_test/solution1/sim/verilog/csv_file_dump.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/FPGA/test/reuse_test/solution1/sim/verilog/df_process_interface.sv" into library xil_defaultlib
+WARNING: [VRFC 10-3609] overwriting previous definition of interface 'df_process_intf' [/home/sumin/workspace/FPGA/test/reuse_test/solution1/sim/verilog/df_process_interface.sv:4]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/FPGA/test/reuse_test/solution1/sim/verilog/df_fifo_monitor.sv" into library xil_defaultlib
+WARNING: [VRFC 10-3609] overwriting previous definition of interface 'df_fifo_intf' [df_fifo_interface.sv:4]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/FPGA/test/reuse_test/solution1/sim/verilog/sample_agent.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/FPGA/test/reuse_test/solution1/sim/verilog/df_fifo_interface.sv" into library xil_defaultlib
+WARNING: [VRFC 10-3609] overwriting previous definition of interface 'df_fifo_intf' [/home/sumin/workspace/FPGA/test/reuse_test/solution1/sim/verilog/df_fifo_interface.sv:4]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/FPGA/test/reuse_test/solution1/sim/verilog/sample_manager.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/FPGA/test/reuse_test/solution1/sim/verilog/dump_file_agent.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/FPGA/test/reuse_test/solution1/sim/verilog/nodf_module_monitor.sv" into library xil_defaultlib
+WARNING: [VRFC 10-3609] overwriting previous definition of interface 'nodf_module_intf' [/home/sumin/workspace/FPGA/test/reuse_test/solution1/sim/verilog/nodf_module_interface.sv:4]
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package xil_defaultlib.$unit_dataflow_monitor_sv
+Compiling module xil_defaultlib.region_region_entry64
+Compiling module xil_defaultlib.region_load_a_a_buf_data_1_ram
+Compiling module xil_defaultlib.region_load_a_a_buf_data_1(DataW...
+Compiling module xil_defaultlib.region_mul_32ns_32ns_64_1_1_Mult...
+Compiling module xil_defaultlib.region_mul_32ns_32ns_64_1_1(ID=1...
+Compiling module xil_defaultlib.region_mul_64ns_32ns_96_1_1_Mult...
+Compiling module xil_defaultlib.region_mul_64ns_32ns_96_1_1(ID=1...
+Compiling module xil_defaultlib.region_mac_muladd_7s_7s_7ns_7_4_...
+Compiling module xil_defaultlib.region_mac_muladd_7s_7s_7ns_7_4_...
+Compiling module xil_defaultlib.region_load_a
+Compiling module xil_defaultlib.region_load_b
+Compiling module xil_defaultlib.region_conv_b_buf_data_ram
+Compiling module xil_defaultlib.region_conv_b_buf_data(DataWidth...
+Compiling module xil_defaultlib.region_conv_local_c_ram
+Compiling module xil_defaultlib.region_conv_local_c(DataWidth=32...
+Compiling module xil_defaultlib.region_mul_7s_7s_7_1_1_Multiplie...
+Compiling module xil_defaultlib.region_mul_7s_7s_7_1_1(ID=1,NUM_...
+Compiling module xil_defaultlib.region_mul_32s_32s_32_1_1_Multip...
+Compiling module xil_defaultlib.region_mul_32s_32s_32_1_1(ID=1,N...
+Compiling module xil_defaultlib.region_mac_muladd_7s_7s_7s_7_4_1...
+Compiling module xil_defaultlib.region_mac_muladd_7s_7s_7s_7_4_1...
+Compiling module xil_defaultlib.region_conv
+Compiling module xil_defaultlib.region_store_c_tmp_data_ram
+Compiling module xil_defaultlib.region_store_c_tmp_data(DataWidt...
+Compiling module xil_defaultlib.region_store_c
+Compiling module xil_defaultlib.region_fifo_w32_d2_S_shiftReg
+Compiling module xil_defaultlib.region_fifo_w32_d2_S
+Compiling module xil_defaultlib.region_fifo_w32_d3_S_shiftReg
+Compiling module xil_defaultlib.region_fifo_w32_d3_S
+Compiling module xil_defaultlib.region_fifo_w3200_d1_S_shiftReg
+Compiling module xil_defaultlib.region_fifo_w3200_d1_S
+Compiling module xil_defaultlib.region_start_for_load_a_U0_shift...
+Compiling module xil_defaultlib.region_start_for_load_a_U0
+Compiling module xil_defaultlib.region_start_for_load_b_U0_shift...
+Compiling module xil_defaultlib.region_start_for_load_b_U0
+Compiling module xil_defaultlib.region_start_for_conv_U0_shiftRe...
+Compiling module xil_defaultlib.region_start_for_conv_U0
+Compiling module xil_defaultlib.region_start_for_store_c_U0_shif...
+Compiling module xil_defaultlib.region_start_for_store_c_U0
+Compiling module xil_defaultlib.region
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_report_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detector_1
+Compiling module xil_defaultlib.df_fifo_intf
+Compiling module xil_defaultlib.df_process_intf
+Compiling module xil_defaultlib.nodf_module_intf
+Compiling module xil_defaultlib.dataflow_monitor_1
+Compiling module xil_defaultlib.apatb_region_top
+Compiling module work.glbl
+Built simulation snapshot region

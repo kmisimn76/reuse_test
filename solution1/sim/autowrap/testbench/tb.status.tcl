@@ -1,0 +1,1 @@
+set ::AESL_AUTOSIM::gTopFileName /home/sumin/workspace/FPGA/test/reuse_test/solution1/./sim/autowrap/testbench/main.cpp_pre.cpp.tb.cpp

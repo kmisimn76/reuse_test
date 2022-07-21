@@ -1,0 +1,19 @@
+<root versionMajor = "1" versionMinor = "5">
+  <kernel src_name="region" language="c" hwCtrl="ap_ctrl_hs" mem_layout="fpga64-xilinx-none">
+    <args>
+      <arg id="0" access_type="r" src_name="A" src_type="*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1" hw_interface="Register" hw_name="A" hw_bitwidth="32" hw_size_or_depth="1"/>
+      <arg id="1" access_type="r" src_name="B" src_type="*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1" hw_interface="Register" hw_name="B" hw_bitwidth="32" hw_size_or_depth="1"/>
+      <arg id="2" access_type="rw" src_name="C" src_type="*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1" hw_interface="Register" hw_name="C" hw_bitwidth="32" hw_size_or_depth="1"/>
+      <arg id="3" access_type="r" src_name="numa" src_type="int" src_isptr="0" src_bitwidth="32" src_size_or_depth="1" hw_interface="Register" hw_name="numa" hw_bitwidth="32" hw_size_or_depth="1"/>
+      <arg id="4" access_type="r" src_name="numc" src_type="int" src_isptr="0" src_bitwidth="32" src_size_or_depth="1" hw_interface="Register" hw_name="numc" hw_bitwidth="32" hw_size_or_depth="1"/>
+      <arg id="5" access_type="r" src_name="n" src_type="int" src_isptr="0" src_bitwidth="32" src_size_or_depth="1" hw_interface="Register" hw_name="n" hw_bitwidth="32" hw_size_or_depth="1"/>
+      <arg id="6" access_type="r" src_name="tilenuma" src_type="int" src_isptr="0" src_bitwidth="32" src_size_or_depth="1" hw_interface="Register" hw_name="tilenuma" hw_bitwidth="32" hw_size_or_depth="1"/>
+      <arg id="7" access_type="r" src_name="tilenumc" src_type="int" src_isptr="0" src_bitwidth="32" src_size_or_depth="1" hw_interface="Register" hw_name="tilenumc" hw_bitwidth="32" hw_size_or_depth="1"/>
+      <arg id="8" access_type="r" src_name="tilen" src_type="int" src_isptr="0" src_bitwidth="32" src_size_or_depth="1" hw_interface="Register" hw_name="tilen" hw_bitwidth="32" hw_size_or_depth="1"/>
+      <arg id="9" access_type="r" src_name="numa_iter" src_type="int" src_isptr="0" src_bitwidth="32" src_size_or_depth="1" hw_interface="Register" hw_name="numa_iter" hw_bitwidth="32" hw_size_or_depth="1"/>
+      <arg id="10" access_type="r" src_name="numc_iter" src_type="int" src_isptr="0" src_bitwidth="32" src_size_or_depth="1" hw_interface="Register" hw_name="numc_iter" hw_bitwidth="32" hw_size_or_depth="1"/>
+      <arg id="11" access_type="r" src_name="n_iter" src_type="int" src_isptr="0" src_bitwidth="32" src_size_or_depth="1" hw_interface="Register" hw_name="n_iter" hw_bitwidth="32" hw_size_or_depth="1"/>
+    </args>
+    <return src_type="void" src_bitwidth="0" hw_interface="" hw_name="" hw_bitwidth="0" offset="0x0"/>
+  </kernel>
+</root>
